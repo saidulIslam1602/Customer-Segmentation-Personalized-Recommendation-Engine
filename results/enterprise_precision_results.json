@@ -1,0 +1,27 @@
+{
+  "statistical_precision": {
+    "clv_mean": 192725.79756720626,
+    "clv_std": 214570.44953460858,
+    "coefficient_of_variation": 1.1133457598471463,
+    "skewness": 2.8821774403397704,
+    "kurtosis": 13.662391977683765,
+    "gini_coefficient": 0.5110012231906284,
+    "pareto_efficiency": 43.76501200960769
+  },
+  "predictive_model_precision": {
+    "r2_score_train": 0.8312331207911605,
+    "r2_score_test": 0.5596287416105874,
+    "mae_test": 77551.21648292082,
+    "rmse_test": 140746.58574998626,
+    "mape_test": 60.75487985450889
+  },
+  "risk_analysis_precision": {
+    "total_revenue_at_risk": 455318359.39994687,
+    "average_risk_score": 0.34417682490157114
+  },
+  "clustering_precision": {
+    "optimal_clusters": 2,
+    "silhouette_score": 0.5269382751498852
+  },
+  "hhi_precision": 0.48113854880220497
+}

@@ -1,0 +1,38 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Data files (too large for GitHub)
+data/transactions_real.csv
+data/products_real.csv
+data/customers_real.csv
+
+# Environment files
+.env
+venv/
+env/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Results that are too large
+results/*.png
+results/*.json
+results/*.csv
+
+# Keep important documentation and visualizations
+!results/ENTERPRISE_RETAIL_ANALYTICS_DASHBOARD.png
+!results/RETAIL_ANALYTICS_EXECUTIVE_SUMMARY.png
+!results/enterprise_precision_results.json
+!results/executive_summary.md 
