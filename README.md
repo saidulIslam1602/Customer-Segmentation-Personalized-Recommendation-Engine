@@ -361,13 +361,6 @@ For commercial deployments, enterprise support, and custom development:
 - **Training Programs:** Team onboarding and best practices
 - **Performance Guarantees:** SLA-backed performance commitments
 
-### Contact Information
-- **Email:** enterprise@businessintelligence.com
-- **Phone:** +1-800-BI-PLATFORM
-- **Website:** www.enterprisebi.com
-- **LinkedIn:** /company/enterprise-bi-platform
-
----
 
 ## Roadmap & Future Enhancements
 
