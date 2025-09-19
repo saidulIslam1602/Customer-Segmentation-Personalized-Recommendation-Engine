@@ -1,0 +1,65 @@
+{
+  "timestamp": "20250919_155149",
+  "segment_profiles": {
+    "Big Spenders": {
+      "segment_name": "Big Spenders",
+      "size": 2,
+      "percentage": 0.04610419548178884,
+      "avg_recency": 163.5,
+      "avg_frequency": 2.0,
+      "avg_monetary": 122828.05,
+      "avg_order_value": 66670.55,
+      "avg_historical_clv": 291300.55,
+      "avg_predicted_clv": 56328641.76294999,
+      "vip_percentage": 100.0,
+      "product_diversity": 1.0,
+      "purchase_consistency": 0.8660030428044684,
+      "total_value": 245656.1,
+      "value_contribution": 2.756647465323634
+    },
+    "Frequent Buyers": {
+      "segment_name": "Frequent Buyers",
+      "size": 4336,
+      "percentage": 99.95389580451821,
+      "avg_recency": 92.50369003690037,
+      "avg_frequency": 91.7619926199262,
+      "avg_monetary": 1998.5589944649444,
+      "avg_order_value": 37.62993384227978,
+      "avg_historical_clv": 1056723.0319580256,
+      "avg_predicted_clv": 1080060.2478845015,
+      "vip_percentage": 4.8662361623616235,
+      "product_diversity": 0.8499477726811576,
+      "purchase_consistency": 0.7599868155141363,
+      "total_value": 8665751.799999999,
+      "value_contribution": 97.24335253467638
+    }
+  },
+  "retention_strategies": {
+    "Big Spenders": {
+      "segment": "Big Spenders",
+      "priority": "High",
+      "recommended_actions": [
+        "Win-back email campaign",
+        "Special discount offers (15-20%)",
+        "Personalized product recommendations",
+        "Survey to understand absence reasons"
+      ],
+      "budget_allocation": 10,
+      "expected_roi": 368384.15
+    },
+    "Frequent Buyers": {
+      "segment": "Frequent Buyers",
+      "priority": "High",
+      "recommended_actions": [
+        "Win-back email campaign",
+        "Special discount offers (15-20%)",
+        "Personalized product recommendations",
+        "Survey to understand absence reasons"
+      ],
+      "budget_allocation": 21680,
+      "expected_roi": 5895.676983394833
+    }
+  },
+  "total_customers": 4338,
+  "total_vips": 213
+}

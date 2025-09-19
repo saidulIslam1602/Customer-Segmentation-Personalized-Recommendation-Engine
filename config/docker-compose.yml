@@ -1,0 +1,83 @@
+version: '3.8'
+
+services:
+  # Main analytics pipeline
+  analytics-engine:
+    build: .
+    container_name: customer-segmentation-analytics
+    volumes:
+      - ./results:/app/results
+      - ./data:/app/data
+      - ./logs:/app/logs
+    environment:
+      - ENVIRONMENT=production
+      - LOG_LEVEL=INFO
+    networks:
+      - analytics-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import pandas; print('Analytics engine healthy')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # High precision analytics service
+  precision-analytics:
+    build: .
+    container_name: precision-analytics-service
+    command: ["python", "high_precision_analytics.py"]
+    volumes:
+      - ./results:/app/results
+      - ./data:/app/data
+    environment:
+      - ENVIRONMENT=production
+      - PRECISION_MODE=true
+    networks:
+      - analytics-network
+    depends_on:
+      - analytics-engine
+    restart: unless-stopped
+
+  # Visualization service
+  visualization-service:
+    build: .
+    container_name: visualization-generator
+    command: ["python", "create_enterprise_visualizations.py"]
+    volumes:
+      - ./results:/app/results
+      - ./data:/app/data
+    environment:
+      - ENVIRONMENT=production
+      - VISUALIZATION_MODE=true
+    networks:
+      - analytics-network
+    depends_on:
+      - precision-analytics
+    restart: unless-stopped
+
+  # Optional: Jupyter Lab for interactive analysis
+  jupyter-lab:
+    build: .
+    container_name: analytics-jupyter
+    command: ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root", "--token=analytics2024"]
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./:/app
+      - ./notebooks:/app/notebooks
+    environment:
+      - ENVIRONMENT=development
+      - JUPYTER_ENABLE_LAB=yes
+    networks:
+      - analytics-network
+    restart: unless-stopped
+
+networks:
+  analytics-network:
+    driver: bridge
+
+volumes:
+  analytics-data:
+    driver: local
+  analytics-results:
+    driver: local 

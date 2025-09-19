@@ -1,0 +1,2064 @@
+{
+  "timestamp": "20250919_153939",
+  "kpis": {
+    "financial": {
+      "total_revenue": 8911407.904,
+      "avg_order_value": 22.396999889415003,
+      "daily_revenue": 23891.17400536193,
+      "revenue_growth_rate": -55.39808588506398
+    },
+    "customer": {
+      "total_customers": 4338,
+      "avg_customer_value": 2054.2664601198708,
+      "repeat_customer_rate": 98.3633010603965,
+      "customer_growth_rate": -63.04086538461539
+    },
+    "operational": {
+      "total_products_sold": "5167812",
+      "avg_items_per_order": 278.8588387653788,
+      "total_transactions": 397884,
+      "date_range_days": 373
+    },
+    "product": {
+      "unique_products": 3665,
+      "top_products": [
+        {
+          "product_id": "PROD_23843",
+          "total_amount": 168469.6,
+          "quantity": 80995,
+          "customer_id": 1
+        },
+        {
+          "product_id": "PROD_22423",
+          "total_amount": 142592.94999999998,
+          "quantity": 12402,
+          "customer_id": 881
+        },
+        {
+          "product_id": "PROD_85123A",
+          "total_amount": 100603.5,
+          "quantity": 36782,
+          "customer_id": 856
+        },
+        {
+          "product_id": "PROD_85099B",
+          "total_amount": 85220.78,
+          "quantity": 46181,
+          "customer_id": 635
+        },
+        {
+          "product_id": "PROD_23166",
+          "total_amount": 81416.73000000001,
+          "quantity": 77916,
+          "customer_id": 138
+        },
+        {
+          "product_id": "PROD_POST",
+          "total_amount": 77803.96,
+          "quantity": 3120,
+          "customer_id": 331
+        },
+        {
+          "product_id": "PROD_47566",
+          "total_amount": 68844.33,
+          "quantity": 15291,
+          "customer_id": 708
+        },
+        {
+          "product_id": "PROD_84879",
+          "total_amount": 56580.34,
+          "quantity": 35362,
+          "customer_id": 678
+        },
+        {
+          "product_id": "PROD_M",
+          "total_amount": 53779.93,
+          "quantity": 7173,
+          "customer_id": 197
+        },
+        {
+          "product_id": "PROD_23084",
+          "total_amount": 51346.2,
+          "quantity": 27202,
+          "customer_id": 450
+        }
+      ]
+    }
+  },
+  "insights": [
+    {
+      "category": "financial",
+      "type": "warning",
+      "title": "Revenue Decline Alert",
+      "description": "Revenue has declined by 55.4% month-over-month. Immediate attention required.",
+      "impact": "high",
+      "confidence": 0.95
+    },
+    {
+      "category": "customer",
+      "type": "positive",
+      "title": "High Customer Loyalty",
+      "description": "Excellent repeat customer rate of 98.4% indicates strong customer loyalty and satisfaction.",
+      "impact": "medium",
+      "confidence": 0.85
+    },
+    {
+      "category": "product",
+      "type": "positive",
+      "title": "Strong Cross-Selling Performance",
+      "description": "Average of 278.9 items per order suggests effective cross-selling strategies.",
+      "impact": "medium",
+      "confidence": 0.8
+    },
+    {
+      "category": "operational",
+      "type": "informational",
+      "title": "Seasonal Pattern Identified",
+      "description": "Peak sales occur in November. Plan inventory and marketing accordingly.",
+      "impact": "medium",
+      "confidence": 0.75
+    },
+    {
+      "category": "operational",
+      "type": "alert",
+      "title": "Business Anomalies Detected",
+      "description": "16 high-severity anomalies detected in recent business metrics.",
+      "impact": "high",
+      "confidence": 0.9
+    }
+  ],
+  "anomalies": [
+    {
+      "type": "revenue_anomaly",
+      "date": "2010-12-22",
+      "value": 4886.52,
+      "severity": "high",
+      "description": "Unusual revenue of $4,886.52 detected"
+    },
+    {
+      "type": "revenue_anomaly",
+      "date": "2010-12-23",
+      "value": 5648.97,
+      "severity": "high",
+      "description": "Unusual revenue of $5,648.97 detected"
+    },
+    {
+      "type": "revenue_anomaly",
+      "date": "2011-01-18",
+      "value": 87589.11,
+      "severity": "high",
+      "description": "Unusual revenue of $87,589.11 detected"
+    },
+    {
+      "type": "revenue_anomaly",
+      "date": "2011-02-06",
+      "value": 3457.11,
+      "severity": "high",
+      "description": "Unusual revenue of $3,457.11 detected"
+    },
+    {
+      "type": "revenue_anomaly",
+      "date": "2011-03-13",
+      "value": 4148.12,
+      "severity": "high",
+      "description": "Unusual revenue of $4,148.12 detected"
+    },
+    {
+      "type": "revenue_anomaly",
+      "date": "2011-08-04",
+      "value": 62079.61,
+      "severity": "high",
+      "description": "Unusual revenue of $62,079.61 detected"
+    },
+    {
+      "type": "revenue_anomaly",
+      "date": "2011-09-15",
+      "value": 71993.67,
+      "severity": "high",
+      "description": "Unusual revenue of $71,993.67 detected"
+    },
+    {
+      "type": "revenue_anomaly",
+      "date": "2011-09-20",
+      "value": 103435.81,
+      "severity": "high",
+      "description": "Unusual revenue of $103,435.81 detected"
+    },
+    {
+      "type": "revenue_anomaly",
+      "date": "2011-10-03",
+      "value": 62275.95,
+      "severity": "high",
+      "description": "Unusual revenue of $62,275.95 detected"
+    },
+    {
+      "type": "revenue_anomaly",
+      "date": "2011-10-05",
+      "value": 74108.43000000001,
+      "severity": "high",
+      "description": "Unusual revenue of $74,108.43 detected"
+    },
+    {
+      "type": "revenue_anomaly",
+      "date": "2011-11-09",
+      "value": 61489.18,
+      "severity": "high",
+      "description": "Unusual revenue of $61,489.18 detected"
+    },
+    {
+      "type": "revenue_anomaly",
+      "date": "2011-11-10",
+      "value": 70513.29,
+      "severity": "high",
+      "description": "Unusual revenue of $70,513.29 detected"
+    },
+    {
+      "type": "revenue_anomaly",
+      "date": "2011-11-23",
+      "value": 71979.93,
+      "severity": "high",
+      "description": "Unusual revenue of $71,979.93 detected"
+    },
+    {
+      "type": "revenue_anomaly",
+      "date": "2011-11-28",
+      "value": 51831.67,
+      "severity": "high",
+      "description": "Unusual revenue of $51,831.67 detected"
+    },
+    {
+      "type": "revenue_anomaly",
+      "date": "2011-12-07",
+      "value": 69354.21,
+      "severity": "high",
+      "description": "Unusual revenue of $69,354.21 detected"
+    },
+    {
+      "type": "revenue_anomaly",
+      "date": "2011-12-09",
+      "value": 184349.28,
+      "severity": "high",
+      "description": "Unusual revenue of $184,349.28 detected"
+    },
+    {
+      "type": "customer_anomaly",
+      "date": "2010-12-19",
+      "value": 17,
+      "severity": "medium",
+      "description": "Unusual customer activity: 17 unique customers"
+    },
+    {
+      "type": "customer_anomaly",
+      "date": "2010-12-22",
+      "value": 13,
+      "severity": "medium",
+      "description": "Unusual customer activity: 13 unique customers"
+    },
+    {
+      "type": "customer_anomaly",
+      "date": "2010-12-23",
+      "value": 15,
+      "severity": "medium",
+      "description": "Unusual customer activity: 15 unique customers"
+    },
+    {
+      "type": "customer_anomaly",
+      "date": "2011-02-06",
+      "value": 11,
+      "severity": "medium",
+      "description": "Unusual customer activity: 11 unique customers"
+    },
+    {
+      "type": "customer_anomaly",
+      "date": "2011-03-13",
+      "value": 16,
+      "severity": "medium",
+      "description": "Unusual customer activity: 16 unique customers"
+    },
+    {
+      "type": "customer_anomaly",
+      "date": "2011-04-03",
+      "value": 18,
+      "severity": "medium",
+      "description": "Unusual customer activity: 18 unique customers"
+    },
+    {
+      "type": "customer_anomaly",
+      "date": "2011-05-01",
+      "value": 18,
+      "severity": "medium",
+      "description": "Unusual customer activity: 18 unique customers"
+    },
+    {
+      "type": "customer_anomaly",
+      "date": "2011-11-10",
+      "value": 112,
+      "severity": "medium",
+      "description": "Unusual customer activity: 112 unique customers"
+    },
+    {
+      "type": "customer_anomaly",
+      "date": "2011-11-16",
+      "value": 111,
+      "severity": "medium",
+      "description": "Unusual customer activity: 111 unique customers"
+    },
+    {
+      "type": "customer_anomaly",
+      "date": "2011-11-17",
+      "value": 125,
+      "severity": "medium",
+      "description": "Unusual customer activity: 125 unique customers"
+    },
+    {
+      "type": "customer_anomaly",
+      "date": "2011-11-22",
+      "value": 120,
+      "severity": "medium",
+      "description": "Unusual customer activity: 120 unique customers"
+    },
+    {
+      "type": "customer_anomaly",
+      "date": "2011-11-23",
+      "value": 107,
+      "severity": "medium",
+      "description": "Unusual customer activity: 107 unique customers"
+    },
+    {
+      "type": "customer_anomaly",
+      "date": "2011-11-29",
+      "value": 109,
+      "severity": "medium",
+      "description": "Unusual customer activity: 109 unique customers"
+    },
+    {
+      "type": "customer_anomaly",
+      "date": "2011-12-01",
+      "value": 111,
+      "severity": "medium",
+      "description": "Unusual customer activity: 111 unique customers"
+    },
+    {
+      "type": "customer_anomaly",
+      "date": "2011-12-06",
+      "value": 103,
+      "severity": "medium",
+      "description": "Unusual customer activity: 103 unique customers"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_15036",
+      "product_name": "ASSORTED COLOURS SILK FAN",
+      "value": 16044.44,
+      "severity": "positive",
+      "description": "Exceptional performance: ASSORTED COLOURS SILK FAN generated $16,044.44"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_15056BL",
+      "product_name": "EDWARDIAN PARASOL BLACK",
+      "value": 15218.67,
+      "severity": "positive",
+      "description": "Exceptional performance: EDWARDIAN PARASOL BLACK generated $15,218.67"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_15056N",
+      "product_name": "EDWARDIAN PARASOL NATURAL",
+      "value": 20696.71,
+      "severity": "positive",
+      "description": "Exceptional performance: EDWARDIAN PARASOL NATURAL generated $20,696.71"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_20685",
+      "product_name": "DOORMAT RED RETROSPOT",
+      "value": 25397.85,
+      "severity": "positive",
+      "description": "Exceptional performance: DOORMAT RED RETROSPOT generated $25,397.85"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_20712",
+      "product_name": "JUMBO BAG WOODLAND ANIMALS",
+      "value": 15511.6,
+      "severity": "positive",
+      "description": "Exceptional performance: JUMBO BAG WOODLAND ANIMALS generated $15,511.60"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_20713",
+      "product_name": "JUMBO BAG OWLS",
+      "value": 19076.92,
+      "severity": "positive",
+      "description": "Exceptional performance: JUMBO BAG OWLS generated $19,076.92"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_20725",
+      "product_name": "LUNCH BAG RED RETROSPOT",
+      "value": 28338.45,
+      "severity": "positive",
+      "description": "Exceptional performance: LUNCH BAG RED RETROSPOT generated $28,338.45"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_20726",
+      "product_name": "LUNCH BAG WOODLAND",
+      "value": 14537.11,
+      "severity": "positive",
+      "description": "Exceptional performance: LUNCH BAG WOODLAND generated $14,537.11"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_20727",
+      "product_name": "LUNCH BAG  BLACK SKULL.",
+      "value": 18024.55,
+      "severity": "positive",
+      "description": "Exceptional performance: LUNCH BAG  BLACK SKULL. generated $18,024.55"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_20728",
+      "product_name": "LUNCH BAG CARS BLUE",
+      "value": 17265.68,
+      "severity": "positive",
+      "description": "Exceptional performance: LUNCH BAG CARS BLUE generated $17,265.68"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_20749",
+      "product_name": "ASSORTED COLOUR MINI CASES",
+      "value": 12123.41,
+      "severity": "positive",
+      "description": "Exceptional performance: ASSORTED COLOUR MINI CASES generated $12,123.41"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_20750",
+      "product_name": "RED RETROSPOT MINI CASES",
+      "value": 12216.8,
+      "severity": "positive",
+      "description": "Exceptional performance: RED RETROSPOT MINI CASES generated $12,216.80"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_20914",
+      "product_name": "SET/5 RED RETROSPOT LID GLASS BOWLS",
+      "value": 17303.98,
+      "severity": "positive",
+      "description": "Exceptional performance: SET/5 RED RETROSPOT LID GLASS BOWLS generated $17,303.98"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_20971",
+      "product_name": "PINK BLUE FELT CRAFT TRINKET BOX",
+      "value": 11629.39,
+      "severity": "positive",
+      "description": "Exceptional performance: PINK BLUE FELT CRAFT TRINKET BOX generated $11,629.39"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_21108",
+      "product_name": "FAIRY CAKE FLANNEL ASSORTED COLOUR",
+      "value": 17304.57,
+      "severity": "positive",
+      "description": "Exceptional performance: FAIRY CAKE FLANNEL ASSORTED COLOUR generated $17,304.57"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_21137",
+      "product_name": "BLACK RECORD COVER FRAME",
+      "value": 39064.55,
+      "severity": "positive",
+      "description": "Exceptional performance: BLACK RECORD COVER FRAME generated $39,064.55"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_21166",
+      "product_name": "COOK WITH WINE METAL SIGN ",
+      "value": 20315.33,
+      "severity": "positive",
+      "description": "Exceptional performance: COOK WITH WINE METAL SIGN  generated $20,315.33"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_21175",
+      "product_name": "GIN + TONIC DIET METAL SIGN",
+      "value": 26107.44,
+      "severity": "positive",
+      "description": "Exceptional performance: GIN + TONIC DIET METAL SIGN generated $26,107.44"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_21181",
+      "product_name": "PLEASE ONE PERSON METAL SIGN",
+      "value": 23930.920000000002,
+      "severity": "positive",
+      "description": "Exceptional performance: PLEASE ONE PERSON METAL SIGN generated $23,930.92"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_21212",
+      "product_name": "PACK OF 72 RETROSPOT CAKE CASES",
+      "value": 16394.53,
+      "severity": "positive",
+      "description": "Exceptional performance: PACK OF 72 RETROSPOT CAKE CASES generated $16,394.53"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_21232",
+      "product_name": "STRAWBERRY CERAMIC TRINKET BOX",
+      "value": 12210.06,
+      "severity": "positive",
+      "description": "Exceptional performance: STRAWBERRY CERAMIC TRINKET BOX generated $12,210.06"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_21479",
+      "product_name": "WHITE SKULL HOT WATER BOTTLE ",
+      "value": 10227.72,
+      "severity": "positive",
+      "description": "Exceptional performance: WHITE SKULL HOT WATER BOTTLE  generated $10,227.72"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_21485",
+      "product_name": "RETROSPOT HEART HOT WATER BOTTLE",
+      "value": 15871.73,
+      "severity": "positive",
+      "description": "Exceptional performance: RETROSPOT HEART HOT WATER BOTTLE generated $15,871.73"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_21523",
+      "product_name": "DOORMAT FANCY FONT HOME SWEET HOME",
+      "value": 19157.02,
+      "severity": "positive",
+      "description": "Exceptional performance: DOORMAT FANCY FONT HOME SWEET HOME generated $19,157.02"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_21524",
+      "product_name": "DOORMAT SPOTTY HOME SWEET HOME",
+      "value": 12095.67,
+      "severity": "positive",
+      "description": "Exceptional performance: DOORMAT SPOTTY HOME SWEET HOME generated $12,095.67"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_21621",
+      "product_name": "VINTAGE UNION JACK BUNTING",
+      "value": 20962.16,
+      "severity": "positive",
+      "description": "Exceptional performance: VINTAGE UNION JACK BUNTING generated $20,962.16"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_21623",
+      "product_name": "VINTAGE UNION JACK MEMOBOARD",
+      "value": 22709.13,
+      "severity": "positive",
+      "description": "Exceptional performance: VINTAGE UNION JACK MEMOBOARD generated $22,709.13"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_21731",
+      "product_name": "RED TOADSTOOL LED NIGHT LIGHT",
+      "value": 19844.91,
+      "severity": "positive",
+      "description": "Exceptional performance: RED TOADSTOOL LED NIGHT LIGHT generated $19,844.91"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_21733",
+      "product_name": "RED HANGING HEART T-LIGHT HOLDER",
+      "value": 22624.690000000002,
+      "severity": "positive",
+      "description": "Exceptional performance: RED HANGING HEART T-LIGHT HOLDER generated $22,624.69"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_21754",
+      "product_name": "HOME BUILDING BLOCK WORD",
+      "value": 15630.960000000001,
+      "severity": "positive",
+      "description": "Exceptional performance: HOME BUILDING BLOCK WORD generated $15,630.96"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_21755",
+      "product_name": "LOVE BUILDING BLOCK WORD",
+      "value": 11535.56,
+      "severity": "positive",
+      "description": "Exceptional performance: LOVE BUILDING BLOCK WORD generated $11,535.56"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_21790",
+      "product_name": "VINTAGE SNAP CARDS",
+      "value": 10447.42,
+      "severity": "positive",
+      "description": "Exceptional performance: VINTAGE SNAP CARDS generated $10,447.42"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_21843",
+      "product_name": "RED RETROSPOT CAKE STAND",
+      "value": 17929.75,
+      "severity": "positive",
+      "description": "Exceptional performance: RED RETROSPOT CAKE STAND generated $17,929.75"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_21915",
+      "product_name": "RED  HARMONICA IN BOX ",
+      "value": 23793.93,
+      "severity": "positive",
+      "description": "Exceptional performance: RED  HARMONICA IN BOX  generated $23,793.93"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_21928",
+      "product_name": "JUMBO BAG SCANDINAVIAN PAISLEY",
+      "value": 18063.62,
+      "severity": "positive",
+      "description": "Exceptional performance: JUMBO BAG SCANDINAVIAN PAISLEY generated $18,063.62"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_21929",
+      "product_name": "JUMBO BAG PINK VINTAGE PAISLEY",
+      "value": 18429.98,
+      "severity": "positive",
+      "description": "Exceptional performance: JUMBO BAG PINK VINTAGE PAISLEY generated $18,429.98"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_21930",
+      "product_name": "JUMBO STORAGE BAG SKULLS",
+      "value": 10890.79,
+      "severity": "positive",
+      "description": "Exceptional performance: JUMBO STORAGE BAG SKULLS generated $10,890.79"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_21931",
+      "product_name": "JUMBO STORAGE BAG SUKI",
+      "value": 21790.95,
+      "severity": "positive",
+      "description": "Exceptional performance: JUMBO STORAGE BAG SUKI generated $21,790.95"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_21936",
+      "product_name": "RED RETROSPOT PICNIC BAG",
+      "value": 10371.66,
+      "severity": "positive",
+      "description": "Exceptional performance: RED RETROSPOT PICNIC BAG generated $10,371.66"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_21977",
+      "product_name": "PACK OF 60 PINK PAISLEY CAKE CASES",
+      "value": 11629.699999999999,
+      "severity": "positive",
+      "description": "Exceptional performance: PACK OF 60 PINK PAISLEY CAKE CASES generated $11,629.70"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22077",
+      "product_name": "6 RIBBONS RUSTIC CHARM",
+      "value": 14988.59,
+      "severity": "positive",
+      "description": "Exceptional performance: 6 RIBBONS RUSTIC CHARM generated $14,988.59"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22083",
+      "product_name": "PAPER CHAIN KIT RETROSPOT",
+      "value": 12043.210000000001,
+      "severity": "positive",
+      "description": "Exceptional performance: PAPER CHAIN KIT RETROSPOT generated $12,043.21"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22084",
+      "product_name": "PAPER CHAIN KIT EMPIRE",
+      "value": 13435.150000000001,
+      "severity": "positive",
+      "description": "Exceptional performance: PAPER CHAIN KIT EMPIRE generated $13,435.15"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22086",
+      "product_name": "PAPER CHAIN KIT 50'S CHRISTMAS ",
+      "value": 42660.83,
+      "severity": "positive",
+      "description": "Exceptional performance: PAPER CHAIN KIT 50'S CHRISTMAS  generated $42,660.83"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22087",
+      "product_name": "PAPER BUNTING WHITE LACE",
+      "value": 10264.050000000001,
+      "severity": "positive",
+      "description": "Exceptional performance: PAPER BUNTING WHITE LACE generated $10,264.05"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22090",
+      "product_name": "PAPER BUNTING RETROSPOT",
+      "value": 18791.890000000003,
+      "severity": "positive",
+      "description": "Exceptional performance: PAPER BUNTING RETROSPOT generated $18,791.89"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22111",
+      "product_name": "SCOTTIE DOG HOT WATER BOTTLE",
+      "value": 20104.350000000002,
+      "severity": "positive",
+      "description": "Exceptional performance: SCOTTIE DOG HOT WATER BOTTLE generated $20,104.35"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22112",
+      "product_name": "CHOCOLATE HOT WATER BOTTLE",
+      "value": 23624.24,
+      "severity": "positive",
+      "description": "Exceptional performance: CHOCOLATE HOT WATER BOTTLE generated $23,624.24"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22113",
+      "product_name": "GREY HEART HOT WATER BOTTLE",
+      "value": 12191.15,
+      "severity": "positive",
+      "description": "Exceptional performance: GREY HEART HOT WATER BOTTLE generated $12,191.15"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22114",
+      "product_name": "HOT WATER BOTTLE TEA AND SYMPATHY",
+      "value": 15415.22,
+      "severity": "positive",
+      "description": "Exceptional performance: HOT WATER BOTTLE TEA AND SYMPATHY generated $15,415.22"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22138",
+      "product_name": "BAKING SET 9 PIECE RETROSPOT ",
+      "value": 23007.55,
+      "severity": "positive",
+      "description": "Exceptional performance: BAKING SET 9 PIECE RETROSPOT  generated $23,007.55"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22139",
+      "product_name": "RETROSPOT TEA SET CERAMIC 11 PC ",
+      "value": 20470.78,
+      "severity": "positive",
+      "description": "Exceptional performance: RETROSPOT TEA SET CERAMIC 11 PC  generated $20,470.78"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22149",
+      "product_name": "FELTCRAFT 6 FLOWER FRIENDS",
+      "value": 11566.39,
+      "severity": "positive",
+      "description": "Exceptional performance: FELTCRAFT 6 FLOWER FRIENDS generated $11,566.39"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22171",
+      "product_name": "3 HOOK PHOTO SHELF ANTIQUE WHITE",
+      "value": 12294.38,
+      "severity": "positive",
+      "description": "Exceptional performance: 3 HOOK PHOTO SHELF ANTIQUE WHITE generated $12,294.38"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22178",
+      "product_name": "VICTORIAN GLASS HANGING T-LIGHT",
+      "value": 28776.51,
+      "severity": "positive",
+      "description": "Exceptional performance: VICTORIAN GLASS HANGING T-LIGHT generated $28,776.51"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22188",
+      "product_name": "BLACK HEART CARD HOLDER",
+      "value": 12261.9,
+      "severity": "positive",
+      "description": "Exceptional performance: BLACK HEART CARD HOLDER generated $12,261.90"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22189",
+      "product_name": "CREAM HEART CARD HOLDER",
+      "value": 22715.57,
+      "severity": "positive",
+      "description": "Exceptional performance: CREAM HEART CARD HOLDER generated $22,715.57"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22191",
+      "product_name": "IVORY DINER WALL CLOCK",
+      "value": 11587.2,
+      "severity": "positive",
+      "description": "Exceptional performance: IVORY DINER WALL CLOCK generated $11,587.20"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22193",
+      "product_name": "RED DINER WALL CLOCK",
+      "value": 11074.39,
+      "severity": "positive",
+      "description": "Exceptional performance: RED DINER WALL CLOCK generated $11,074.39"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22197",
+      "product_name": "SMALL POPCORN HOLDER",
+      "value": 37226.43,
+      "severity": "positive",
+      "description": "Exceptional performance: SMALL POPCORN HOLDER generated $37,226.43"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22273",
+      "product_name": "FELTCRAFT DOLL MOLLY",
+      "value": 11762.99,
+      "severity": "positive",
+      "description": "Exceptional performance: FELTCRAFT DOLL MOLLY generated $11,762.99"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22326",
+      "product_name": "ROUND SNACK BOXES SET OF4 WOODLAND ",
+      "value": 22175.52,
+      "severity": "positive",
+      "description": "Exceptional performance: ROUND SNACK BOXES SET OF4 WOODLAND  generated $22,175.52"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22328",
+      "product_name": "ROUND SNACK BOXES SET OF 4 FRUITS ",
+      "value": 17604.99,
+      "severity": "positive",
+      "description": "Exceptional performance: ROUND SNACK BOXES SET OF 4 FRUITS  generated $17,604.99"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22379",
+      "product_name": "RECYCLING BAG RETROSPOT ",
+      "value": 11942.43,
+      "severity": "positive",
+      "description": "Exceptional performance: RECYCLING BAG RETROSPOT  generated $11,942.43"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22382",
+      "product_name": "LUNCH BAG SPACEBOY DESIGN ",
+      "value": 15881.2,
+      "severity": "positive",
+      "description": "Exceptional performance: LUNCH BAG SPACEBOY DESIGN  generated $15,881.20"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22383",
+      "product_name": "LUNCH BAG SUKI  DESIGN ",
+      "value": 18723.7,
+      "severity": "positive",
+      "description": "Exceptional performance: LUNCH BAG SUKI  DESIGN  generated $18,723.70"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22384",
+      "product_name": "LUNCH BAG PINK POLKADOT",
+      "value": 16349.5,
+      "severity": "positive",
+      "description": "Exceptional performance: LUNCH BAG PINK POLKADOT generated $16,349.50"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22385",
+      "product_name": "JUMBO BAG SPACEBOY DESIGN",
+      "value": 15331.02,
+      "severity": "positive",
+      "description": "Exceptional performance: JUMBO BAG SPACEBOY DESIGN generated $15,331.02"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22386",
+      "product_name": "JUMBO BAG PINK POLKADOT",
+      "value": 37289.590000000004,
+      "severity": "positive",
+      "description": "Exceptional performance: JUMBO BAG PINK POLKADOT generated $37,289.59"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22411",
+      "product_name": "JUMBO SHOPPER VINTAGE RED PAISLEY",
+      "value": 20174.23,
+      "severity": "positive",
+      "description": "Exceptional performance: JUMBO SHOPPER VINTAGE RED PAISLEY generated $20,174.23"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22413",
+      "product_name": "METAL SIGN TAKE IT OR LEAVE IT ",
+      "value": 10647.300000000001,
+      "severity": "positive",
+      "description": "Exceptional performance: METAL SIGN TAKE IT OR LEAVE IT  generated $10,647.30"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22423",
+      "product_name": "REGENCY CAKESTAND 3 TIER",
+      "value": 142592.94999999998,
+      "severity": "positive",
+      "description": "Exceptional performance: REGENCY CAKESTAND 3 TIER generated $142,592.95"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22427",
+      "product_name": "ENAMEL FLOWER JUG CREAM",
+      "value": 11444.93,
+      "severity": "positive",
+      "description": "Exceptional performance: ENAMEL FLOWER JUG CREAM generated $11,444.93"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22457",
+      "product_name": "NATURAL SLATE HEART CHALKBOARD ",
+      "value": 24245.520000000004,
+      "severity": "positive",
+      "description": "Exceptional performance: NATURAL SLATE HEART CHALKBOARD  generated $24,245.52"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22467",
+      "product_name": "GUMBALL COAT RACK",
+      "value": 17580.350000000002,
+      "severity": "positive",
+      "description": "Exceptional performance: GUMBALL COAT RACK generated $17,580.35"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22469",
+      "product_name": "HEART OF WICKER SMALL",
+      "value": 28228.64,
+      "severity": "positive",
+      "description": "Exceptional performance: HEART OF WICKER SMALL generated $28,228.64"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22470",
+      "product_name": "HEART OF WICKER LARGE",
+      "value": 28520.95,
+      "severity": "positive",
+      "description": "Exceptional performance: HEART OF WICKER LARGE generated $28,520.95"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22492",
+      "product_name": "MINI PAINT SET VINTAGE ",
+      "value": 16039.24,
+      "severity": "positive",
+      "description": "Exceptional performance: MINI PAINT SET VINTAGE  generated $16,039.24"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22501",
+      "product_name": "PICNIC BASKET WICKER LARGE",
+      "value": 10818.9,
+      "severity": "positive",
+      "description": "Exceptional performance: PICNIC BASKET WICKER LARGE generated $10,818.90"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22502",
+      "product_name": "PICNIC BASKET WICKER SMALL",
+      "value": 47366.2,
+      "severity": "positive",
+      "description": "Exceptional performance: PICNIC BASKET WICKER SMALL generated $47,366.20"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22507",
+      "product_name": "MEMO BOARD RETROSPOT  DESIGN",
+      "value": 12411.02,
+      "severity": "positive",
+      "description": "Exceptional performance: MEMO BOARD RETROSPOT  DESIGN generated $12,411.02"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22551",
+      "product_name": "PLASTERS IN TIN SPACEBOY",
+      "value": 12151.8,
+      "severity": "positive",
+      "description": "Exceptional performance: PLASTERS IN TIN SPACEBOY generated $12,151.80"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22554",
+      "product_name": "PLASTERS IN TIN WOODLAND ANIMALS",
+      "value": 11637.43,
+      "severity": "positive",
+      "description": "Exceptional performance: PLASTERS IN TIN WOODLAND ANIMALS generated $11,637.43"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22558",
+      "product_name": "CLOTHES PEGS RETROSPOT PACK 24 ",
+      "value": 12545.38,
+      "severity": "positive",
+      "description": "Exceptional performance: CLOTHES PEGS RETROSPOT PACK 24  generated $12,545.38"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22568",
+      "product_name": "FELTCRAFT CUSHION OWL",
+      "value": 11783.05,
+      "severity": "positive",
+      "description": "Exceptional performance: FELTCRAFT CUSHION OWL generated $11,783.05"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22570",
+      "product_name": "FELTCRAFT CUSHION RABBIT",
+      "value": 10694.81,
+      "severity": "positive",
+      "description": "Exceptional performance: FELTCRAFT CUSHION RABBIT generated $10,694.81"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22607",
+      "product_name": "WOODEN ROUNDERS GARDEN SET ",
+      "value": 11601.14,
+      "severity": "positive",
+      "description": "Exceptional performance: WOODEN ROUNDERS GARDEN SET  generated $11,601.14"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22617",
+      "product_name": "BAKING SET SPACEBOY DESIGN",
+      "value": 10210.89,
+      "severity": "positive",
+      "description": "Exceptional performance: BAKING SET SPACEBOY DESIGN generated $10,210.89"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22622",
+      "product_name": "BOX OF VINTAGE ALPHABET BLOCKS",
+      "value": 13035.66,
+      "severity": "positive",
+      "description": "Exceptional performance: BOX OF VINTAGE ALPHABET BLOCKS generated $13,035.66"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22624",
+      "product_name": "IVORY KITCHEN SCALES",
+      "value": 14788.33,
+      "severity": "positive",
+      "description": "Exceptional performance: IVORY KITCHEN SCALES generated $14,788.33"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22625",
+      "product_name": "RED KITCHEN SCALES",
+      "value": 11895.73,
+      "severity": "positive",
+      "description": "Exceptional performance: RED KITCHEN SCALES generated $11,895.73"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22629",
+      "product_name": "SPACEBOY LUNCH BOX ",
+      "value": 24694.59,
+      "severity": "positive",
+      "description": "Exceptional performance: SPACEBOY LUNCH BOX  generated $24,694.59"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22630",
+      "product_name": "DOLLY GIRL LUNCH BOX",
+      "value": 20129.44,
+      "severity": "positive",
+      "description": "Exceptional performance: DOLLY GIRL LUNCH BOX generated $20,129.44"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22659",
+      "product_name": "LUNCH BOX I LOVE LONDON",
+      "value": 19353.22,
+      "severity": "positive",
+      "description": "Exceptional performance: LUNCH BOX I LOVE LONDON generated $19,353.22"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22662",
+      "product_name": "LUNCH BAG DOLLY GIRL DESIGN",
+      "value": 10360.69,
+      "severity": "positive",
+      "description": "Exceptional performance: LUNCH BAG DOLLY GIRL DESIGN generated $10,360.69"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22666",
+      "product_name": "RECIPE BOX PANTRY YELLOW DESIGN",
+      "value": 20859.27,
+      "severity": "positive",
+      "description": "Exceptional performance: RECIPE BOX PANTRY YELLOW DESIGN generated $20,859.27"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22693",
+      "product_name": "GROW A FLYTRAP OR SUNFLOWER IN TIN",
+      "value": 17226.2,
+      "severity": "positive",
+      "description": "Exceptional performance: GROW A FLYTRAP OR SUNFLOWER IN TIN generated $17,226.20"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22697",
+      "product_name": "GREEN REGENCY TEACUP AND SAUCER",
+      "value": 17806.34,
+      "severity": "positive",
+      "description": "Exceptional performance: GREEN REGENCY TEACUP AND SAUCER generated $17,806.34"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22698",
+      "product_name": "PINK REGENCY TEACUP AND SAUCER",
+      "value": 14769.490000000002,
+      "severity": "positive",
+      "description": "Exceptional performance: PINK REGENCY TEACUP AND SAUCER generated $14,769.49"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22699",
+      "product_name": "ROSES REGENCY TEACUP AND SAUCER ",
+      "value": 24865.600000000002,
+      "severity": "positive",
+      "description": "Exceptional performance: ROSES REGENCY TEACUP AND SAUCER  generated $24,865.60"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22720",
+      "product_name": "SET OF 3 CAKE TINS PANTRY DESIGN ",
+      "value": 33347.8,
+      "severity": "positive",
+      "description": "Exceptional performance: SET OF 3 CAKE TINS PANTRY DESIGN  generated $33,347.80"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22722",
+      "product_name": "SET OF 6 SPICE TINS PANTRY DESIGN",
+      "value": 20530.0,
+      "severity": "positive",
+      "description": "Exceptional performance: SET OF 6 SPICE TINS PANTRY DESIGN generated $20,530.00"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22726",
+      "product_name": "ALARM CLOCK BAKELIKE GREEN",
+      "value": 20880.4,
+      "severity": "positive",
+      "description": "Exceptional performance: ALARM CLOCK BAKELIKE GREEN generated $20,880.40"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22727",
+      "product_name": "ALARM CLOCK BAKELIKE RED ",
+      "value": 25925.2,
+      "severity": "positive",
+      "description": "Exceptional performance: ALARM CLOCK BAKELIKE RED  generated $25,925.20"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22728",
+      "product_name": "ALARM CLOCK BAKELIKE PINK",
+      "value": 18569.09,
+      "severity": "positive",
+      "description": "Exceptional performance: ALARM CLOCK BAKELIKE PINK generated $18,569.09"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22730",
+      "product_name": "ALARM CLOCK BAKELIKE IVORY",
+      "value": 10285.61,
+      "severity": "positive",
+      "description": "Exceptional performance: ALARM CLOCK BAKELIKE IVORY generated $10,285.61"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22752",
+      "product_name": "SET 7 BABUSHKA NESTING BOXES",
+      "value": 12665.29,
+      "severity": "positive",
+      "description": "Exceptional performance: SET 7 BABUSHKA NESTING BOXES generated $12,665.29"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22776",
+      "product_name": "SWEETHEART CAKESTAND 3 TIER",
+      "value": 10570.6,
+      "severity": "positive",
+      "description": "Exceptional performance: SWEETHEART CAKESTAND 3 TIER generated $10,570.60"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22835",
+      "product_name": "HOT WATER BOTTLE I AM SO POORLY",
+      "value": 13847.28,
+      "severity": "positive",
+      "description": "Exceptional performance: HOT WATER BOTTLE I AM SO POORLY generated $13,847.28"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22847",
+      "product_name": "BREAD BIN DINER STYLE IVORY",
+      "value": 13191.689999999999,
+      "severity": "positive",
+      "description": "Exceptional performance: BREAD BIN DINER STYLE IVORY generated $13,191.69"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22865",
+      "product_name": "HAND WARMER OWL DESIGN",
+      "value": 16237.630000000001,
+      "severity": "positive",
+      "description": "Exceptional performance: HAND WARMER OWL DESIGN generated $16,237.63"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22866",
+      "product_name": "HAND WARMER SCOTTY DOG DESIGN",
+      "value": 12248.76,
+      "severity": "positive",
+      "description": "Exceptional performance: HAND WARMER SCOTTY DOG DESIGN generated $12,248.76"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22867",
+      "product_name": "HAND WARMER BIRD DESIGN",
+      "value": 12081.430000000002,
+      "severity": "positive",
+      "description": "Exceptional performance: HAND WARMER BIRD DESIGN generated $12,081.43"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22900",
+      "product_name": " SET 2 TEA TOWELS I LOVE LONDON ",
+      "value": 13068.2,
+      "severity": "positive",
+      "description": "Exceptional performance:  SET 2 TEA TOWELS I LOVE LONDON  generated $13,068.20"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22910",
+      "product_name": "PAPER CHAIN KIT VINTAGE CHRISTMAS",
+      "value": 25669.27,
+      "severity": "positive",
+      "description": "Exceptional performance: PAPER CHAIN KIT VINTAGE CHRISTMAS generated $25,669.27"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22941",
+      "product_name": "CHRISTMAS LIGHTS 10 REINDEER",
+      "value": 12150.0,
+      "severity": "positive",
+      "description": "Exceptional performance: CHRISTMAS LIGHTS 10 REINDEER generated $12,150.00"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22960",
+      "product_name": "JAM MAKING SET WITH JARS",
+      "value": 32662.97,
+      "severity": "positive",
+      "description": "Exceptional performance: JAM MAKING SET WITH JARS generated $32,662.97"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22961",
+      "product_name": "JAM MAKING SET PRINTED",
+      "value": 21170.75,
+      "severity": "positive",
+      "description": "Exceptional performance: JAM MAKING SET PRINTED generated $21,170.75"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22969",
+      "product_name": "HOMEMADE JAM SCENTED CANDLES",
+      "value": 17521.6,
+      "severity": "positive",
+      "description": "Exceptional performance: HOMEMADE JAM SCENTED CANDLES generated $17,521.60"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_22993",
+      "product_name": "SET OF 4 PANTRY JELLY MOULDS",
+      "value": 14180.17,
+      "severity": "positive",
+      "description": "Exceptional performance: SET OF 4 PANTRY JELLY MOULDS generated $14,180.17"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_23077",
+      "product_name": "DOUGHNUT LIP GLOSS ",
+      "value": 11640.7,
+      "severity": "positive",
+      "description": "Exceptional performance: DOUGHNUT LIP GLOSS  generated $11,640.70"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_23084",
+      "product_name": "RABBIT NIGHT LIGHT",
+      "value": 51346.2,
+      "severity": "positive",
+      "description": "Exceptional performance: RABBIT NIGHT LIGHT generated $51,346.20"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_23108",
+      "product_name": "SET OF 10 LED DOLLY LIGHTS",
+      "value": 12985.23,
+      "severity": "positive",
+      "description": "Exceptional performance: SET OF 10 LED DOLLY LIGHTS generated $12,985.23"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_23166",
+      "product_name": "MEDIUM CERAMIC TOP STORAGE JAR",
+      "value": 81416.73000000001,
+      "severity": "positive",
+      "description": "Exceptional performance: MEDIUM CERAMIC TOP STORAGE JAR generated $81,416.73"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_23170",
+      "product_name": "REGENCY TEA PLATE ROSES ",
+      "value": 10190.789999999999,
+      "severity": "positive",
+      "description": "Exceptional performance: REGENCY TEA PLATE ROSES  generated $10,190.79"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_23173",
+      "product_name": "REGENCY TEAPOT ROSES ",
+      "value": 23073.32,
+      "severity": "positive",
+      "description": "Exceptional performance: REGENCY TEAPOT ROSES  generated $23,073.32"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_23174",
+      "product_name": "REGENCY SUGAR BOWL GREEN",
+      "value": 11575.54,
+      "severity": "positive",
+      "description": "Exceptional performance: REGENCY SUGAR BOWL GREEN generated $11,575.54"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_23199",
+      "product_name": "JUMBO BAG APPLES",
+      "value": 26451.260000000002,
+      "severity": "positive",
+      "description": "Exceptional performance: JUMBO BAG APPLES generated $26,451.26"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_23200",
+      "product_name": "JUMBO BAG PEARS",
+      "value": 13043.24,
+      "severity": "positive",
+      "description": "Exceptional performance: JUMBO BAG PEARS generated $13,043.24"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_23201",
+      "product_name": "JUMBO BAG ALPHABET",
+      "value": 24175.0,
+      "severity": "positive",
+      "description": "Exceptional performance: JUMBO BAG ALPHABET generated $24,175.00"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_23202",
+      "product_name": "JUMBO BAG VINTAGE LEAF",
+      "value": 20963.93,
+      "severity": "positive",
+      "description": "Exceptional performance: JUMBO BAG VINTAGE LEAF generated $20,963.93"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_23203",
+      "product_name": "JUMBO BAG DOILEY PATTERNS",
+      "value": 37684.38,
+      "severity": "positive",
+      "description": "Exceptional performance: JUMBO BAG DOILEY PATTERNS generated $37,684.38"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_23206",
+      "product_name": "LUNCH BAG APPLE DESIGN",
+      "value": 18278.25,
+      "severity": "positive",
+      "description": "Exceptional performance: LUNCH BAG APPLE DESIGN generated $18,278.25"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_23207",
+      "product_name": "LUNCH BAG ALPHABET DESIGN",
+      "value": 12029.06,
+      "severity": "positive",
+      "description": "Exceptional performance: LUNCH BAG ALPHABET DESIGN generated $12,029.06"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_23209",
+      "product_name": "LUNCH BAG DOILEY PATTERN ",
+      "value": 20817.56,
+      "severity": "positive",
+      "description": "Exceptional performance: LUNCH BAG DOILEY PATTERN  generated $20,817.56"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_23240",
+      "product_name": "SET OF 4 KNICK KNACK TINS DOILEY ",
+      "value": 16432.25,
+      "severity": "positive",
+      "description": "Exceptional performance: SET OF 4 KNICK KNACK TINS DOILEY  generated $16,432.25"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_23243",
+      "product_name": "SET OF TEA COFFEE SUGAR TINS PANTRY",
+      "value": 22133.829999999998,
+      "severity": "positive",
+      "description": "Exceptional performance: SET OF TEA COFFEE SUGAR TINS PANTRY generated $22,133.83"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_23245",
+      "product_name": "SET OF 3 REGENCY CAKE TINS",
+      "value": 26625.68,
+      "severity": "positive",
+      "description": "Exceptional performance: SET OF 3 REGENCY CAKE TINS generated $26,625.68"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_23284",
+      "product_name": "DOORMAT KEEP CALM AND COME IN",
+      "value": 35913.85,
+      "severity": "positive",
+      "description": "Exceptional performance: DOORMAT KEEP CALM AND COME IN generated $35,913.85"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_23298",
+      "product_name": "SPOTTY BUNTING",
+      "value": 36173.950000000004,
+      "severity": "positive",
+      "description": "Exceptional performance: SPOTTY BUNTING generated $36,173.95"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_23301",
+      "product_name": "GARDENERS KNEELING PAD KEEP CALM ",
+      "value": 12493.48,
+      "severity": "positive",
+      "description": "Exceptional performance: GARDENERS KNEELING PAD KEEP CALM  generated $12,493.48"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_23313",
+      "product_name": "VINTAGE CHRISTMAS BUNTING",
+      "value": 12994.77,
+      "severity": "positive",
+      "description": "Exceptional performance: VINTAGE CHRISTMAS BUNTING generated $12,994.77"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_23344",
+      "product_name": "JUMBO BAG 50'S CHRISTMAS ",
+      "value": 17679.72,
+      "severity": "positive",
+      "description": "Exceptional performance: JUMBO BAG 50'S CHRISTMAS  generated $17,679.72"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_23355",
+      "product_name": "HOT WATER BOTTLE KEEP CALM",
+      "value": 24426.3,
+      "severity": "positive",
+      "description": "Exceptional performance: HOT WATER BOTTLE KEEP CALM generated $24,426.30"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_23356",
+      "product_name": "LOVE HOT WATER BOTTLE",
+      "value": 13115.4,
+      "severity": "positive",
+      "description": "Exceptional performance: LOVE HOT WATER BOTTLE generated $13,115.40"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_23843",
+      "product_name": "PAPER CRAFT , LITTLE BIRDIE",
+      "value": 168469.6,
+      "severity": "positive",
+      "description": "Exceptional performance: PAPER CRAFT , LITTLE BIRDIE generated $168,469.60"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_47566",
+      "product_name": "PARTY BUNTING",
+      "value": 68844.33,
+      "severity": "positive",
+      "description": "Exceptional performance: PARTY BUNTING generated $68,844.33"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_47566B",
+      "product_name": "TEA TIME PARTY BUNTING",
+      "value": 10445.25,
+      "severity": "positive",
+      "description": "Exceptional performance: TEA TIME PARTY BUNTING generated $10,445.25"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_47590B",
+      "product_name": "PINK HAPPY BIRTHDAY BUNTING",
+      "value": 11688.150000000001,
+      "severity": "positive",
+      "description": "Exceptional performance: PINK HAPPY BIRTHDAY BUNTING generated $11,688.15"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_48138",
+      "product_name": "DOORMAT UNION FLAG",
+      "value": 23697.99,
+      "severity": "positive",
+      "description": "Exceptional performance: DOORMAT UNION FLAG generated $23,697.99"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_48184",
+      "product_name": "DOORMAT ENGLISH ROSE ",
+      "value": 13470.95,
+      "severity": "positive",
+      "description": "Exceptional performance: DOORMAT ENGLISH ROSE  generated $13,470.95"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_48185",
+      "product_name": "DOORMAT FAIRY CAKE",
+      "value": 21187.69,
+      "severity": "positive",
+      "description": "Exceptional performance: DOORMAT FAIRY CAKE generated $21,187.69"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_48187",
+      "product_name": "DOORMAT NEW ENGLAND",
+      "value": 22968.25,
+      "severity": "positive",
+      "description": "Exceptional performance: DOORMAT NEW ENGLAND generated $22,968.25"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_48188",
+      "product_name": "DOORMAT WELCOME PUPPIES",
+      "value": 11544.2,
+      "severity": "positive",
+      "description": "Exceptional performance: DOORMAT WELCOME PUPPIES generated $11,544.20"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_48194",
+      "product_name": "DOORMAT HEARTS",
+      "value": 19948.81,
+      "severity": "positive",
+      "description": "Exceptional performance: DOORMAT HEARTS generated $19,948.81"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_71477",
+      "product_name": "COLOUR GLASS. STAR T-LIGHT HOLDER",
+      "value": 20049.12,
+      "severity": "positive",
+      "description": "Exceptional performance: COLOUR GLASS. STAR T-LIGHT HOLDER generated $20,049.12"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_79321",
+      "product_name": "CHILLI LIGHTS",
+      "value": 46286.51,
+      "severity": "positive",
+      "description": "Exceptional performance: CHILLI LIGHTS generated $46,286.51"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_82482",
+      "product_name": "WOODEN PICTURE FRAME WHITE FINISH",
+      "value": 20001.65,
+      "severity": "positive",
+      "description": "Exceptional performance: WOODEN PICTURE FRAME WHITE FINISH generated $20,001.65"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_82483",
+      "product_name": "WOOD 2 DRAWER CABINET WHITE FINISH",
+      "value": 14689.87,
+      "severity": "positive",
+      "description": "Exceptional performance: WOOD 2 DRAWER CABINET WHITE FINISH generated $14,689.87"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_82484",
+      "product_name": "WOOD BLACK BOARD ANT WHITE FINISH",
+      "value": 34478.01,
+      "severity": "positive",
+      "description": "Exceptional performance: WOOD BLACK BOARD ANT WHITE FINISH generated $34,478.01"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_82486",
+      "product_name": "WOOD S/3 CABINET ANT WHITE FINISH",
+      "value": 17590.63,
+      "severity": "positive",
+      "description": "Exceptional performance: WOOD S/3 CABINET ANT WHITE FINISH generated $17,590.63"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_82494L",
+      "product_name": "WOODEN FRAME ANTIQUE WHITE ",
+      "value": 17625.070000000003,
+      "severity": "positive",
+      "description": "Exceptional performance: WOODEN FRAME ANTIQUE WHITE  generated $17,625.07"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_82583",
+      "product_name": "HOT BATHS METAL SIGN",
+      "value": 12832.140000000001,
+      "severity": "positive",
+      "description": "Exceptional performance: HOT BATHS METAL SIGN generated $12,832.14"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_82600",
+      "product_name": "NO SINGING METAL SIGN",
+      "value": 12097.380000000001,
+      "severity": "positive",
+      "description": "Exceptional performance: NO SINGING METAL SIGN generated $12,097.38"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_84029E",
+      "product_name": "RED WOOLLY HOTTIE WHITE HEART.",
+      "value": 13430.51,
+      "severity": "positive",
+      "description": "Exceptional performance: RED WOOLLY HOTTIE WHITE HEART. generated $13,430.51"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_84077",
+      "product_name": "WORLD WAR 2 GLIDERS ASSTD DESIGNS",
+      "value": 13586.249999999998,
+      "severity": "positive",
+      "description": "Exceptional performance: WORLD WAR 2 GLIDERS ASSTD DESIGNS generated $13,586.25"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_84078A",
+      "product_name": "SET/4 WHITE RETRO STORAGE CUBES ",
+      "value": 13007.150000000001,
+      "severity": "positive",
+      "description": "Exceptional performance: SET/4 WHITE RETRO STORAGE CUBES  generated $13,007.15"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_84347",
+      "product_name": "ROTATING SILVER ANGELS T-LIGHT HLDR",
+      "value": 17592.52,
+      "severity": "positive",
+      "description": "Exceptional performance: ROTATING SILVER ANGELS T-LIGHT HLDR generated $17,592.52"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_84879",
+      "product_name": "ASSORTED COLOUR BIRD ORNAMENT",
+      "value": 56580.34,
+      "severity": "positive",
+      "description": "Exceptional performance: ASSORTED COLOUR BIRD ORNAMENT generated $56,580.34"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_84946",
+      "product_name": "ANTIQUE SILVER TEA GLASS ETCHED",
+      "value": 19239.420000000002,
+      "severity": "positive",
+      "description": "Exceptional performance: ANTIQUE SILVER TEA GLASS ETCHED generated $19,239.42"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_84978",
+      "product_name": "HANGING HEART JAR T-LIGHT HOLDER",
+      "value": 12674.72,
+      "severity": "positive",
+      "description": "Exceptional performance: HANGING HEART JAR T-LIGHT HOLDER generated $12,674.72"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_84997B",
+      "product_name": "RED 3 PIECE RETROSPOT CUTLERY SET",
+      "value": 15158.81,
+      "severity": "positive",
+      "description": "Exceptional performance: RED 3 PIECE RETROSPOT CUTLERY SET generated $15,158.81"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_84997C",
+      "product_name": "BLUE 3 PIECE POLKADOT CUTLERY SET",
+      "value": 14044.74,
+      "severity": "positive",
+      "description": "Exceptional performance: BLUE 3 PIECE POLKADOT CUTLERY SET generated $14,044.74"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_84997D",
+      "product_name": "PINK 3 PIECE POLKADOT CUTLERY SET",
+      "value": 18807.0,
+      "severity": "positive",
+      "description": "Exceptional performance: PINK 3 PIECE POLKADOT CUTLERY SET generated $18,807.00"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_85014B",
+      "product_name": "RED RETROSPOT UMBRELLA",
+      "value": 10247.470000000001,
+      "severity": "positive",
+      "description": "Exceptional performance: RED RETROSPOT UMBRELLA generated $10,247.47"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_85066",
+      "product_name": "CREAM SWEETHEART MINI CHEST",
+      "value": 20562.92,
+      "severity": "positive",
+      "description": "Exceptional performance: CREAM SWEETHEART MINI CHEST generated $20,562.92"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_85099B",
+      "product_name": "JUMBO BAG RED RETROSPOT",
+      "value": 85220.78,
+      "severity": "positive",
+      "description": "Exceptional performance: JUMBO BAG RED RETROSPOT generated $85,220.78"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_85099C",
+      "product_name": "JUMBO  BAG BAROQUE BLACK WHITE",
+      "value": 23675.04,
+      "severity": "positive",
+      "description": "Exceptional performance: JUMBO  BAG BAROQUE BLACK WHITE generated $23,675.04"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_85099F",
+      "product_name": "JUMBO BAG STRAWBERRY",
+      "value": 30644.2,
+      "severity": "positive",
+      "description": "Exceptional performance: JUMBO BAG STRAWBERRY generated $30,644.20"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_85123A",
+      "product_name": "WHITE HANGING HEART T-LIGHT HOLDER",
+      "value": 100603.5,
+      "severity": "positive",
+      "description": "Exceptional performance: WHITE HANGING HEART T-LIGHT HOLDER generated $100,603.50"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_85152",
+      "product_name": "HAND OVER THE CHOCOLATE   SIGN ",
+      "value": 15539.11,
+      "severity": "positive",
+      "description": "Exceptional performance: HAND OVER THE CHOCOLATE   SIGN  generated $15,539.11"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_DOT",
+      "product_name": "DOTCOM POSTAGE",
+      "value": 11906.36,
+      "severity": "positive",
+      "description": "Exceptional performance: DOTCOM POSTAGE generated $11,906.36"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_M",
+      "product_name": "Manual",
+      "value": 53779.93,
+      "severity": "positive",
+      "description": "Exceptional performance: Manual generated $53,779.93"
+    },
+    {
+      "type": "product_performance",
+      "product_id": "PROD_POST",
+      "product_name": "POSTAGE",
+      "value": 77803.96,
+      "severity": "positive",
+      "description": "Exceptional performance: POSTAGE generated $77,803.96"
+    }
+  ],
+  "trends": {
+    "revenue_trend": {
+      "slope": 34886.028873626405,
+      "direction": "increasing",
+      "monthly_data": [
+        {
+          "month": "2010-12",
+          "revenue_total": 572713.89
+        },
+        {
+          "month": "2011-01",
+          "revenue_total": 569445.04
+        },
+        {
+          "month": "2011-02",
+          "revenue_total": 447137.35
+        },
+        {
+          "month": "2011-03",
+          "revenue_total": 595500.76
+        },
+        {
+          "month": "2011-04",
+          "revenue_total": 469200.36100000003
+        },
+        {
+          "month": "2011-05",
+          "revenue_total": 678594.56
+        },
+        {
+          "month": "2011-06",
+          "revenue_total": 661213.6900000001
+        },
+        {
+          "month": "2011-07",
+          "revenue_total": 600091.011
+        },
+        {
+          "month": "2011-08",
+          "revenue_total": 645343.9
+        },
+        {
+          "month": "2011-09",
+          "revenue_total": 952838.382
+        },
+        {
+          "month": "2011-10",
+          "revenue_total": 1039318.79
+        },
+        {
+          "month": "2011-11",
+          "revenue_total": 1161817.3800000001
+        },
+        {
+          "month": "2011-12",
+          "revenue_total": 518192.79
+        }
+      ]
+    },
+    "customer_trend": {
+      "slope": 34.8681318681319,
+      "direction": "increasing",
+      "monthly_data": [
+        {
+          "month": "2010-12",
+          "unique_customers": 885
+        },
+        {
+          "month": "2011-01",
+          "unique_customers": 741
+        },
+        {
+          "month": "2011-02",
+          "unique_customers": 758
+        },
+        {
+          "month": "2011-03",
+          "unique_customers": 974
+        },
+        {
+          "month": "2011-04",
+          "unique_customers": 856
+        },
+        {
+          "month": "2011-05",
+          "unique_customers": 1056
+        },
+        {
+          "month": "2011-06",
+          "unique_customers": 991
+        },
+        {
+          "month": "2011-07",
+          "unique_customers": 949
+        },
+        {
+          "month": "2011-08",
+          "unique_customers": 935
+        },
+        {
+          "month": "2011-09",
+          "unique_customers": 1266
+        },
+        {
+          "month": "2011-10",
+          "unique_customers": 1364
+        },
+        {
+          "month": "2011-11",
+          "unique_customers": 1664
+        },
+        {
+          "month": "2011-12",
+          "unique_customers": 615
+        }
+      ]
+    },
+    "transaction_trend": {
+      "slope": 1800.5164835164849,
+      "direction": "increasing",
+      "monthly_data": [
+        {
+          "month": "2010-12",
+          "transaction_count": 26157
+        },
+        {
+          "month": "2011-01",
+          "transaction_count": 21229
+        },
+        {
+          "month": "2011-02",
+          "transaction_count": 19927
+        },
+        {
+          "month": "2011-03",
+          "transaction_count": 27175
+        },
+        {
+          "month": "2011-04",
+          "transaction_count": 22642
+        },
+        {
+          "month": "2011-05",
+          "transaction_count": 28320
+        },
+        {
+          "month": "2011-06",
+          "transaction_count": 27185
+        },
+        {
+          "month": "2011-07",
+          "transaction_count": 26825
+        },
+        {
+          "month": "2011-08",
+          "transaction_count": 27007
+        },
+        {
+          "month": "2011-09",
+          "transaction_count": 40028
+        },
+        {
+          "month": "2011-10",
+          "transaction_count": 49554
+        },
+        {
+          "month": "2011-11",
+          "transaction_count": 64531
+        },
+        {
+          "month": "2011-12",
+          "transaction_count": 17304
+        }
+      ]
+    },
+    "seasonality": {
+      "monthly": {
+        "1": 569445.04,
+        "2": 447137.35,
+        "3": 595500.76,
+        "4": 469200.36100000003,
+        "5": 678594.56,
+        "6": 661213.6900000001,
+        "7": 600091.011,
+        "8": 645343.9,
+        "9": 952838.382,
+        "10": 1039318.79,
+        "11": 1161817.3800000001,
+        "12": 1090906.68
+      },
+      "weekly": {
+        "0": 1367146.411,
+        "1": 1700634.631,
+        "2": 1588336.17,
+        "3": 1976859.07,
+        "4": 1485917.401,
+        "6": 792514.221
+      },
+      "peak_month": "11",
+      "peak_day": "3"
+    }
+  },
+  "recommendations": [
+    {
+      "category": "revenue",
+      "priority": "high",
+      "title": "Implement Revenue Recovery Plan",
+      "actions": [
+        "Launch targeted marketing campaigns",
+        "Offer limited-time promotions",
+        "Analyze competitor pricing",
+        "Improve customer retention programs"
+      ],
+      "expected_impact": "Potential 10-15% revenue increase",
+      "timeline": "30-60 days"
+    },
+    {
+      "category": "product",
+      "priority": "medium",
+      "title": "Optimize Product Mix",
+      "actions": [
+        "Increase inventory for top performers",
+        "Bundle high-performing products",
+        "Analyze underperforming products",
+        "Implement dynamic pricing"
+      ],
+      "expected_impact": "Improve profit margins by 5-10%",
+      "timeline": "30-45 days"
+    },
+    {
+      "category": "operational",
+      "priority": "medium",
+      "title": "Improve Operational Consistency",
+      "actions": [
+        "Implement real-time monitoring",
+        "Standardize business processes",
+        "Train staff on best practices",
+        "Set up automated alerts"
+      ],
+      "expected_impact": "Reduce operational variance by 20%",
+      "timeline": "45-60 days"
+    }
+  ]
+}

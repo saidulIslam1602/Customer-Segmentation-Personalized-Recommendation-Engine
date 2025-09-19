@@ -1,0 +1,87 @@
+{
+  "report_metadata": {
+    "generated_at": "2025-09-19T15:49:45.200389",
+    "report_type": "Comprehensive Performance Analysis",
+    "version": "1.0"
+  },
+  "executive_summary": {
+    "total_models_evaluated": 0,
+    "business_metrics_calculated": 6,
+    "overall_performance_score": 68.994928538497,
+    "key_achievements": [
+      "Outstanding ROI achieved: 1722.8%"
+    ],
+    "improvement_areas": []
+  },
+  "model_performance": {},
+  "business_performance": {
+    "revenue": {
+      "total_revenue": 8911407.904,
+      "monthly_revenue_growth": -0.5539808588506397,
+      "average_monthly_revenue": 685492.9156923078,
+      "revenue_volatility": 0.32591676591168245
+    },
+    "customer": {
+      "total_customers": 4338,
+      "repeat_customer_rate": 0.9836330106039649,
+      "average_clv": 2054.2664601198708,
+      "customer_retention_rate": 0.37989857076994005,
+      "customer_acquisition_rate": 0.05
+    },
+    "transactions": {
+      "total_transactions": 397884,
+      "average_order_value": 22.396999889415003,
+      "transaction_frequency_per_customer": 91.72060857538035,
+      "conversion_rate": 0.05
+    },
+    "products": {
+      "total_products_sold": 5167812,
+      "unique_products": 3665,
+      "avg_products_per_transaction": 278.8588387653788,
+      "top_product_revenue_share": 0.09949699638392852
+    },
+    "operational": {
+      "daily_transaction_volume": 1066.7131367292225,
+      "revenue_per_transaction": 22.396999889415003,
+      "customer_service_efficiency": 0.85,
+      "order_fulfillment_rate": 0.95
+    },
+    "benchmark_comparison": {
+      "conversion_rate_vs_benchmark": {
+        "actual": 0.05,
+        "benchmark": 0.05,
+        "performance": "Below",
+        "difference": 0.0
+      }
+    }
+  },
+  "financial_impact": {
+    "financial_impact": {
+      "baseline_revenue": 8000000.0,
+      "current_revenue": 8911407.904,
+      "revenue_increase": 911407.9039999992,
+      "revenue_lift_percentage": 11.39259879999999,
+      "implementation_cost": 50000.0
+    },
+    "roi_metrics": {
+      "roi_percentage": 1722.8158079999982,
+      "payback_period_months": 0.658322138053348,
+      "net_present_value": 2216536.560661155,
+      "break_even_achieved": "True"
+    },
+    "business_value": {
+      "annual_value_created": 911407.9039999992,
+      "monthly_value_created": 75950.6586666666,
+      "value_multiple": 1.1139259879999999,
+      "efficiency_gain": 0.1139259879999999
+    }
+  },
+  "recommendations": [
+    {
+      "category": "Business Performance",
+      "priority": "High",
+      "recommendation": "Implement targeted retention campaigns for at-risk customers",
+      "expected_impact": "Improve retention rate to 85%+"
+    }
+  ]
+}

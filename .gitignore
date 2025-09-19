@@ -1,38 +1,108 @@
-# Python cache files
+# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
 
-# Data files (too large for GitHub)
-data/transactions_real.csv
-data/products_real.csv
-data/customers_real.csv
+# C extensions
+*.so
 
-# Environment files
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
 .env
-venv/
+.venv
 env/
+venv/
+ENV/
+env.bak/
+venv.bak/
 
-# IDE files
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Data files
+data/raw/*.csv
+data/raw/*.xlsx
+data/processed/*.csv
+models/*.pkl
+models/*.joblib
+
+# Results and reports
+reports/figures/*.png
+reports/figures/*.jpg
+reports/*.html
+
+# IDE
 .vscode/
 .idea/
 *.swp
 *.swo
 
-# OS files
+# OS
 .DS_Store
 Thumbs.db
-
-# Jupyter Notebook checkpoints
-.ipynb_checkpoints/
-
-# Results that are too large
-results/*.png
-results/*.json
-results/*.csv
-
-# Keep important documentation and visualizations
-!results/ENTERPRISE_RETAIL_ANALYTICS_DASHBOARD.png
-!results/RETAIL_ANALYTICS_EXECUTIVE_SUMMARY.png
-!results/enterprise_precision_results.json
-!results/executive_summary.md 
