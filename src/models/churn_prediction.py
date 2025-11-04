@@ -617,7 +617,8 @@ def main():
 
     # Initialize churn prediction engine
     churn_engine = ChurnPredictionEngine(
-        transactions_path="data/transactions_real.csv", customers_path="data/customers_real.csv"
+        transactions_path="data/transactions_real.csv",
+        customers_path="data/customers_real.csv",
     )
 
     # Prepare features and train model
