@@ -13,9 +13,9 @@ from .security_manager import SecurityManager
 from .performance_monitor import EnterprisePerformanceMonitor
 
 __all__ = [
-    'EnterprisePlatformManager',
-    'CRMIntegrationLayer', 
-    'APIGateway',
-    'SecurityManager',
-    'EnterprisePerformanceMonitor'
+    "EnterprisePlatformManager",
+    "CRMIntegrationLayer",
+    "APIGateway",
+    "SecurityManager",
+    "EnterprisePerformanceMonitor",
 ]

@@ -26,7 +26,9 @@ requirements_path = "requirements/requirements.txt"
 requirements = []
 if os.path.exists(requirements_path):
     with open(requirements_path, "r", encoding="utf-8") as fh:
-        requirements = [line.strip() for line in fh if line.strip() and not line.startswith("#")]
+        requirements = [
+            line.strip() for line in fh if line.strip() and not line.startswith("#")
+        ]
 
 # Read version from VERSION file
 version = "2.0.0"
@@ -73,28 +75,33 @@ setup(
             "black>=22.0",
             "flake8>=4.0",
             "mypy>=1.0",
-            "pre-commit>=3.0"
+            "pre-commit>=3.0",
         ],
         "enterprise": [
             "fastapi>=0.104.0",
             "uvicorn[standard]>=0.24.0",
             "redis>=5.0.0",
             "celery>=5.3.0",
-            "cryptography>=41.0.0"
+            "cryptography>=41.0.0",
         ],
-        "viz": [
+        "viz": ["streamlit>=1.28", "plotly>=5.15", "dash>=2.14", "grafana-api>=1.0"],
+        "all": [
+            "pytest>=7.0",
+            "pytest-asyncio>=0.21.0",
+            "pytest-cov>=4.0",
+            "black>=22.0",
+            "flake8>=4.0",
+            "mypy>=1.0",
+            "pre-commit>=3.0",
+            "fastapi>=0.104.0",
+            "uvicorn[standard]>=0.24.0",
+            "redis>=5.0.0",
+            "celery>=5.3.0",
+            "cryptography>=41.0.0",
             "streamlit>=1.28",
             "plotly>=5.15",
             "dash>=2.14",
-            "grafana-api>=1.0"
         ],
-        "all": [
-            "pytest>=7.0", "pytest-asyncio>=0.21.0", "pytest-cov>=4.0",
-            "black>=22.0", "flake8>=4.0", "mypy>=1.0", "pre-commit>=3.0",
-            "fastapi>=0.104.0", "uvicorn[standard]>=0.24.0",
-            "redis>=5.0.0", "celery>=5.3.0", "cryptography>=41.0.0",
-            "streamlit>=1.28", "plotly>=5.15", "dash>=2.14"
-        ]
     },
     entry_points={
         "console_scripts": [
