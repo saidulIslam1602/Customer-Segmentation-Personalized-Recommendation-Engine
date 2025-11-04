@@ -1,0 +1,87 @@
+{
+  "report_date": "2025-11-04T02:21:53.718164",
+  "business_health": {
+    "overall_score": 40.0,
+    "status": "Fair",
+    "component_scores": {
+      "revenue": 20,
+      "customer": 100,
+      "operational": 20,
+      "growth": 20
+    },
+    "weights": {
+      "revenue": 0.3,
+      "customer": 0.25,
+      "operational": 0.25,
+      "growth": 0.2
+    },
+    "calculation_date": "2025-11-04T02:21:53.718148"
+  },
+  "key_metrics": {
+    "total_revenue": 8554230.94,
+    "revenue_growth": -69.80632862729476,
+    "total_customers": 4336,
+    "customer_growth": -63.10096153846154,
+    "repeat_customer_rate": 98.38560885608855
+  },
+  "top_insights": [
+    {
+      "category": "financial",
+      "type": "warning",
+      "title": "Revenue Decline Alert",
+      "description": "Revenue has declined by 69.8% month-over-month. Immediate attention required.",
+      "impact": "high",
+      "confidence": 0.95
+    },
+    {
+      "category": "operational",
+      "type": "alert",
+      "title": "Business Anomalies Detected",
+      "description": "16 high-severity anomalies detected in recent business metrics.",
+      "impact": "high",
+      "confidence": 0.9
+    }
+  ],
+  "critical_recommendations": [
+    {
+      "category": "revenue",
+      "priority": "high",
+      "title": "Implement Revenue Recovery Plan",
+      "actions": [
+        "Launch targeted marketing campaigns",
+        "Offer limited-time promotions",
+        "Analyze competitor pricing",
+        "Improve customer retention programs"
+      ],
+      "expected_impact": "Potential 10-15% revenue increase",
+      "timeline": "30-60 days"
+    }
+  ],
+  "anomalies_summary": {
+    "total_anomalies": 216,
+    "high_severity": 16,
+    "recent_anomalies": [
+      {
+        "type": "revenue_anomaly",
+        "date": "2010-12-07",
+        "value": 53635.01,
+        "severity": "high",
+        "description": "Unusual revenue of $53,635.01 detected"
+      },
+      {
+        "type": "revenue_anomaly",
+        "date": "2010-12-22",
+        "value": 4886.5199999999995,
+        "severity": "high",
+        "description": "Unusual revenue of $4,886.52 detected"
+      },
+      {
+        "type": "revenue_anomaly",
+        "date": "2011-02-06",
+        "value": 3422.4900000000002,
+        "severity": "high",
+        "description": "Unusual revenue of $3,422.49 detected"
+      }
+    ]
+  }
+}

@@ -292,7 +292,7 @@ class EnterprisePlatformManager:
                     insights['top_customers'] = top_customers.to_frame('engagement_score')
             
         except Exception as e:
-                print(f"Warning: Error extracting insights: {e}")
+            print(f"Warning: Error extracting insights: {e}")
             insights = {'error': str(e)}
         
         return insights

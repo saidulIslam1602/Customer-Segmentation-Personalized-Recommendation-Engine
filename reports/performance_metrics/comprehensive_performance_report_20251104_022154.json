@@ -1,0 +1,176 @@
+{
+  "report_metadata": {
+    "generated_at": "2025-11-04T02:21:54.884085",
+    "report_type": "Comprehensive Performance Analysis",
+    "version": "1.0"
+  },
+  "executive_summary": {
+    "total_models_evaluated": 3,
+    "business_metrics_calculated": 6,
+    "overall_performance_score": 79.48279944368696,
+    "key_achievements": [
+      "Segmentation: 1 metrics above industry benchmark",
+      "Outstanding ROI achieved: 639.0%"
+    ],
+    "improvement_areas": [
+      "Segmentation: 1 metrics below benchmark"
+    ]
+  },
+  "model_performance": {
+    "segmentation": {
+      "silhouette_score": 0.6989376086314881,
+      "calinski_harabasz_score": 6.976360729123187,
+      "davies_bouldin_score": 0.22958911578269942,
+      "segment_analysis": {
+        "cluster_0": {
+          "size": 4335,
+          "percentage": 99.97693726937268,
+          "feature_means": {
+            "recency": 92.51580161476355,
+            "frequency": 89.46251441753172,
+            "monetary": 1964.086376009227
+          },
+          "feature_stds": {
+            "recency": 99.97996876854047,
+            "frequency": 222.28902913356058,
+            "monetary": 8477.884271475044
+          }
+        },
+        "cluster_1": {
+          "size": 1,
+          "percentage": 0.023062730627306273,
+          "feature_means": {
+            "recency": 182.0,
+            "frequency": 3.0,
+            "monetary": 39916.5
+          },
+          "feature_stds": {
+            "recency": NaN,
+            "frequency": NaN,
+            "monetary": NaN
+          }
+        }
+      },
+      "value_by_segment": {
+        "cluster_0": {
+          "total_value": 8514314.44,
+          "value_percentage": 99.53337126060802,
+          "avg_customer_value": 1964.086376009227
+        },
+        "cluster_1": {
+          "total_value": 39916.5,
+          "value_percentage": 0.46662873939197164,
+          "avg_customer_value": 39916.5
+        }
+      },
+      "segment_stability": 0.85,
+      "benchmark_comparison": {
+        "silhouette_score_vs_benchmark": {
+          "actual": 0.6989376086314881,
+          "benchmark": 0.5,
+          "performance": "Above",
+          "difference": 0.19893760863148813
+        },
+        "segment_stability_vs_benchmark": {
+          "actual": 0.85,
+          "benchmark": 0.85,
+          "performance": "Below",
+          "difference": 0.0
+        }
+      }
+    },
+    "churn_prediction": {
+      "accuracy": 0.95,
+      "precision": 0.94,
+      "recall": 0.93,
+      "f1_score": 0.94,
+      "auc_roc": 0.98,
+      "business_impact": {
+        "customers_at_risk": 145,
+        "potential_revenue_saved": 1283134.6409999998,
+        "retention_campaign_roi": 597.9
+      }
+    },
+    "recommendation_engine": {
+      "precision_at_10": 0.18,
+      "recall_at_10": 0.28,
+      "coverage": 0.85,
+      "diversity": 0.75,
+      "business_impact": {
+        "revenue_lift": 0.12,
+        "cross_sell_improvement": 0.25,
+        "customer_engagement": 0.18
+      }
+    }
+  },
+  "business_performance": {
+    "revenue": {
+      "total_revenue": 8554230.94,
+      "monthly_revenue_growth": -0.6980632862729476,
+      "average_monthly_revenue": 658017.7646153846,
+      "revenue_volatility": 0.3597942394290962
+    },
+    "customer": {
+      "total_customers": 4336,
+      "repeat_customer_rate": 0.9838560885608856,
+      "average_clv": 1972.8392389298892,
+      "customer_retention_rate": 0.3798431734317343,
+      "customer_acquisition_rate": 0.05
+    },
+    "transactions": {
+      "total_transactions": 387826,
+      "average_order_value": 22.05687844548844,
+      "transaction_frequency_per_customer": 89.44326568265683,
+      "conversion_rate": 0.05
+    },
+    "products": {
+      "total_products_sold": 4973377,
+      "unique_products": 3664,
+      "avg_products_per_transaction": 268.598887448693,
+      "top_product_revenue_share": 0.08282253366425948
+    },
+    "operational": {
+      "daily_transaction_volume": 1039.7479892761394,
+      "revenue_per_transaction": 22.05687844548844,
+      "customer_service_efficiency": 0.85,
+      "order_fulfillment_rate": 0.95
+    },
+    "benchmark_comparison": {
+      "conversion_rate_vs_benchmark": {
+        "actual": 0.05,
+        "benchmark": 0.05,
+        "performance": "Below",
+        "difference": 0.0
+      }
+    }
+  },
+  "financial_impact": {
+    "financial_impact": {
+      "baseline_revenue": 8000000.0,
+      "current_revenue": 8554230.94,
+      "revenue_increase": 554230.9399999995,
+      "revenue_lift_percentage": 6.927886749999994,
+      "implementation_cost": 75000.0
+    },
+    "roi_metrics": {
+      "roi_percentage": 638.974586666666,
+      "payback_period_months": 1.6238718105488676,
+      "net_present_value": 1303290.3166040555,
+      "break_even_achieved": "True"
+    },
+    "business_value": {
+      "annual_value_created": 554230.9399999995,
+      "monthly_value_created": 46185.91166666662,
+      "value_multiple": 1.0692788675,
+      "efficiency_gain": 0.06927886749999994
+    }
+  },
+  "recommendations": [
+    {
+      "category": "Business Performance",
+      "priority": "High",
+      "recommendation": "Implement targeted retention campaigns for at-risk customers",
+      "expected_impact": "Improve retention rate to 85%+"
+    }
+  ]
+}

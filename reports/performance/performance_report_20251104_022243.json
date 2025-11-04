@@ -1,0 +1,32 @@
+{
+  "timestamp": "2025-11-04T02:22:43.348791",
+  "overall_score": 45.3,
+  "business_metrics": {
+    "revenue_impact": 0,
+    "customers_analyzed": 0,
+    "roi_percentage": 0,
+    "customer_retention_rate": 98.4,
+    "processing_time_seconds": 0
+  },
+  "crm_metrics": {
+    "systems_connected": 3,
+    "total_records_synced": 0,
+    "sync_success_rate": 100.0,
+    "average_sync_time": 2.5
+  },
+  "system_metrics": {
+    "cpu_usage_percent": 26.3,
+    "memory_usage_percent": 43.7,
+    "disk_usage_percent": 89.8372438826447,
+    "uptime_hours": 175.5
+  },
+  "ml_metrics": {
+    "churn_prediction_accuracy": 0.95,
+    "recommendation_precision": 0.18,
+    "segmentation_quality": 0.89,
+    "model_training_time": 45.2,
+    "prediction_latency_ms": 150
+  },
+  "alerts_count": 1,
+  "monitoring_status": "active"
+}
