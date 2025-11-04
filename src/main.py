@@ -50,10 +50,10 @@ class EnhancedBusinessIntelligencePlatform:
 
         # Data paths for new structure
         self.data_paths = {
-            "transactions": f"{data_dir}/transactions.csv",
-            "customers": f"{data_dir}/customers.csv",
-            "products": f"{data_dir}/products.csv",
-            "digital_events": f"{data_dir}/digital_events.csv",
+            "transactions": f"{data_dir}/transactions_real.csv",
+            "customers": f"{data_dir}/customers_real.csv",
+            "products": f"{data_dir}/products_real.csv",
+            "digital_events": f"{data_dir}/digital_events_real.csv",
         }
 
         self.data_source = "UCI Online Retail + Wholesale Customers Dataset"

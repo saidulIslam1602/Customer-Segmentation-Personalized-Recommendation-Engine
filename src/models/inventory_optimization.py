@@ -594,7 +594,7 @@ def main():
 
     # Initialize inventory optimization engine
     inventory_engine = InventoryOptimizationEngine(
-        transactions_path="data/transactions.csv", products_path="data/products.csv"
+        transactions_path="data/transactions_real.csv", products_path="data/products_real.csv"
     )
 
     # Prepare data and train models

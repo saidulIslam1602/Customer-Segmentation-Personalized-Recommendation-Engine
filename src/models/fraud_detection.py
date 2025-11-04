@@ -653,7 +653,7 @@ def main():
 
     # Initialize fraud detection engine
     fraud_engine = FraudDetectionEngine(
-        transactions_path="data/transactions.csv", customers_path="data/customers.csv"
+        transactions_path="data/transactions_real.csv", customers_path="data/customers_real.csv"
     )
 
     # Prepare features and train model

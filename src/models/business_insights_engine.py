@@ -830,9 +830,9 @@ def main():
 
     # Initialize engine
     insights_engine = BusinessInsightsEngine(
-        "data/processed/transactions.csv",
-        "data/processed/customers.csv",
-        "data/processed/products.csv",
+        "data/transactions_real.csv",
+        "data/customers_real.csv",
+        "data/products_real.csv",
     )
 
     # Run complete analysis

@@ -552,9 +552,9 @@ def main():
 
     # Initialize marketing attribution engine
     attribution_engine = MarketingAttributionEngine(
-        transactions_path="data/transactions.csv",
-        customers_path="data/customers.csv",
-        digital_events_path="data/digital_events.csv",
+        transactions_path="data/transactions_real.csv",
+        customers_path="data/customers_real.csv",
+        digital_events_path="data/digital_events_real.csv",
     )
 
     # Prepare attribution data

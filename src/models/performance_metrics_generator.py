@@ -1054,8 +1054,8 @@ def main():
 
     # Run complete analysis
     data_sources = {
-        "transactions": "data/processed/transactions.csv",
-        "customers": "data/processed/customers.csv",
+        "transactions": "data/transactions_real.csv",
+        "customers": "data/customers_real.csv",
     }
 
     results = metrics_generator.run_complete_performance_analysis(data_sources)

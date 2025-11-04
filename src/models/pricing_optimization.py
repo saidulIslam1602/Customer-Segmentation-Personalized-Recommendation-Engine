@@ -656,7 +656,7 @@ def main():
 
     # Initialize pricing optimization engine
     pricing_engine = PricingOptimizationEngine(
-        transactions_path="data/transactions.csv", products_path="data/products.csv"
+        transactions_path="data/transactions_real.csv", products_path="data/products_real.csv"
     )
 
     # Prepare data and calculate elasticity

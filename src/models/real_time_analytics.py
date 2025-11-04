@@ -492,7 +492,7 @@ def main():
 
     # Run demo with simulated data
     results = rt_engine.run_real_time_demo(
-        "data/processed/transactions.csv", duration_minutes=1
+        "data/transactions_real.csv", duration_minutes=1
     )
 
     print(f"\n📊 DEMO RESULTS:")

@@ -46,10 +46,10 @@ class ExecutiveDashboard:
     def __init__(self):
         """Initialize dashboard with all business intelligence engines"""
         self.data_paths = {
-            "transactions": "data/transactions.csv",
-            "customers": "data/customers.csv",
-            "products": "data/products.csv",
-            "digital_events": "data/digital_events.csv",
+            "transactions": "data/transactions_real.csv",
+            "customers": "data/customers_real.csv",
+            "products": "data/products_real.csv",
+            "digital_events": "data/digital_events_real.csv",
         }
 
         # Initialize engines

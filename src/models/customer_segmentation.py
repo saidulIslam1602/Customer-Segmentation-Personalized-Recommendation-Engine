@@ -1260,7 +1260,7 @@ if __name__ == "__main__":
 
     # Initialize segmentation
     segmentation = CustomerSegmentation(
-        "../data/transactions.csv", "../data/customers.csv"
+        "../data/transactions_real.csv", "../data/customers_real.csv"
     )
 
     # Run complete analysis
