@@ -137,7 +137,7 @@ namespace CustomerSegmentation.API.Services
                 var results = new List<SystemSyncResult>();
                 var totalRecords = 0;
 
-                var targetSystems = request.TargetSystems.Any() ? request.TargetSystems : new[] { "dynamics365", "salesforce", "hubspot" };
+                var targetSystems = request.TargetSystems.Any() ? request.TargetSystems.ToArray() : new[] { "dynamics365", "salesforce", "hubspot" };
 
                 foreach (var system in targetSystems)
                 {
