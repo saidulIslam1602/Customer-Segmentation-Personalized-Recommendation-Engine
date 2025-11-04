@@ -1,0 +1,42 @@
+{
+  "model_type": "Random Forest",
+  "training_date": "20251104_023603",
+  "feature_columns": [
+    "total_transactions",
+    "total_spent",
+    "avg_transaction_value",
+    "std_transaction_value",
+    "total_items_purchased",
+    "avg_items_per_transaction",
+    "unique_stores_visited",
+    "unique_channels_used",
+    "discount_usage_rate",
+    "total_discounts_received",
+    "days_since_last_purchase",
+    "customer_lifetime_days",
+    "purchase_frequency_per_month",
+    "avg_days_between_purchases",
+    "spending_acceleration",
+    "transaction_value_consistency",
+    "recent_30d_spent",
+    "recent_30d_transactions",
+    "recent_30d_items",
+    "age",
+    "household_size",
+    "estimated_income",
+    "customer_tenure_days",
+    "loyalty_tier_encoded",
+    "gender_encoded",
+    "declining_spend_trend",
+    "low_engagement_score",
+    "churn_risk_score"
+  ],
+  "model_path": "models/churn_model_20251104_023603.joblib",
+  "scaler_path": "models/churn_scaler_20251104_023603.joblib",
+  "performance_metrics": {},
+  "data_shape": [
+    4336,
+    46
+  ],
+  "churn_rate": 0.33325645756457567
+}
