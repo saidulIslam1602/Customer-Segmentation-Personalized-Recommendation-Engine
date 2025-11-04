@@ -1,0 +1,92 @@
+{
+  "crm": {
+    "enabled_systems": ["dynamics365", "salesforce", "hubspot"],
+    "sync_interval_minutes": 30,
+    "batch_size": 1000,
+    "dynamics365": {
+      "base_url": "https://your-org.crm.dynamics.com",
+      "client_id": "your-client-id",
+      "client_secret": "your-client-secret",
+      "tenant_id": "your-tenant-id"
+    },
+    "salesforce": {
+      "instance_url": "https://your-org.salesforce.com",
+      "client_id": "your-client-id",
+      "client_secret": "your-client-secret",
+      "username": "your-username",
+      "password": "your-password"
+    },
+    "hubspot": {
+      "api_key": "your-api-key"
+    }
+  },
+  "api": {
+    "port": 8000,
+    "enable_swagger": true,
+    "rate_limit": 1000,
+    "cors_enabled": true,
+    "authentication": {
+      "enabled": true,
+      "jwt_secret": "your-jwt-secret",
+      "token_expiry_hours": 24
+    }
+  },
+  "security": {
+    "encryption_enabled": true,
+    "audit_logging": true,
+    "gdpr_compliance": true,
+    "data_retention_days": 365,
+    "allowed_origins": ["http://localhost:3000", "https://your-domain.com"],
+    "security_headers": {
+      "x_frame_options": "DENY",
+      "x_content_type_options": "nosniff",
+      "x_xss_protection": "1; mode=block"
+    }
+  },
+  "monitoring": {
+    "performance_tracking": true,
+    "alert_thresholds": {
+      "response_time_ms": 5000,
+      "error_rate_percent": 5,
+      "memory_usage_percent": 80,
+      "cpu_usage_percent": 90,
+      "disk_usage_percent": 85
+    },
+    "notification_channels": {
+      "email": {
+        "enabled": true,
+        "smtp_server": "smtp.gmail.com",
+        "smtp_port": 587,
+        "recipients": ["admin@yourcompany.com"]
+      },
+      "slack": {
+        "enabled": false,
+        "webhook_url": "https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK"
+      }
+    }
+  },
+  "database": {
+    "type": "postgresql",
+    "host": "localhost",
+    "port": 5432,
+    "database": "enterprise_bi",
+    "username": "bi_user",
+    "password": "your-password",
+    "connection_pool_size": 10
+  },
+  "cache": {
+    "type": "redis",
+    "host": "localhost",
+    "port": 6379,
+    "database": 0,
+    "ttl_seconds": 3600
+  },
+  "deployment": {
+    "environment": "production",
+    "log_level": "INFO",
+    "debug": false,
+    "workers": 4,
+    "max_requests": 1000,
+    "timeout": 30
+  }
+}
