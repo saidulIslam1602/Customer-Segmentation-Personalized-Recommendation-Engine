@@ -47,6 +47,7 @@ jobs:
         # Core dependencies needed for imports
         pip install pandas numpy scipy scikit-learn matplotlib seaborn
         pip install python-dotenv sqlalchemy joblib aiohttp
+        pip install fastapi uvicorn pydantic cryptography psutil
         pip install pytest pytest-cov pytest-asyncio httpx
         pip install black==24.10.0 flake8
     
