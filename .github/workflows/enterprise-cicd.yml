@@ -171,7 +171,8 @@ jobs:
     
     - name: Install minimal dependencies
       run: |
-        pip install pandas numpy python-dotenv
+        pip install pandas numpy scipy scikit-learn matplotlib seaborn
+        pip install python-dotenv joblib
     
     - name: Run performance benchmarks
       run: |
