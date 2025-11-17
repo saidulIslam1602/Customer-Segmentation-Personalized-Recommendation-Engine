@@ -1,0 +1,32 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{827E0CD3-B72D-47B6-A68D-7590B98EB39B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "enterprise", "enterprise", "{0C36FAED-7623-1CB1-61B1-4442D19D8F5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerSegmentation.API", "src\enterprise\dotnet_api\CustomerSegmentation.API.csproj", "{C44ABDD1-7FF8-1934-D0AE-857E3FDA192E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C44ABDD1-7FF8-1934-D0AE-857E3FDA192E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C44ABDD1-7FF8-1934-D0AE-857E3FDA192E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C44ABDD1-7FF8-1934-D0AE-857E3FDA192E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C44ABDD1-7FF8-1934-D0AE-857E3FDA192E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0C36FAED-7623-1CB1-61B1-4442D19D8F5D} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
+		{C44ABDD1-7FF8-1934-D0AE-857E3FDA192E} = {0C36FAED-7623-1CB1-61B1-4442D19D8F5D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E152939A-3822-42B6-8CD2-92A81338D659}
+	EndGlobalSection
+EndGlobal

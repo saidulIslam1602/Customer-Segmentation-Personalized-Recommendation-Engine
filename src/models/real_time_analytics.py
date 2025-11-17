@@ -452,9 +452,7 @@ class RealTimeAnalyticsEngine:
                 print(f"\n LIVE STATUS ({datetime.now().strftime('%H:%M:%S')}):")
                 if dashboard_data["current_metrics"]:
                     metrics = dashboard_data["current_metrics"]
-                    print(
-                        f"    Revenue (5min): ${metrics.get('total_revenue', 0):.2f}"
-                    )
+                    print(f"    Revenue (5min): ${metrics.get('total_revenue', 0):.2f}")
                     print(f"    Transactions: {metrics.get('transaction_count', 0)}")
                     print(f"    Customers: {metrics.get('unique_customers', 0)}")
                     print(f"    Total Alerts: {len(self.alerts)}")

@@ -579,15 +579,11 @@ class PricingOptimizationEngine:
         promotional_df = pd.DataFrame(promotional_analysis)
 
         if len(promotional_df) > 0:
-            print(
-                f" Promotional analysis completed for {len(promotional_df)} products"
-            )
+            print(f" Promotional analysis completed for {len(promotional_df)} products")
             print(
                 f" Average quantity lift: {promotional_df['quantity_lift'].mean():.1%}"
             )
-            print(
-                f" Average revenue lift: {promotional_df['revenue_lift'].mean():.1%}"
-            )
+            print(f" Average revenue lift: {promotional_df['revenue_lift'].mean():.1%}")
             print(
                 f" Average promotional ROI: {promotional_df['promotional_roi'].mean():.1%}"
             )

@@ -97,7 +97,7 @@ class EnhancedBusinessIntelligencePlatform:
         # Validate data before processing
         logger.info("Validating data files...")
         validation_results = validate_data_files(self.data_dir)
-        
+
         total_errors = sum(len(r.errors) for r in validation_results.values())
         if total_errors > 0:
             logger.warning(f"Data validation found {total_errors} errors")
@@ -227,9 +227,15 @@ class EnhancedBusinessIntelligencePlatform:
         # Print key insights
         logger.info("Key Insights:")
         if "customer_analytics" in self.results:
-            logger.info(f"  Customer Segments: {self.results['customer_analytics']['segments']}")
-            logger.info(f"  High-Risk Customers: {self.results['customer_analytics']['high_risk_customers']}")
-            logger.info(f"  Churn Rate: {self.results['customer_analytics']['churn_rate']:.2%}")
+            logger.info(
+                f"  Customer Segments: {self.results['customer_analytics']['segments']}"
+            )
+            logger.info(
+                f"  High-Risk Customers: {self.results['customer_analytics']['high_risk_customers']}"
+            )
+            logger.info(
+                f"  Churn Rate: {self.results['customer_analytics']['churn_rate']:.2%}"
+            )
 
         logger.info(f"All results saved to: {self.results_dir}/")
 
@@ -240,15 +246,14 @@ def main():
     """Main execution function"""
     # Initialize logging
     setup_logging(log_level=config.log_level, log_dir="logs")
-    
+
     logger.info("=" * 70)
     logger.info("Enterprise Business Intelligence Platform v2.0.0")
     logger.info("=" * 70)
-    
+
     # Initialize and run comprehensive business intelligence platform
     platform = EnhancedBusinessIntelligencePlatform(
-        data_dir=config.data_dir,
-        results_dir=config.results_dir
+        data_dir=config.data_dir, results_dir=config.results_dir
     )
     results = platform.run_complete_analysis()
 

@@ -581,9 +581,7 @@ class RealDataLoader:
         print(
             f"   {'' if negative_amounts == 0 else ' '} Negative amounts: {negative_amounts:,}"
         )
-        print(
-            f"   {'' if zero_amounts == 0 else ' '} Zero amounts: {zero_amounts:,}"
-        )
+        print(f"   {'' if zero_amounts == 0 else ' '} Zero amounts: {zero_amounts:,}")
 
         # Customer validation
         print("\n Customer Data Quality:")

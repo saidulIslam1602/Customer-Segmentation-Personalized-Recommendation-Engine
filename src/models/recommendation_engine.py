@@ -1055,7 +1055,9 @@ if __name__ == "__main__":
 
     # Initialize recommendation engine
     rec_engine = RecommendationEngine(
-        "../data/transactions_real.csv", "../data/customers_real.csv", "../data/products_real.csv"
+        "../data/transactions_real.csv",
+        "../data/customers_real.csv",
+        "../data/products_real.csv",
     )
 
     # Build models

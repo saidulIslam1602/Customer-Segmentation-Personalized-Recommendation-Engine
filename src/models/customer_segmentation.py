@@ -1279,9 +1279,7 @@ if __name__ == "__main__":
 
     # Get marketing recommendations
     recommendations = segmentation.get_marketing_recommendations()
-    print(
-        f"\n MARKETING RECOMMENDATIONS GENERATED FOR {len(recommendations)} SEGMENTS"
-    )
+    print(f"\n MARKETING RECOMMENDATIONS GENERATED FOR {len(recommendations)} SEGMENTS")
 
     # Export results
     segmentation.export_segments("../results/customer_segments.csv")
