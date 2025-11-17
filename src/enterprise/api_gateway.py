@@ -246,9 +246,9 @@ class APIGateway:
                         "price": np.random.uniform(10, 500),
                     }
                     if request.include_explanations:
-                        rec[
-                            "explanation"
-                        ] = "Based on purchase history and similar customers"
+                        rec["explanation"] = (
+                            "Based on purchase history and similar customers"
+                        )
                     recommendations.append(rec)
 
                 return RecommendationResponse(

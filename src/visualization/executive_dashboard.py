@@ -251,11 +251,15 @@ class ExecutiveDashboard:
                     "high_risk_customers"
                 ]
                 * 150,  # Avg customer value
-                "status": "critical"
-                if churn_data["churn_summary"]["churn_rate"] > 0.15
-                else "warning"
-                if churn_data["churn_summary"]["churn_rate"] > 0.10
-                else "good",
+                "status": (
+                    "critical"
+                    if churn_data["churn_summary"]["churn_rate"] > 0.15
+                    else (
+                        "warning"
+                        if churn_data["churn_summary"]["churn_rate"] > 0.10
+                        else "good"
+                    )
+                ),
             }
         except Exception as e:
             print(f"Warning: Churn analysis failed: {e}")
@@ -274,11 +278,15 @@ class ExecutiveDashboard:
                 "total_reorder_value": inventory_recs["high_priority_reorders"][
                     "total_value"
                 ],
-                "status": "critical"
-                if inventory_recs["high_priority_reorders"]["count"] > 50
-                else "warning"
-                if inventory_recs["high_priority_reorders"]["count"] > 20
-                else "good",
+                "status": (
+                    "critical"
+                    if inventory_recs["high_priority_reorders"]["count"] > 50
+                    else (
+                        "warning"
+                        if inventory_recs["high_priority_reorders"]["count"] > 20
+                        else "good"
+                    )
+                ),
             }
         except Exception as e:
             print(f"Warning: Inventory analysis failed: {e}")
@@ -295,9 +303,11 @@ class ExecutiveDashboard:
                 "avg_elasticity": pricing_data["pricing_summary"][
                     "avg_price_elasticity"
                 ],
-                "status": "opportunity"
-                if pricing_data["pricing_summary"]["high_revenue_potential"] > 10
-                else "good",
+                "status": (
+                    "opportunity"
+                    if pricing_data["pricing_summary"]["high_revenue_potential"] > 10
+                    else "good"
+                ),
             }
         except Exception as e:
             print(f"Warning: Pricing analysis failed: {e}")
@@ -314,11 +324,15 @@ class ExecutiveDashboard:
                 "anomalous_transactions": fraud_data["fraud_summary"][
                     "total_anomalous_transactions"
                 ],
-                "status": "critical"
-                if fraud_data["fraud_summary"]["fraud_rate"] > 0.05
-                else "warning"
-                if fraud_data["fraud_summary"]["fraud_rate"] > 0.02
-                else "good",
+                "status": (
+                    "critical"
+                    if fraud_data["fraud_summary"]["fraud_rate"] > 0.05
+                    else (
+                        "warning"
+                        if fraud_data["fraud_summary"]["fraud_rate"] > 0.02
+                        else "good"
+                    )
+                ),
             }
         except Exception as e:
             print(f"Warning: Fraud analysis failed: {e}")

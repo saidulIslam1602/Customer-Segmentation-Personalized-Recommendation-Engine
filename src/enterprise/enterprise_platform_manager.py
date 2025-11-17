@@ -371,11 +371,11 @@ class EnterprisePlatformManager:
             "executive_summary": {
                 "timestamp": datetime.now().isoformat(),
                 "platform_version": "2.0.0 Enterprise",
-                "core_performance_score": core_results.get(
-                    "overall_performance_score", 0
-                )
-                if isinstance(core_results, dict)
-                else 85.0,
+                "core_performance_score": (
+                    core_results.get("overall_performance_score", 0)
+                    if isinstance(core_results, dict)
+                    else 85.0
+                ),
                 "enterprise_features_active": True,
                 "crm_integration_status": "Active",
                 "security_compliance": "GDPR Compliant",

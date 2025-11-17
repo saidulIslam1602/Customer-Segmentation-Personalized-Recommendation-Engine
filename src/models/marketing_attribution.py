@@ -297,12 +297,14 @@ class MarketingAttributionEngine:
                     "premium_customers_percentage": premium_customers_pct,
                     "estimated_cac": estimated_cac,
                     "roi": roi,
-                    "revenue_per_customer": attributed_revenue / total_customers
-                    if total_customers > 0
-                    else 0,
-                    "efficiency_score": (avg_customer_value / estimated_cac)
-                    if estimated_cac > 0
-                    else 0,
+                    "revenue_per_customer": (
+                        attributed_revenue / total_customers
+                        if total_customers > 0
+                        else 0
+                    ),
+                    "efficiency_score": (
+                        (avg_customer_value / estimated_cac) if estimated_cac > 0 else 0
+                    ),
                 }
             )
 
@@ -491,9 +493,9 @@ class MarketingAttributionEngine:
                     "customers_who_purchased": customers_who_purchased,
                     "conversion_rate": conversion_rate,
                     "avg_days_to_convert": avg_days_to_convert,
-                    "events_per_customer": total_events / unique_customers
-                    if unique_customers > 0
-                    else 0,
+                    "events_per_customer": (
+                        total_events / unique_customers if unique_customers > 0 else 0
+                    ),
                 }
             )
 

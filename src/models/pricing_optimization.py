@@ -319,12 +319,12 @@ class PricingOptimizationEngine:
                         "price_volatility": product_info["price_coefficient_variation"],
                         "weeks_analyzed": len(product_data),
                         "total_revenue": product_data["revenue"].sum(),
-                        "revenue_potential": "High"
-                        if abs(price_elasticity) > 0.8
-                        and mean_quantity > product_data["quantity"].median()
-                        else "Medium"
-                        if abs(price_elasticity) > 0.5
-                        else "Low",
+                        "revenue_potential": (
+                            "High"
+                            if abs(price_elasticity) > 0.8
+                            and mean_quantity > product_data["quantity"].median()
+                            else "Medium" if abs(price_elasticity) > 0.5 else "Low"
+                        ),
                     }
                 )
 
@@ -564,11 +564,11 @@ class PricingOptimizationEngine:
                     "quantity_lift": quantity_lift,
                     "revenue_lift": revenue_lift,
                     "promotional_roi": promo_roi,
-                    "promo_effectiveness": "High"
-                    if quantity_lift > 0.3 and promo_roi > 0
-                    else "Medium"
-                    if quantity_lift > 0.1
-                    else "Low",
+                    "promo_effectiveness": (
+                        "High"
+                        if quantity_lift > 0.3 and promo_roi > 0
+                        else "Medium" if quantity_lift > 0.1 else "Low"
+                    ),
                     "regular_avg_quantity": regular_avg_quantity,
                     "promo_avg_quantity": promo_avg_quantity,
                     "regular_avg_revenue": regular_avg_revenue,
@@ -598,47 +598,65 @@ class PricingOptimizationEngine:
 
         dashboard_data = {
             "pricing_summary": {
-                "total_products_analyzed": len(elasticity_data)
-                if elasticity_data is not None
-                else 0,
-                "elastic_products": len(
-                    elasticity_data[elasticity_data["elasticity_type"] == "Elastic"]
-                )
-                if elasticity_data is not None
-                else 0,
-                "inelastic_products": len(
-                    elasticity_data[elasticity_data["elasticity_type"] == "Inelastic"]
-                )
-                if elasticity_data is not None
-                else 0,
-                "high_revenue_potential": len(
-                    pricing_strategies[
-                        pricing_strategies["revenue_potential"] == "High"
-                    ]
-                )
-                if pricing_strategies is not None
-                else 0,
-                "avg_price_elasticity": elasticity_data["price_elasticity"].mean()
-                if elasticity_data is not None
-                else 0,
+                "total_products_analyzed": (
+                    len(elasticity_data) if elasticity_data is not None else 0
+                ),
+                "elastic_products": (
+                    len(
+                        elasticity_data[elasticity_data["elasticity_type"] == "Elastic"]
+                    )
+                    if elasticity_data is not None
+                    else 0
+                ),
+                "inelastic_products": (
+                    len(
+                        elasticity_data[
+                            elasticity_data["elasticity_type"] == "Inelastic"
+                        ]
+                    )
+                    if elasticity_data is not None
+                    else 0
+                ),
+                "high_revenue_potential": (
+                    len(
+                        pricing_strategies[
+                            pricing_strategies["revenue_potential"] == "High"
+                        ]
+                    )
+                    if pricing_strategies is not None
+                    else 0
+                ),
+                "avg_price_elasticity": (
+                    elasticity_data["price_elasticity"].mean()
+                    if elasticity_data is not None
+                    else 0
+                ),
             },
-            "top_pricing_opportunities": pricing_strategies.head(20).to_dict("records")
-            if pricing_strategies is not None
-            else [],
+            "top_pricing_opportunities": (
+                pricing_strategies.head(20).to_dict("records")
+                if pricing_strategies is not None
+                else []
+            ),
             "promotional_insights": {
-                "avg_quantity_lift": promotional_analysis["quantity_lift"].mean()
-                if promotional_analysis is not None
-                else 0,
-                "avg_revenue_lift": promotional_analysis["revenue_lift"].mean()
-                if promotional_analysis is not None
-                else 0,
-                "high_effectiveness_promos": len(
-                    promotional_analysis[
-                        promotional_analysis["promo_effectiveness"] == "High"
-                    ]
-                )
-                if promotional_analysis is not None
-                else 0,
+                "avg_quantity_lift": (
+                    promotional_analysis["quantity_lift"].mean()
+                    if promotional_analysis is not None
+                    else 0
+                ),
+                "avg_revenue_lift": (
+                    promotional_analysis["revenue_lift"].mean()
+                    if promotional_analysis is not None
+                    else 0
+                ),
+                "high_effectiveness_promos": (
+                    len(
+                        promotional_analysis[
+                            promotional_analysis["promo_effectiveness"] == "High"
+                        ]
+                    )
+                    if promotional_analysis is not None
+                    else 0
+                ),
             },
         }
 

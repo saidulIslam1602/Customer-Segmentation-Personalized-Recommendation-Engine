@@ -358,9 +358,9 @@ class BusinessInsightsEngine:
                 },
                 "transaction_trend": {
                     "slope": transaction_trend,
-                    "direction": "increasing"
-                    if transaction_trend > 0
-                    else "decreasing",
+                    "direction": (
+                        "increasing" if transaction_trend > 0 else "decreasing"
+                    ),
                     "monthly_data": monthly_trends[
                         ["month", "transaction_count"]
                     ].to_dict("records"),

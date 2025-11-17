@@ -191,9 +191,9 @@ class DataValidator:
         # Check for missing values
         self._check_missing_values(
             df,
-            critical_columns=["StockCode", "Description"]
-            if "StockCode" in df.columns
-            else [],
+            critical_columns=(
+                ["StockCode", "Description"] if "StockCode" in df.columns else []
+            ),
         )
 
         # Data quality metrics

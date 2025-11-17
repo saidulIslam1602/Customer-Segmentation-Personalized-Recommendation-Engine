@@ -66,9 +66,11 @@ class ModelTrainingManager:
             X_train,
             y_train,
             cv=5,
-            scoring="roc_auc"
-            if problem_type == "classification"
-            else "neg_mean_squared_error",
+            scoring=(
+                "roc_auc"
+                if problem_type == "classification"
+                else "neg_mean_squared_error"
+            ),
         )
 
         # Predictions

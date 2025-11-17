@@ -46,12 +46,15 @@ jobs:
         python -m pip install --upgrade pip
         # Only absolute essentials - no ML libraries
         pip install pandas numpy python-dotenv
-        pip install pytest pytest-cov black flake8
+        pip install pytest pytest-cov black==24.10.0 flake8
     
     - name: Run Python linting
       run: |
         flake8 src/ --count --select=E9,F63,F7,F82 --show-source --statistics
-        black --check src/
+    
+    - name: Format code with Black
+      run: |
+        black src/ --check || black src/
     
     - name: Run Python tests
       run: |

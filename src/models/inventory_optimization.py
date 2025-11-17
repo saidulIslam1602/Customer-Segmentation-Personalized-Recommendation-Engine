@@ -109,9 +109,9 @@ class InventoryOptimizationEngine:
         complete_demand = complete_data.merge(
             daily_demand, on=["product_id", "transaction_date"], how="left"
         )
-        complete_demand[
-            ["quantity", "total_amount", "transaction_count"]
-        ] = complete_demand[["quantity", "total_amount", "transaction_count"]].fillna(0)
+        complete_demand[["quantity", "total_amount", "transaction_count"]] = (
+            complete_demand[["quantity", "total_amount", "transaction_count"]].fillna(0)
+        )
 
         # Fill product information
         product_info = self.products.set_index("product_id")
@@ -471,16 +471,12 @@ class InventoryOptimizationEngine:
             stockout_risk = (
                 "High"
                 if demand_std > avg_daily_demand
-                else "Medium"
-                if demand_std > avg_daily_demand * 0.5
-                else "Low"
+                else "Medium" if demand_std > avg_daily_demand * 0.5 else "Low"
             )
             overstock_risk = (
                 "High"
                 if days_of_supply > 60
-                else "Medium"
-                if days_of_supply > 30
-                else "Low"
+                else "Medium" if days_of_supply > 30 else "Low"
             )
 
             inventory_optimization.append(

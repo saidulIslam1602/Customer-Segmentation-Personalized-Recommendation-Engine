@@ -145,19 +145,27 @@ class RealTimeAnalyticsEngine:
         kpis = {
             "timestamp": current_time,
             "transaction_count": len(recent_df),
-            "total_revenue": recent_df["total_amount"].sum()
-            if "total_amount" in recent_df.columns
-            else 0,
-            "avg_order_value": recent_df["total_amount"].mean()
-            if "total_amount" in recent_df.columns
-            else 0,
-            "unique_customers": recent_df["customer_id"].nunique()
-            if "customer_id" in recent_df.columns
-            else 0,
+            "total_revenue": (
+                recent_df["total_amount"].sum()
+                if "total_amount" in recent_df.columns
+                else 0
+            ),
+            "avg_order_value": (
+                recent_df["total_amount"].mean()
+                if "total_amount" in recent_df.columns
+                else 0
+            ),
+            "unique_customers": (
+                recent_df["customer_id"].nunique()
+                if "customer_id" in recent_df.columns
+                else 0
+            ),
             "transactions_per_minute": len(recent_df) / 5,  # 5-minute window
-            "revenue_per_minute": (recent_df["total_amount"].sum() / 5)
-            if "total_amount" in recent_df.columns
-            else 0,
+            "revenue_per_minute": (
+                (recent_df["total_amount"].sum() / 5)
+                if "total_amount" in recent_df.columns
+                else 0
+            ),
         }
 
         # Add to KPI buffer
@@ -376,12 +384,14 @@ class RealTimeAnalyticsEngine:
         dashboard_data = {
             "timestamp": datetime.now(),
             "current_metrics": self.current_metrics,
-            "recent_alerts": self.alerts[-10:]
-            if len(self.alerts) > 10
-            else self.alerts,
-            "kpi_history": list(self.kpi_buffer)[-20:]
-            if len(self.kpi_buffer) > 20
-            else list(self.kpi_buffer),
+            "recent_alerts": (
+                self.alerts[-10:] if len(self.alerts) > 10 else self.alerts
+            ),
+            "kpi_history": (
+                list(self.kpi_buffer)[-20:]
+                if len(self.kpi_buffer) > 20
+                else list(self.kpi_buffer)
+            ),
             "buffer_status": {
                 "transaction_buffer_size": len(self.transaction_buffer),
                 "kpi_buffer_size": len(self.kpi_buffer),

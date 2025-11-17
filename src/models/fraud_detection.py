@@ -483,12 +483,12 @@ class FraudDetectionEngine:
                 {
                     "total_amount": ["mean", "std"],
                     "quantity": ["mean", "std"],
-                    "hour": lambda x: x.mode().iloc[0]
-                    if len(x.mode()) > 0
-                    else x.mean(),
-                    "store_id": lambda x: x.mode().iloc[0]
-                    if len(x.mode()) > 0
-                    else x.iloc[0],
+                    "hour": lambda x: (
+                        x.mode().iloc[0] if len(x.mode()) > 0 else x.mean()
+                    ),
+                    "store_id": lambda x: (
+                        x.mode().iloc[0] if len(x.mode()) > 0 else x.iloc[0]
+                    ),
                 }
             )
             .round(2)
@@ -593,9 +593,11 @@ class FraudDetectionEngine:
             "recent_anomalies": {
                 "count": len(recent_anomalies),
                 "transactions": recent_anomalies.head(20).to_dict("records"),
-                "avg_anomaly_score": recent_anomalies["anomaly_score"].mean()
-                if len(recent_anomalies) > 0
-                else 0,
+                "avg_anomaly_score": (
+                    recent_anomalies["anomaly_score"].mean()
+                    if len(recent_anomalies) > 0
+                    else 0
+                ),
             },
             "recommendations": [
                 "Implement additional verification for high-risk customers",

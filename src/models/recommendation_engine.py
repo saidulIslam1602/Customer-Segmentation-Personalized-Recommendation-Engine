@@ -169,9 +169,9 @@ class RecommendationEngine:
                 # Normalize numerical features
                 scaler = StandardScaler()
                 normalized_values = scaler.fit_transform(products_features[[feature]])
-                self.item_features[
-                    f"{feature}_normalized"
-                ] = normalized_values.flatten()
+                self.item_features[f"{feature}_normalized"] = (
+                    normalized_values.flatten()
+                )
 
     def build_collaborative_filtering(self, n_components=50):
         """Build collaborative filtering model using Matrix Factorization"""
@@ -1035,9 +1035,11 @@ class RecommendationEngine:
             "model_weights": self.model_weights,
             "business_rules": self.business_rules,
             "timestamp": timestamp,
-            "seasonal_patterns_shape": self.seasonal_patterns.shape
-            if self.seasonal_patterns is not None
-            else None,
+            "seasonal_patterns_shape": (
+                self.seasonal_patterns.shape
+                if self.seasonal_patterns is not None
+                else None
+            ),
         }
 
         with open(f"models/recommendation_config_{timestamp}.json", "w") as f:

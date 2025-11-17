@@ -179,9 +179,11 @@ class EnhancedBusinessIntelligencePlatform:
         )
 
         self.results["customer_analytics"] = {
-            "segments": len(segments["segment_name"].unique())
-            if "segment_name" in segments.columns
-            else len(segments["final_cluster"].unique()),
+            "segments": (
+                len(segments["segment_name"].unique())
+                if "segment_name" in segments.columns
+                else len(segments["final_cluster"].unique())
+            ),
             "churn_rate": predictions["is_churned"].mean(),
             "high_risk_customers": len(
                 predictions[predictions["risk_category"] == "High Risk"]

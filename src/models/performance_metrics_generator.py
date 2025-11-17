@@ -228,9 +228,9 @@ class PerformanceMetricsGenerator:
 
         metrics.update(
             {
-                f"precision_at_{k}": np.mean(precision_scores)
-                if precision_scores
-                else 0,
+                f"precision_at_{k}": (
+                    np.mean(precision_scores) if precision_scores else 0
+                ),
                 f"recall_at_{k}": np.mean(recall_scores) if recall_scores else 0,
                 f"precision_scores_distribution": {
                     "mean": np.mean(precision_scores) if precision_scores else 0,
@@ -396,9 +396,9 @@ class PerformanceMetricsGenerator:
             metrics["value_by_segment"] = value_by_segment
 
         # Segment stability (if historical data available)
-        metrics[
-            "segment_stability"
-        ] = 0.85  # Placeholder - would need historical comparison
+        metrics["segment_stability"] = (
+            0.85  # Placeholder - would need historical comparison
+        )
 
         # Benchmark comparison
         benchmark_comparison = {}
@@ -453,9 +453,11 @@ class PerformanceMetricsGenerator:
             "total_revenue": float(total_revenue),
             "monthly_revenue_growth": float(revenue_growth),
             "average_monthly_revenue": float(monthly_revenue.mean()),
-            "revenue_volatility": float(monthly_revenue.std() / monthly_revenue.mean())
-            if monthly_revenue.mean() > 0
-            else 0,
+            "revenue_volatility": (
+                float(monthly_revenue.std() / monthly_revenue.mean())
+                if monthly_revenue.mean() > 0
+                else 0
+            ),
         }
 
         # Customer Metrics
@@ -475,13 +477,13 @@ class PerformanceMetricsGenerator:
 
         metrics["customer"] = {
             "total_customers": int(total_customers),
-            "repeat_customer_rate": float(repeat_customers / total_customers)
-            if total_customers > 0
-            else 0,
+            "repeat_customer_rate": (
+                float(repeat_customers / total_customers) if total_customers > 0 else 0
+            ),
             "average_clv": float(avg_clv),
-            "customer_retention_rate": float(recent_customers / total_customers)
-            if total_customers > 0
-            else 0,
+            "customer_retention_rate": (
+                float(recent_customers / total_customers) if total_customers > 0 else 0
+            ),
             "customer_acquisition_rate": 0.05,  # Placeholder - would need historical data
         }
 
@@ -513,11 +515,11 @@ class PerformanceMetricsGenerator:
             "avg_products_per_transaction": float(
                 transactions_df.groupby("transaction_id")["quantity"].sum().mean()
             ),
-            "top_product_revenue_share": float(
-                top_products["total_amount"].sum() / total_revenue
-            )
-            if total_revenue > 0
-            else 0,
+            "top_product_revenue_share": (
+                float(top_products["total_amount"].sum() / total_revenue)
+                if total_revenue > 0
+                else 0
+            ),
         }
 
         # Operational Efficiency
@@ -528,9 +530,11 @@ class PerformanceMetricsGenerator:
 
         metrics["operational"] = {
             "daily_transaction_volume": float(daily_transaction_volume),
-            "revenue_per_transaction": float(total_revenue / len(transactions_df))
-            if len(transactions_df) > 0
-            else 0,
+            "revenue_per_transaction": (
+                float(total_revenue / len(transactions_df))
+                if len(transactions_df) > 0
+                else 0
+            ),
             "customer_service_efficiency": 0.85,  # Placeholder
             "order_fulfillment_rate": 0.95,  # Placeholder
         }
@@ -618,18 +622,20 @@ class PerformanceMetricsGenerator:
             },
             "roi_metrics": {
                 "roi_percentage": float(roi),
-                "payback_period_months": float(payback_months)
-                if payback_months != float("inf")
-                else None,
+                "payback_period_months": (
+                    float(payback_months) if payback_months != float("inf") else None
+                ),
                 "net_present_value": float(npv),
                 "break_even_achieved": roi > 0,
             },
             "business_value": {
                 "annual_value_created": float(revenue_increase),
                 "monthly_value_created": float(revenue_increase / 12),
-                "value_multiple": float(current_revenue / baseline_revenue)
-                if baseline_revenue > 0
-                else 1,
+                "value_multiple": (
+                    float(current_revenue / baseline_revenue)
+                    if baseline_revenue > 0
+                    else 1
+                ),
                 "efficiency_gain": float(revenue_lift_percentage / 100),
             },
         }

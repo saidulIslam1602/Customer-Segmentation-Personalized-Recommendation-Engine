@@ -787,12 +787,12 @@ class CustomerSegmentation:
                     "transaction_date": ["count", "min", "max"],
                     "product_id": "nunique",
                     "store_id": "nunique",
-                    "channel": lambda x: x.mode().iloc[0]
-                    if len(x.mode()) > 0
-                    else "Unknown",
-                    "payment_method": lambda x: x.mode().iloc[0]
-                    if len(x.mode()) > 0
-                    else "Unknown",
+                    "channel": lambda x: (
+                        x.mode().iloc[0] if len(x.mode()) > 0 else "Unknown"
+                    ),
+                    "payment_method": lambda x: (
+                        x.mode().iloc[0] if len(x.mode()) > 0 else "Unknown"
+                    ),
                 }
             )
             .round(2)
@@ -825,9 +825,9 @@ class CustomerSegmentation:
             .agg(
                 {
                     "hour": lambda x: x.mode().iloc[0] if len(x.mode()) > 0 else 12,
-                    "day_of_week": lambda x: x.mode().iloc[0]
-                    if len(x.mode()) > 0
-                    else 1,
+                    "day_of_week": lambda x: (
+                        x.mode().iloc[0] if len(x.mode()) > 0 else 1
+                    ),
                     "month": lambda x: x.mode().iloc[0] if len(x.mode()) > 0 else 6,
                 }
             )
@@ -848,9 +848,9 @@ class CustomerSegmentation:
                 {
                     "hour": "std",
                     "day_of_week": "std",
-                    "total_amount": lambda x: x.std() / x.mean()
-                    if x.mean() > 0
-                    else 0,  # Coefficient of variation
+                    "total_amount": lambda x: (
+                        x.std() / x.mean() if x.mean() > 0 else 0
+                    ),  # Coefficient of variation
                 }
             )
             .fillna(0)
@@ -888,9 +888,9 @@ class CustomerSegmentation:
         product_diversity = (
             self.transactions.groupby("customer_id")["product_id"]
             .apply(
-                lambda x: len(set(x)) / len(x)
-                if len(x) > 0
-                else 0  # Unique products ratio
+                lambda x: (
+                    len(set(x)) / len(x) if len(x) > 0 else 0
+                )  # Unique products ratio
             )
             .reset_index()
         )
@@ -1008,22 +1008,32 @@ class CustomerSegmentation:
                 "avg_monetary": segment_data["monetary"].mean(),
                 "avg_order_value": segment_data["avg_order_value"].mean(),
                 # CLV characteristics
-                "avg_historical_clv": segment_data["historical_clv"].mean()
-                if "historical_clv" in segment_data.columns
-                else 0,
-                "avg_predicted_clv": segment_data["predicted_clv"].mean()
-                if "predicted_clv" in segment_data.columns
-                else 0,
-                "vip_percentage": segment_data["is_vip"].mean() * 100
-                if "is_vip" in segment_data.columns
-                else 0,
+                "avg_historical_clv": (
+                    segment_data["historical_clv"].mean()
+                    if "historical_clv" in segment_data.columns
+                    else 0
+                ),
+                "avg_predicted_clv": (
+                    segment_data["predicted_clv"].mean()
+                    if "predicted_clv" in segment_data.columns
+                    else 0
+                ),
+                "vip_percentage": (
+                    segment_data["is_vip"].mean() * 100
+                    if "is_vip" in segment_data.columns
+                    else 0
+                ),
                 # Behavioral characteristics
-                "product_diversity": segment_data["product_diversity_ratio"].mean()
-                if "product_diversity_ratio" in segment_data.columns
-                else 0,
-                "purchase_consistency": segment_data["amount_consistency"].mean()
-                if "amount_consistency" in segment_data.columns
-                else 0,
+                "product_diversity": (
+                    segment_data["product_diversity_ratio"].mean()
+                    if "product_diversity_ratio" in segment_data.columns
+                    else 0
+                ),
+                "purchase_consistency": (
+                    segment_data["amount_consistency"].mean()
+                    if "amount_consistency" in segment_data.columns
+                    else 0
+                ),
                 # Business value
                 "total_value": segment_data["monetary"].sum(),
                 "value_contribution": segment_data["monetary"].sum()
@@ -1231,9 +1241,9 @@ class CustomerSegmentation:
             "segment_profiles": self.segment_profiles,
             "retention_strategies": self.retention_strategies,
             "total_customers": len(self.rfm_data) if self.rfm_data is not None else 0,
-            "total_vips": len(self.vip_customers)
-            if self.vip_customers is not None
-            else 0,
+            "total_vips": (
+                len(self.vip_customers) if self.vip_customers is not None else 0
+            ),
         }
 
         with open(f"reports/segmentation_summary_{timestamp}.json", "w") as f:
