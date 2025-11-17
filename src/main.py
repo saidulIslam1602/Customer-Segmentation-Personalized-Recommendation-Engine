@@ -9,9 +9,16 @@ import os
 import sys
 from datetime import datetime
 import json
+import logging
 
 # Add src to path for imports
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+# Import utility modules
+from utils.logger import setup_logging, get_logger
+from utils.config import config
+from utils.data_validator import validate_data_files, generate_validation_report
+from utils.error_handler import error_handler, graceful_shutdown, monitored_execution
 
 # Import models
 from models.customer_segmentation import CustomerSegmentation
@@ -22,6 +29,9 @@ from models.pricing_optimization import PricingOptimizationEngine
 from models.fraud_detection import FraudDetectionEngine
 from models.marketing_attribution import MarketingAttributionEngine
 from visualization.executive_dashboard import ExecutiveDashboard
+
+# Initialize logging
+logger = get_logger(__name__)
 
 
 class EnhancedBusinessIntelligencePlatform:
@@ -70,21 +80,32 @@ class EnhancedBusinessIntelligencePlatform:
                 missing_files.append(path)
 
         if missing_files:
-            print(f"❌ Missing data files: {missing_files}")
-            print("💡 Run the data loader first: python src/data/data_loader.py")
+            logger.error(f"Missing data files: {missing_files}")
+            logger.info("Run the data loader first: python src/data/data_loader.py")
             return False
         return True
 
+    @monitored_execution(context="initialization")
     def initialize_all_engines(self):
         """Initialize all business intelligence engines"""
-        print("🚀 INITIALIZING COMPREHENSIVE BUSINESS INTELLIGENCE PLATFORM")
-        print("=" * 70)
+        logger.info("Initializing Comprehensive Business Intelligence Platform")
+        logger.info("=" * 70)
 
         if not self._check_data_exists():
             return False
 
+        # Validate data before processing
+        logger.info("Validating data files...")
+        validation_results = validate_data_files(self.data_dir)
+        
+        total_errors = sum(len(r.errors) for r in validation_results.values())
+        if total_errors > 0:
+            logger.warning(f"Data validation found {total_errors} errors")
+            validation_report = generate_validation_report(validation_results)
+            logger.debug(validation_report)
+
         # Original engines
-        print("📊 Initializing core analytics engines...")
+        logger.info("Initializing core analytics engines...")
         self.engines["segmentation"] = CustomerSegmentation(
             self.data_paths["transactions"], self.data_paths["customers"]
         )
@@ -122,16 +143,18 @@ class EnhancedBusinessIntelligencePlatform:
 
         self.engines["executive_dashboard"] = ExecutiveDashboard()
 
-        print("✅ All engines initialized successfully!")
+        logger.info("All engines initialized successfully")
         return True
 
+    @error_handler(default_return=None)
+    @monitored_execution(context="customer_analytics")
     def run_customer_analytics(self):
         """Run comprehensive customer analytics"""
-        print("\n👥 CUSTOMER ANALYTICS & SEGMENTATION")
-        print("=" * 50)
+        logger.info("Customer Analytics & Segmentation")
+        logger.info("=" * 50)
 
         # Customer Segmentation
-        print("🔄 Running customer segmentation analysis...")
+        logger.info("Running customer segmentation analysis...")
         segmentation = self.engines["segmentation"]
         segmentation.prepare_data()
         segmentation.calculate_rfm()
@@ -144,7 +167,7 @@ class EnhancedBusinessIntelligencePlatform:
         )
 
         # Churn Prediction
-        print("🔄 Running churn prediction analysis...")
+        logger.info("Running churn prediction analysis...")
         churn_engine = self.engines["churn_prediction"]
         churn_engine.prepare_churn_features()
         churn_engine.train_churn_model()
@@ -166,61 +189,67 @@ class EnhancedBusinessIntelligencePlatform:
             "retention_strategies": strategies,
         }
 
-        print("✅ Customer analytics completed!")
+        logger.info("Customer analytics completed")
 
+    @graceful_shutdown
+    @monitored_execution(context="complete_analysis")
     def run_complete_analysis(self):
         """Run the complete business intelligence analysis"""
-        print("🚀 STARTING COMPREHENSIVE BUSINESS INTELLIGENCE ANALYSIS")
-        print("=" * 70)
+        logger.info("Starting Comprehensive Business Intelligence Analysis")
+        logger.info("=" * 70)
 
         start_time = datetime.now()
 
-        print(f"📊 Data Source: {self.data_source}")
-        print("=" * 70)
+        logger.info(f"Data Source: {self.data_source}")
+        logger.info("=" * 70)
 
         # Initialize all engines
         if not self.initialize_all_engines():
-            print("❌ Failed to initialize engines. Please check data files.")
+            logger.error("Failed to initialize engines. Please check data files.")
             return None
 
         # Run customer analytics
         try:
             self.run_customer_analytics()
         except Exception as e:
-            print(f"⚠️  Customer analytics failed: {e}")
+            logger.error(f"Customer analytics failed: {e}", exc_info=True)
 
         end_time = datetime.now()
         analysis_duration = (end_time - start_time).total_seconds()
 
         # Final summary
-        print("\n🎉 COMPREHENSIVE ANALYSIS COMPLETED!")
-        print("=" * 50)
-        print(f"⏱️  Analysis Duration: {analysis_duration:.1f} seconds")
-        print(f"📊 Modules Executed: {len(self.results)}")
-        print(f"📁 Results Directory: {self.results_dir}")
+        logger.info("Comprehensive Analysis Completed")
+        logger.info("=" * 50)
+        logger.info(f"Analysis Duration: {analysis_duration:.1f} seconds")
+        logger.info(f"Modules Executed: {len(self.results)}")
+        logger.info(f"Results Directory: {self.results_dir}")
 
         # Print key insights
-        print(f"\n🔍 KEY INSIGHTS:")
+        logger.info("Key Insights:")
         if "customer_analytics" in self.results:
-            print(
-                f"   👥 Customer Segments: {self.results['customer_analytics']['segments']}"
-            )
-            print(
-                f"   ⚠️  High-Risk Customers: {self.results['customer_analytics']['high_risk_customers']}"
-            )
-            print(
-                f"   📈 Churn Rate: {self.results['customer_analytics']['churn_rate']:.2%}"
-            )
+            logger.info(f"  Customer Segments: {self.results['customer_analytics']['segments']}")
+            logger.info(f"  High-Risk Customers: {self.results['customer_analytics']['high_risk_customers']}")
+            logger.info(f"  Churn Rate: {self.results['customer_analytics']['churn_rate']:.2%}")
 
-        print(f"\n✅ All results saved to: {self.results_dir}/")
+        logger.info(f"All results saved to: {self.results_dir}/")
 
         return self.results
 
 
 def main():
     """Main execution function"""
+    # Initialize logging
+    setup_logging(log_level=config.log_level, log_dir="logs")
+    
+    logger.info("=" * 70)
+    logger.info("Enterprise Business Intelligence Platform v2.0.0")
+    logger.info("=" * 70)
+    
     # Initialize and run comprehensive business intelligence platform
-    platform = EnhancedBusinessIntelligencePlatform()
+    platform = EnhancedBusinessIntelligencePlatform(
+        data_dir=config.data_dir,
+        results_dir=config.results_dir
+    )
     results = platform.run_complete_analysis()
 
     return results

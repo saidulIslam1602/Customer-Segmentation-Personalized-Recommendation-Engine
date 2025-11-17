@@ -48,6 +48,12 @@ from .api_gateway import APIGateway
 from .security_manager import SecurityManager
 from .performance_monitor import EnterprisePerformanceMonitor
 
+# Import utilities
+from utils import get_logger, error_handler, monitored_execution
+
+# Initialize logger
+logger = get_logger(__name__)
+
 
 class EnterprisePlatformManager:
     """
@@ -100,8 +106,8 @@ class EnterprisePlatformManager:
             FileNotFoundError: If configuration file is not found
             ValueError: If configuration is invalid
         """
-        print("INITIALIZING ENTERPRISE BUSINESS INTELLIGENCE PLATFORM")
-        print("=" * 70)
+        logger.info("INITIALIZING ENTERPRISE BUSINESS INTELLIGENCE PLATFORM")
+        logger.info("=" * 70)
 
         # Initialize existing platform (unchanged)
         self.core_platform = EnhancedBusinessIntelligencePlatform(data_dir, results_dir)
@@ -110,7 +116,7 @@ class EnterprisePlatformManager:
         self.config = self._load_enterprise_config(config_path)
 
         # Initialize enterprise layers
-        print("Initializing enterprise components...")
+        logger.info("Initializing enterprise components...")
         self.crm_integration = CRMIntegrationLayer(self.config.get("crm", {}))
         self.api_gateway = APIGateway(self.config.get("api", {}))
         self.security_manager = SecurityManager(self.config.get("security", {}))
@@ -122,7 +128,7 @@ class EnterprisePlatformManager:
         self.enterprise_results = {}
         self.sync_history = []
 
-        print("Enterprise platform initialized successfully!")
+        logger.info("Enterprise platform initialized successfully")
 
     def _load_enterprise_config(self, config_path: str) -> Dict:
         """
@@ -177,7 +183,7 @@ class EnterprisePlatformManager:
                     else:
                         default_config[key] = value
         except Exception as e:
-            print(f"Warning: Using default config due to error: {e}")
+            logger.warning(f"Using default config due to error: {e}")
 
         return default_config
 
@@ -200,37 +206,37 @@ class EnterprisePlatformManager:
         Raises:
             Exception: If critical analysis components fail
         """
-        print("STARTING ENTERPRISE BUSINESS INTELLIGENCE ANALYSIS")
-        print("=" * 70)
+        logger.info("STARTING ENTERPRISE BUSINESS INTELLIGENCE ANALYSIS")
+        logger.info("=" * 70)
 
         start_time = datetime.now()
 
         # Phase 1: Execute core analytics using existing functionality
-        print("Phase 1: Running core analytics (existing functionality)...")
+        logger.info("Phase 1: Running core analytics (existing functionality)...")
         core_results = self.core_platform.run_complete_analysis()
 
         # Phase 2: Extract insights for enterprise integration
-        print("Phase 2: Extracting insights for enterprise integration...")
+        logger.info("Phase 2: Extracting insights for enterprise integration...")
         insights = await self._extract_enterprise_insights()
 
         # Phase 3: Apply enterprise security measures
-        print("Phase 3: Applying enterprise security measures...")
+        logger.info("Phase 3: Applying enterprise security measures...")
         secured_insights = self.security_manager.secure_data(insights)
 
         # Phase 4: Synchronize insights to CRM systems
-        print("Phase 4: Syncing insights to CRM systems...")
+        logger.info("Phase 4: Syncing insights to CRM systems...")
         crm_sync_results = await self.crm_integration.sync_all_insights(
             secured_insights
         )
 
         # Phase 5: Update performance monitoring metrics
-        print("Phase 5: Updating performance monitoring...")
+        logger.info("Phase 5: Updating performance monitoring...")
         performance_metrics = self.performance_monitor.collect_metrics(
             core_results, crm_sync_results
         )
 
         # Phase 6: Generate comprehensive enterprise reports
-        print("Phase 6: Generating enterprise reports...")
+        logger.info("Phase 6: Generating enterprise reports...")
         enterprise_reports = self._generate_enterprise_reports(
             core_results, crm_sync_results, performance_metrics
         )
@@ -249,14 +255,14 @@ class EnterprisePlatformManager:
         }
 
         # Analysis completion summary
-        print("\nENTERPRISE ANALYSIS COMPLETED!")
-        print("=" * 50)
-        print(f"Total Duration: {duration:.1f} seconds")
-        print(
+        logger.info("\nENTERPRISE ANALYSIS COMPLETED")
+        logger.info("=" * 50)
+        logger.info(f"Total Duration: {duration:.1f} seconds")
+        logger.info(
             f"Core Models Executed: {len(self.core_platform.engines) if hasattr(self.core_platform, 'engines') else 'N/A'}"
         )
-        print(f"CRM Systems Synced: {len(crm_sync_results)}")
-        print(
+        logger.info(f"CRM Systems Synced: {len(crm_sync_results)}")
+        logger.info(
             f"Performance Score: {performance_metrics.get('overall_score', 'N/A')}/100"
         )
 
