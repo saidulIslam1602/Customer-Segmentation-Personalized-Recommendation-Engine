@@ -4,6 +4,7 @@ Tests the interaction between Python ML services and .NET API gateway
 """
 
 import pytest
+import pytest_asyncio
 import asyncio
 import httpx
 import json
@@ -27,7 +28,7 @@ class TestEnterpriseIntegration:
             results_dir='tests/results'
         )
     
-    @pytest.fixture
+    @pytest_asyncio.fixture
     async def http_client(self):
         """Create HTTP client for API testing"""
         async with httpx.AsyncClient(timeout=30.0) as client:
