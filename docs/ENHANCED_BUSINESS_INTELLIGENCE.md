@@ -50,7 +50,7 @@ This enhanced platform transforms the original customer segmentation project int
           
 ```
 
-## 🧠 **Advanced Analytics Modules**
+##  **Advanced Analytics Modules**
 
 ### **1. Customer Churn Prediction Engine**
 ```python
@@ -325,7 +325,7 @@ PRICING_MODEL_CONFIG = {
 ### **Support & Contribution**
 -  [Issue Tracker](https://github.com/saidulIslam1602/Customer-Segmentation-Personalized-Recommendation-Engine/issues)
 -  [Discussions](https://github.com/saidulIslam1602/Customer-Segmentation-Personalized-Recommendation-Engine/discussions)
-- 🤝 [Contributing Guidelines](./CONTRIBUTING.md)
+-  [Contributing Guidelines](./CONTRIBUTING.md)
 
 ##  **Project Evolution**
 

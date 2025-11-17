@@ -641,9 +641,9 @@ class PerformanceMetricsGenerator:
         print(f"    Revenue Lift: {revenue_lift_percentage:.1f}%")
         print(f"    ROI: {roi:.1f}%")
         print(
-            f"   ⏱  Payback Period: {payback_months:.1f} months"
+            f"     Payback Period: {payback_months:.1f} months"
             if payback_months != float("inf")
-            else "   ⏱  Payback Period: Not achieved"
+            else "     Payback Period: Not achieved"
         )
 
         return metrics
