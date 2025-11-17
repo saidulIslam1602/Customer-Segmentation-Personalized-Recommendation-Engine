@@ -7,11 +7,11 @@ EXECUTIVE SUMMARY
 Overall Performance Score: 79.5/100
 
 KEY ACHIEVEMENTS:
-✅ Segmentation: 1 metrics above industry benchmark
-✅ Outstanding ROI achieved: 639.0%
+ Segmentation: 1 metrics above industry benchmark
+ Outstanding ROI achieved: 639.0%
 
 IMPROVEMENT AREAS:
-⚠️  Segmentation: 1 metrics below benchmark
+  Segmentation: 1 metrics below benchmark
 
 MODEL PERFORMANCE SUMMARY:
 
@@ -29,4 +29,4 @@ ROI: 639.0%
 Revenue Impact: $554,230.94
 
 RECOMMENDATIONS:
-🎯 Implement targeted retention campaigns for at-risk customers (Priority: High)
+ Implement targeted retention campaigns for at-risk customers (Priority: High)
