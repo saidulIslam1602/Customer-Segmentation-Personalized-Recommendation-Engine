@@ -99,8 +99,8 @@ app.MapGet("/health", () => new
     Environment = app.Environment.EnvironmentName
 });
 
-Log.Information("🚀 Enterprise Customer Segmentation API starting...");
-Log.Information("📚 Swagger UI available at: https://localhost:7000");
-Log.Information("🔗 Python ML Service: http://localhost:8001");
+Log.Information(" Enterprise Customer Segmentation API starting...");
+Log.Information(" Swagger UI available at: https://localhost:7000");
+Log.Information(" Python ML Service: http://localhost:8001");
 
 app.Run();

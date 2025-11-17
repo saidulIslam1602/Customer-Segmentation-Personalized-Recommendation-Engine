@@ -1,35 +1,35 @@
 # Customer Segmentation & Business Intelligence Platform
 
-## 🚀 Overview
+##  Overview
 
 A comprehensive business intelligence platform for retail analytics, featuring advanced customer segmentation, churn prediction, inventory optimization, pricing strategies, fraud detection, and marketing attribution analysis.
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 customer-segmentation-bi/
-├── src/                          # Source code
-│   ├── data/                     # Data processing modules
-│   ├── features/                 # Feature engineering
-│   ├── models/                   # ML models and business logic
-│   ├── visualization/            # Dashboards and visualizations
-│   ├── utils/                    # Utility functions
-│   └── main.py                   # Main pipeline
-├── data/                         # Data storage
-│   ├── raw/                      # Raw data files
-│   ├── processed/                # Processed data
-│   └── external/                 # External data sources
-├── models/                       # Trained models
-├── notebooks/                    # Jupyter notebooks
-├── reports/                      # Generated reports
-├── tests/                        # Unit tests
-├── config/                       # Configuration files
-├── scripts/                      # Utility scripts
-├── docs/                         # Documentation
-└── requirements/                 # Dependencies
+ src/                          # Source code
+    data/                     # Data processing modules
+    features/                 # Feature engineering
+    models/                   # ML models and business logic
+    visualization/            # Dashboards and visualizations
+    utils/                    # Utility functions
+    main.py                   # Main pipeline
+ data/                         # Data storage
+    raw/                      # Raw data files
+    processed/                # Processed data
+    external/                 # External data sources
+ models/                       # Trained models
+ notebooks/                    # Jupyter notebooks
+ reports/                      # Generated reports
+ tests/                        # Unit tests
+ config/                       # Configuration files
+ scripts/                      # Utility scripts
+ docs/                         # Documentation
+ requirements/                 # Dependencies
 ```
 
-## 🛠️ Installation
+##  Installation
 
 ```bash
 # Clone the repository
@@ -43,7 +43,7 @@ make install
 make install-dev
 ```
 
-## 🚀 Quick Start
+##  Quick Start
 
 ```bash
 # Run the complete business intelligence pipeline
@@ -57,7 +57,7 @@ make docker-build
 make docker-run
 ```
 
-## 📊 Features
+##  Features
 
 - **Customer Segmentation**: RFM analysis and advanced clustering
 - **Churn Prediction**: ML-based customer retention strategies
@@ -67,7 +67,7 @@ make docker-run
 - **Marketing Attribution**: Multi-touch attribution and ROI analysis
 - **Executive Dashboard**: Real-time business intelligence
 
-## 🔧 Development
+##  Development
 
 ```bash
 # Run tests
@@ -83,13 +83,13 @@ make lint
 make clean
 ```
 
-## 📈 Business Impact
+##  Business Impact
 
 - **Customer Retention**: 597.9% ROI on retention campaigns
 - **Revenue Protection**: $1.56M in potential revenue saved
 - **Operational Efficiency**: 60% reduction in analyst workload
 - **Real-time Insights**: Automated business intelligence
 
-## 📄 License
+##  License
 
 MIT License - see LICENSE file for details.

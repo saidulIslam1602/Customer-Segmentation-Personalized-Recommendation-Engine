@@ -84,7 +84,7 @@ class RealTimeAnalyticsEngine:
     ):
         """Simulate real-time transaction stream from historical data"""
         print(f" Starting transaction stream simulation...")
-        print(f"   ⏱  Duration: {duration_minutes} minutes")
+        print(f"   Duration: {duration_minutes} minutes")
         print(f"    Rate: {transactions_per_minute} transactions/minute")
 
         # Load historical data for simulation
@@ -474,7 +474,7 @@ class RealTimeAnalyticsEngine:
 
         # Final summary
         print(f"\n REAL-TIME DEMO COMPLETED!")
-        print(f"   ⏱  Duration: {duration_minutes} minutes")
+        print(f"   Duration: {duration_minutes} minutes")
         print(f"    Transactions processed: {len(self.transaction_buffer)}")
         print(f"    KPI calculations: {len(self.kpi_buffer)}")
         print(f"    Alerts generated: {len(self.alerts)}")

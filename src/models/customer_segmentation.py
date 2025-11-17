@@ -775,7 +775,7 @@ class CustomerSegmentation:
 
     def create_behavioral_features(self):
         """Create advanced behavioral features for clustering"""
-        print("🧠 Creating behavioral features...")
+        print("Creating behavioral features...")
 
         # Purchase behavior patterns
         behavioral_data = (
