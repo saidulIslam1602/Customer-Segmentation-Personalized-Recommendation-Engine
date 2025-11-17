@@ -20,7 +20,7 @@ import json
 
 def generate_high_quality_performance_metrics():
     """Generate comprehensive high-quality performance metrics"""
-    print("🚀 GENERATING HIGH-QUALITY PERFORMANCE METRICS")
+    print(" GENERATING HIGH-QUALITY PERFORMANCE METRICS")
     print("=" * 70)
 
     # Initialize performance metrics generator
@@ -31,7 +31,7 @@ def generate_high_quality_performance_metrics():
     customers_df = pd.read_csv("data/processed/customers.csv")
     products_df = pd.read_csv("data/processed/products.csv")
 
-    print("\n📊 BUSINESS PERFORMANCE METRICS")
+    print("\n BUSINESS PERFORMANCE METRICS")
     print("-" * 50)
 
     # Calculate comprehensive business metrics
@@ -39,7 +39,7 @@ def generate_high_quality_performance_metrics():
         transactions_df, customers_df
     )
 
-    print("\n💰 FINANCIAL IMPACT & ROI ANALYSIS")
+    print("\n FINANCIAL IMPACT & ROI ANALYSIS")
     print("-" * 50)
 
     # Calculate ROI and financial impact
@@ -51,7 +51,7 @@ def generate_high_quality_performance_metrics():
         baseline_revenue, current_revenue, implementation_cost
     )
 
-    print("\n🎯 CUSTOMER SEGMENTATION PERFORMANCE")
+    print("\n CUSTOMER SEGMENTATION PERFORMANCE")
     print("-" * 50)
 
     # Test segmentation performance
@@ -94,15 +94,15 @@ def generate_high_quality_performance_metrics():
         },
     }
 
-    print(f"✅ Churn Prediction Metrics:")
-    print(f"   🎯 Accuracy: {churn_metrics['accuracy']:.4f}")
-    print(f"   📊 Precision: {churn_metrics['precision']:.4f}")
-    print(f"   🔍 Recall: {churn_metrics['recall']:.4f}")
+    print(f" Churn Prediction Metrics:")
+    print(f"    Accuracy: {churn_metrics['accuracy']:.4f}")
+    print(f"    Precision: {churn_metrics['precision']:.4f}")
+    print(f"    Recall: {churn_metrics['recall']:.4f}")
     print(
-        f"   💰 Potential Revenue Saved: ${churn_metrics['business_impact']['potential_revenue_saved']:,.2f}"
+        f"    Potential Revenue Saved: ${churn_metrics['business_impact']['potential_revenue_saved']:,.2f}"
     )
 
-    print("\n💡 BUSINESS INSIGHTS PERFORMANCE")
+    print("\n BUSINESS INSIGHTS PERFORMANCE")
     print("-" * 50)
 
     # Test business insights engine
@@ -114,7 +114,7 @@ def generate_high_quality_performance_metrics():
 
     insights_results = insights_engine.run_complete_analysis()
 
-    print("\n📈 RECOMMENDATION ENGINE PERFORMANCE")
+    print("\n RECOMMENDATION ENGINE PERFORMANCE")
     print("-" * 50)
 
     # Create mock recommendation metrics based on industry standards
@@ -130,13 +130,13 @@ def generate_high_quality_performance_metrics():
         },
     }
 
-    print(f"✅ Recommendation Engine Metrics:")
-    print(f"   🎯 Precision@10: {recommendation_metrics['precision_at_10']:.4f}")
-    print(f"   🔍 Recall@10: {recommendation_metrics['recall_at_10']:.4f}")
-    print(f"   📊 Coverage: {recommendation_metrics['coverage']:.4f}")
-    print(f"   🌈 Diversity: {recommendation_metrics['diversity']:.4f}")
+    print(f" Recommendation Engine Metrics:")
+    print(f"    Precision@10: {recommendation_metrics['precision_at_10']:.4f}")
+    print(f"    Recall@10: {recommendation_metrics['recall_at_10']:.4f}")
+    print(f"    Coverage: {recommendation_metrics['coverage']:.4f}")
+    print(f"    Diversity: {recommendation_metrics['diversity']:.4f}")
 
-    print("\n📊 GENERATING PERFORMANCE DASHBOARD")
+    print("\n GENERATING PERFORMANCE DASHBOARD")
     print("-" * 50)
 
     # Add all metrics to the generator
@@ -146,13 +146,13 @@ def generate_high_quality_performance_metrics():
     # Generate performance dashboard
     dashboard_path = metrics_generator.generate_performance_dashboard()
 
-    print("\n📋 COMPREHENSIVE PERFORMANCE REPORT")
+    print("\n COMPREHENSIVE PERFORMANCE REPORT")
     print("-" * 50)
 
     # Generate comprehensive report
     comprehensive_report = metrics_generator.generate_comprehensive_report()
 
-    print("\n🎯 EXECUTIVE PERFORMANCE SUMMARY")
+    print("\n EXECUTIVE PERFORMANCE SUMMARY")
     print("=" * 70)
 
     # Create executive performance summary
@@ -222,77 +222,77 @@ def generate_high_quality_performance_metrics():
 
     # Display executive summary
     print(
-        f"🏆 OVERALL PERFORMANCE SCORE: {executive_summary['overall_performance_score']:.1f}/100"
+        f" OVERALL PERFORMANCE SCORE: {executive_summary['overall_performance_score']:.1f}/100"
     )
     print(
-        f"🏥 Business Health Score: {executive_summary['key_performance_indicators']['business_health_score']:.1f}/100"
+        f" Business Health Score: {executive_summary['key_performance_indicators']['business_health_score']:.1f}/100"
     )
     print(
-        f"💰 ROI Achievement: {executive_summary['key_performance_indicators']['roi_percentage']:.1f}%"
+        f" ROI Achievement: {executive_summary['key_performance_indicators']['roi_percentage']:.1f}%"
     )
     print(
-        f"🎯 Churn Prediction Accuracy: {executive_summary['key_performance_indicators']['churn_prediction_accuracy']:.1%}"
+        f" Churn Prediction Accuracy: {executive_summary['key_performance_indicators']['churn_prediction_accuracy']:.1%}"
     )
     print(
-        f"📊 Recommendation Precision: {executive_summary['key_performance_indicators']['recommendation_precision']:.1%}"
+        f" Recommendation Precision: {executive_summary['key_performance_indicators']['recommendation_precision']:.1%}"
     )
     print(
-        f"👥 Customer Retention Rate: {executive_summary['key_performance_indicators']['customer_retention_rate']:.1%}"
+        f" Customer Retention Rate: {executive_summary['key_performance_indicators']['customer_retention_rate']:.1%}"
     )
 
-    print(f"\n💼 BUSINESS IMPACT:")
+    print(f"\n BUSINESS IMPACT:")
     print(
-        f"   💰 Total Revenue: ${executive_summary['business_impact_metrics']['total_revenue']:,.2f}"
+        f"    Total Revenue: ${executive_summary['business_impact_metrics']['total_revenue']:,.2f}"
     )
     print(
-        f"   📈 Revenue Increase: ${executive_summary['business_impact_metrics']['revenue_increase']:,.2f}"
+        f"    Revenue Increase: ${executive_summary['business_impact_metrics']['revenue_increase']:,.2f}"
     )
     print(
-        f"   👥 Customers Analyzed: {executive_summary['business_impact_metrics']['customers_analyzed']:,}"
+        f"    Customers Analyzed: {executive_summary['business_impact_metrics']['customers_analyzed']:,}"
     )
     print(
-        f"   👑 VIP Customers: {executive_summary['business_impact_metrics']['vip_customers_identified']:,}"
+        f"    VIP Customers: {executive_summary['business_impact_metrics']['vip_customers_identified']:,}"
     )
     print(
-        f"   💡 Insights Generated: {executive_summary['business_impact_metrics']['insights_generated']}"
+        f"    Insights Generated: {executive_summary['business_impact_metrics']['insights_generated']}"
     )
     print(
-        f"   🚨 Anomalies Detected: {executive_summary['business_impact_metrics']['anomalies_detected']}"
+        f"    Anomalies Detected: {executive_summary['business_impact_metrics']['anomalies_detected']}"
     )
 
-    print(f"\n⚡ OPERATIONAL EXCELLENCE:")
+    print(f"\n OPERATIONAL EXCELLENCE:")
     print(
         f"   🤖 Models Deployed: {executive_summary['operational_excellence']['models_deployed']}"
     )
     print(
-        f"   🔄 Automation Level: {executive_summary['operational_excellence']['automation_level']:.0%}"
+        f"    Automation Level: {executive_summary['operational_excellence']['automation_level']:.0%}"
     )
     print(
-        f"   📊 Data Quality: {executive_summary['operational_excellence']['data_quality_score']:.0%}"
+        f"    Data Quality: {executive_summary['operational_excellence']['data_quality_score']:.0%}"
     )
     print(
-        f"   🔧 System Reliability: {executive_summary['operational_excellence']['system_reliability']:.0%}"
+        f"    System Reliability: {executive_summary['operational_excellence']['system_reliability']:.0%}"
     )
     print(
-        f"   ⚡ Processing Speed: {executive_summary['operational_excellence']['processing_speed']}"
+        f"    Processing Speed: {executive_summary['operational_excellence']['processing_speed']}"
     )
 
-    print(f"\n🏆 COMPETITIVE ADVANTAGES:")
+    print(f"\n COMPETITIVE ADVANTAGES:")
     for advantage in executive_summary["competitive_advantages"]:
-        print(f"   ✅ {advantage}")
+        print(f"    {advantage}")
 
-    print(f"\n📊 PERFORMANCE VS BENCHMARKS:")
+    print(f"\n PERFORMANCE VS BENCHMARKS:")
     print(
-        f"   🎯 Churn Prediction: {executive_summary['performance_benchmarks']['vs_industry_average']['churn_prediction']}"
+        f"    Churn Prediction: {executive_summary['performance_benchmarks']['vs_industry_average']['churn_prediction']}"
     )
     print(
-        f"   🎯 Recommendations: {executive_summary['performance_benchmarks']['vs_industry_average']['recommendation_precision']}"
+        f"    Recommendations: {executive_summary['performance_benchmarks']['vs_industry_average']['recommendation_precision']}"
     )
     print(
-        f"   🎯 Customer Retention: {executive_summary['performance_benchmarks']['vs_industry_average']['customer_retention']}"
+        f"    Customer Retention: {executive_summary['performance_benchmarks']['vs_industry_average']['customer_retention']}"
     )
     print(
-        f"   🎯 ROI Achievement: {executive_summary['performance_benchmarks']['vs_industry_average']['roi_achievement']}"
+        f"    ROI Achievement: {executive_summary['performance_benchmarks']['vs_industry_average']['roi_achievement']}"
     )
 
     # Performance grade
@@ -313,7 +313,7 @@ def generate_high_quality_performance_metrics():
         grade = "C"
         status = "NEEDS IMPROVEMENT"
 
-    print(f"\n🎓 FINAL PERFORMANCE GRADE: {grade} ({status})")
+    print(f"\n FINAL PERFORMANCE GRADE: {grade} ({status})")
 
     # Save executive summary
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -365,7 +365,7 @@ COMPETITIVE ADVANTAGES
 """
 
     for advantage in executive_summary["competitive_advantages"]:
-        detailed_report += f"✅ {advantage}\n"
+        detailed_report += f" {advantage}\n"
 
     detailed_report += f"""
 PERFORMANCE BENCHMARKS
@@ -394,11 +394,11 @@ and industry-leading accuracy in predictive models.
 
 RECOMMENDATIONS
 {'='*40}
-✅ Deploy to production environment
-✅ Scale to handle enterprise workloads  
-✅ Implement continuous monitoring
-✅ Expand to additional business units
-✅ Integrate with existing enterprise systems
+ Deploy to production environment
+ Scale to handle enterprise workloads  
+ Implement continuous monitoring
+ Expand to additional business units
+ Integrate with existing enterprise systems
 
 Report Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
 """
@@ -407,19 +407,19 @@ Report Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
     with open(f"reports/detailed_performance_report_{timestamp}.txt", "w") as f:
         f.write(detailed_report)
 
-    print(f"\n💾 REPORTS SAVED:")
+    print(f"\n REPORTS SAVED:")
     print(
-        f"   📊 Executive Summary: reports/executive_performance_summary_{timestamp}.json"
+        f"    Executive Summary: reports/executive_performance_summary_{timestamp}.json"
     )
-    print(f"   📋 Detailed Report: reports/detailed_performance_report_{timestamp}.txt")
-    print(f"   📈 Performance Dashboard: {dashboard_path}")
-    print(f"   📊 Comprehensive Analysis: Available in reports/performance_metrics/")
+    print(f"    Detailed Report: reports/detailed_performance_report_{timestamp}.txt")
+    print(f"    Performance Dashboard: {dashboard_path}")
+    print(f"    Comprehensive Analysis: Available in reports/performance_metrics/")
 
-    print(f"\n🎉 HIGH-QUALITY PERFORMANCE METRICS GENERATION COMPLETED!")
-    print(f"   🏆 Final Grade: {grade} ({status})")
-    print(f"   📊 Overall Score: {score:.1f}/100")
-    print(f"   ✅ Production Ready: {'Yes' if score >= 70 else 'Needs Improvement'}")
-    print(f"   🚀 Enterprise Grade: {'Yes' if score >= 80 else 'Good but can improve'}")
+    print(f"\n HIGH-QUALITY PERFORMANCE METRICS GENERATION COMPLETED!")
+    print(f"    Final Grade: {grade} ({status})")
+    print(f"    Overall Score: {score:.1f}/100")
+    print(f"    Production Ready: {'Yes' if score >= 70 else 'Needs Improvement'}")
+    print(f"    Enterprise Grade: {'Yes' if score >= 80 else 'Good but can improve'}")
 
     return executive_summary
 
@@ -428,9 +428,9 @@ if __name__ == "__main__":
     # Generate high-quality performance metrics
     results = generate_high_quality_performance_metrics()
 
-    print(f"\n📈 PERFORMANCE METRICS GENERATION SUMMARY:")
-    print(f"   Status: ✅ COMPLETED")
-    print(f"   Quality: 🏆 ENTERPRISE-GRADE")
+    print(f"\n PERFORMANCE METRICS GENERATION SUMMARY:")
+    print(f"   Status:  COMPLETED")
+    print(f"   Quality:  ENTERPRISE-GRADE")
     print(f"   Score: {results['overall_performance_score']:.1f}/100")
-    print(f"   Business Impact: 💰 SIGNIFICANT")
-    print(f"   Production Ready: ✅ YES")
+    print(f"   Business Impact:  SIGNIFICANT")
+    print(f"   Production Ready:  YES")

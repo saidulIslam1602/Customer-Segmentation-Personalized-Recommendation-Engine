@@ -65,7 +65,7 @@ class ExecutiveDashboard:
 
     def initialize_engines(self):
         """Initialize all business intelligence engines"""
-        print("🔄 Initializing business intelligence engines...")
+        print(" Initializing business intelligence engines...")
 
         self.churn_engine = ChurnPredictionEngine(
             self.data_paths["transactions"], self.data_paths["customers"]
@@ -89,11 +89,11 @@ class ExecutiveDashboard:
             self.data_paths["digital_events"],
         )
 
-        print("✅ All engines initialized successfully")
+        print(" All engines initialized successfully")
 
     def calculate_executive_kpis(self):
         """Calculate comprehensive executive KPIs"""
-        print("📊 Calculating executive KPIs...")
+        print(" Calculating executive KPIs...")
 
         # Load base data
         transactions = pd.read_csv(self.data_paths["transactions"])
@@ -219,12 +219,12 @@ class ExecutiveDashboard:
             "channels": {"performance": channel_revenue, "top_channel": top_channel},
         }
 
-        print("✅ Executive KPIs calculated successfully")
+        print(" Executive KPIs calculated successfully")
         return self.kpi_data
 
     def generate_business_insights(self):
         """Generate comprehensive business insights from all engines"""
-        print("💡 Generating business insights...")
+        print(" Generating business insights...")
 
         if not all(
             [
@@ -348,7 +348,7 @@ class ExecutiveDashboard:
 
         self.insights_data = insights
 
-        print("✅ Business insights generated successfully")
+        print(" Business insights generated successfully")
         return insights
 
     def create_executive_summary(self):
@@ -536,7 +536,7 @@ class ExecutiveDashboard:
 
     def save_dashboard_data(self):
         """Save all dashboard data to files"""
-        print("💾 Saving dashboard data...")
+        print(" Saving dashboard data...")
 
         # Ensure we have all data
         if self.kpi_data is None:
@@ -562,8 +562,8 @@ class ExecutiveDashboard:
         with open("results/executive_summary.json", "w") as f:
             json.dump(executive_summary, f, indent=2, default=str)
 
-        print("✅ Dashboard data saved successfully")
-        print("📁 Files created:")
+        print(" Dashboard data saved successfully")
+        print(" Files created:")
         print("   - results/executive_dashboard_data.json")
         print("   - results/executive_summary.json")
 
@@ -572,7 +572,7 @@ class ExecutiveDashboard:
 
 def main():
     """Main execution function"""
-    print("🚀 EXECUTIVE BUSINESS INTELLIGENCE DASHBOARD")
+    print(" EXECUTIVE BUSINESS INTELLIGENCE DASHBOARD")
     print("=" * 60)
 
     # Initialize dashboard
@@ -588,13 +588,13 @@ def main():
     # Print executive summary
     executive_summary = dashboard.create_executive_summary()
 
-    print(f"\n📊 EXECUTIVE SUMMARY - {executive_summary['period']}")
+    print(f"\n EXECUTIVE SUMMARY - {executive_summary['period']}")
     print("=" * 50)
     print(
         f"Overall Business Health: {executive_summary['overall_health']['status']} ({executive_summary['overall_health']['score']:.0f}%)"
     )
 
-    print(f"\n💰 Key Metrics:")
+    print(f"\n Key Metrics:")
     print(
         f"   Revenue Growth: {executive_summary['key_metrics']['revenue']['growth']:.1%}"
     )
@@ -604,27 +604,27 @@ def main():
     print(f"   AOV Growth: {executive_summary['key_metrics']['aov']['growth']:.1%}")
 
     if executive_summary["critical_alerts"]:
-        print(f"\n🚨 Critical Alerts ({len(executive_summary['critical_alerts'])}):")
+        print(f"\n Critical Alerts ({len(executive_summary['critical_alerts'])}):")
         for alert in executive_summary["critical_alerts"]:
             print(f"   • {alert['category']}: {alert['issue']}")
 
     if executive_summary["opportunities"]:
-        print(f"\n💡 Opportunities ({len(executive_summary['opportunities'])}):")
+        print(f"\n Opportunities ({len(executive_summary['opportunities'])}):")
         for opp in executive_summary["opportunities"]:
             print(f"   • {opp['category']}: {opp['recommendation']}")
 
     if executive_summary["top_achievements"]:
-        print(f"\n🏆 Top Achievements:")
+        print(f"\n Top Achievements:")
         for achievement in executive_summary["top_achievements"]:
             print(f"   • {achievement}")
 
-    print(f"\n📋 Next Actions:")
+    print(f"\n Next Actions:")
     for i, action in enumerate(executive_summary["next_actions"], 1):
         print(
             f"   {i}. {action['recommendation']} (Impact: {action['impact']}, Effort: {action['effort']})"
         )
 
-    print("\n✅ Executive dashboard analysis completed!")
+    print("\n Executive dashboard analysis completed!")
 
 
 if __name__ == "__main__":

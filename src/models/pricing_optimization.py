@@ -39,7 +39,7 @@ class PricingOptimizationEngine:
 
     def prepare_pricing_data(self):
         """Prepare comprehensive pricing analysis data"""
-        print("🔄 Preparing pricing analysis data...")
+        print(" Preparing pricing analysis data...")
 
         # Convert dates
         self.transactions["transaction_date"] = pd.to_datetime(
@@ -201,17 +201,17 @@ class PricingOptimizationEngine:
 
         self.pricing_data = weekly_data
 
-        print(f"✅ Pricing data prepared: {len(weekly_data)} product-week observations")
-        print(f"📊 Products analyzed: {weekly_data['product_id'].nunique()}")
+        print(f" Pricing data prepared: {len(weekly_data)} product-week observations")
+        print(f" Products analyzed: {weekly_data['product_id'].nunique()}")
         print(
-            f"📅 Time period: {weekly_data['transaction_date'].min().date()} to {weekly_data['transaction_date'].max().date()}"
+            f" Time period: {weekly_data['transaction_date'].min().date()} to {weekly_data['transaction_date'].max().date()}"
         )
 
         return weekly_data
 
     def calculate_price_elasticity(self):
         """Calculate price elasticity of demand for each product"""
-        print("📈 Calculating price elasticity of demand...")
+        print(" Calculating price elasticity of demand...")
 
         if self.pricing_data is None:
             self.prepare_pricing_data()
@@ -337,8 +337,8 @@ class PricingOptimizationEngine:
         elasticity_df = pd.DataFrame(elasticity_results)
 
         if len(elasticity_df) > 0:
-            print(f"✅ Price elasticity calculated for {len(elasticity_df)} products")
-            print(f"📊 Elasticity distribution:")
+            print(f" Price elasticity calculated for {len(elasticity_df)} products")
+            print(f" Elasticity distribution:")
             print(
                 f"   Elastic products: {len(elasticity_df[elasticity_df['elasticity_type'] == 'Elastic'])}"
             )
@@ -353,12 +353,12 @@ class PricingOptimizationEngine:
 
     def optimize_pricing_strategy(self, target_metric="revenue"):
         """Generate optimal pricing strategies based on elasticity analysis"""
-        print("💰 Optimizing pricing strategies...")
+        print(" Optimizing pricing strategies...")
 
         elasticity_data = self.calculate_price_elasticity()
 
         if len(elasticity_data) == 0:
-            print("❌ No elasticity data available for pricing optimization")
+            print(" No elasticity data available for pricing optimization")
             return None
 
         pricing_strategies = []
@@ -485,18 +485,18 @@ class PricingOptimizationEngine:
         )
 
         print(
-            f"✅ Pricing strategies generated for {len(pricing_strategies_df)} products"
+            f" Pricing strategies generated for {len(pricing_strategies_df)} products"
         )
         print(
-            f"💰 Estimated annual revenue impact: ${total_potential_revenue_impact:,.0f}"
+            f" Estimated annual revenue impact: ${total_potential_revenue_impact:,.0f}"
         )
-        print(f"🎯 High-impact opportunities: {high_impact_products} products")
+        print(f" High-impact opportunities: {high_impact_products} products")
 
         return pricing_strategies_df
 
     def generate_promotional_pricing_analysis(self):
         """Analyze promotional pricing effectiveness"""
-        print("🎉 Analyzing promotional pricing effectiveness...")
+        print(" Analyzing promotional pricing effectiveness...")
 
         if self.pricing_data is None:
             self.prepare_pricing_data()
@@ -580,16 +580,16 @@ class PricingOptimizationEngine:
 
         if len(promotional_df) > 0:
             print(
-                f"✅ Promotional analysis completed for {len(promotional_df)} products"
+                f" Promotional analysis completed for {len(promotional_df)} products"
             )
             print(
-                f"📊 Average quantity lift: {promotional_df['quantity_lift'].mean():.1%}"
+                f" Average quantity lift: {promotional_df['quantity_lift'].mean():.1%}"
             )
             print(
-                f"💰 Average revenue lift: {promotional_df['revenue_lift'].mean():.1%}"
+                f" Average revenue lift: {promotional_df['revenue_lift'].mean():.1%}"
             )
             print(
-                f"📈 Average promotional ROI: {promotional_df['promotional_roi'].mean():.1%}"
+                f" Average promotional ROI: {promotional_df['promotional_roi'].mean():.1%}"
             )
 
         return promotional_df
@@ -651,7 +651,7 @@ class PricingOptimizationEngine:
 
 def main():
     """Main execution function"""
-    print("🚀 PRICING OPTIMIZATION & ELASTICITY ANALYSIS ENGINE")
+    print(" PRICING OPTIMIZATION & ELASTICITY ANALYSIS ENGINE")
     print("=" * 60)
 
     # Initialize pricing optimization engine
@@ -690,8 +690,8 @@ def main():
     with open("results/pricing_dashboard_data.json", "w") as f:
         json.dump(dashboard_data, f, indent=2, default=str)
 
-    print("\n✅ Pricing optimization analysis completed!")
-    print("📁 Results saved to:")
+    print("\n Pricing optimization analysis completed!")
+    print(" Results saved to:")
     print("   - results/price_elasticity_analysis.csv")
     print("   - results/pricing_optimization_strategies.csv")
     print("   - results/promotional_pricing_analysis.csv")

@@ -69,7 +69,7 @@ class RecommendationEngine:
 
     def prepare_data(self):
         """Prepare data for recommendation algorithms"""
-        print("🔄 Preparing recommendation data...")
+        print(" Preparing recommendation data...")
 
         # Create user-item interaction matrix
         # Aggregate by customer and product (sum quantities as interaction strength)
@@ -114,7 +114,7 @@ class RecommendationEngine:
         self._prepare_product_features()
 
         print(
-            f"✅ Data prepared: {len(self.user_item_matrix)} users, {len(self.user_item_matrix.columns)} products"
+            f" Data prepared: {len(self.user_item_matrix)} users, {len(self.user_item_matrix.columns)} products"
         )
 
     def _prepare_product_features(self):
@@ -197,22 +197,22 @@ class RecommendationEngine:
             columns=self.user_item_matrix.columns,
         )
 
-        print(f"✅ Collaborative filtering model built with {n_components} components")
+        print(f" Collaborative filtering model built with {n_components} components")
 
     def build_content_based_filtering(self):
         """Build content-based filtering model with memory optimization"""
-        print("📊 Building content-based filtering model...")
+        print(" Building content-based filtering model...")
 
         if self.item_features is None:
             self.prepare_data()
 
         # Use memory-efficient approach for large datasets
         n_items = len(self.item_features)
-        print(f"🔧 Processing {n_items:,} items with memory optimization...")
+        print(f" Processing {n_items:,} items with memory optimization...")
 
         if n_items > 10000:
             # For large datasets, use sparse similarity calculation
-            print("⚡ Using sparse similarity calculation for large dataset...")
+            print(" Using sparse similarity calculation for large dataset...")
             # Calculate similarity on-demand rather than storing full matrix
             self.item_similarity_df = None  # Will calculate similarities on-demand
             self.item_features_sparse = self.item_features.copy()
@@ -225,7 +225,7 @@ class RecommendationEngine:
                 columns=self.item_features.index,
             )
 
-        print("✅ Content-based filtering model built with memory optimization")
+        print(" Content-based filtering model built with memory optimization")
 
     def get_collaborative_recommendations(self, customer_id, n_recommendations=10):
         """Get recommendations using collaborative filtering"""
@@ -376,7 +376,7 @@ class RecommendationEngine:
         content_weight=0.4,
     ):
         """Get hybrid recommendations combining collaborative and content-based"""
-        print(f"🎯 Generating hybrid recommendations for {customer_id}...")
+        print(f" Generating hybrid recommendations for {customer_id}...")
 
         # Get recommendations from both methods
         collaborative_recs = self.get_collaborative_recommendations(
@@ -426,7 +426,7 @@ class RecommendationEngine:
 
     def _handle_cold_start_user(self, customer_id, n_recommendations=10):
         """Handle recommendations for new users (cold start problem)"""
-        print(f"🆕 Handling cold start for new customer: {customer_id}")
+        print(f" Handling cold start for new customer: {customer_id}")
 
         # Get customer demographics if available
         customer_info = self.customers[self.customers["customer_id"] == customer_id]
@@ -581,7 +581,7 @@ class RecommendationEngine:
 
     def calculate_recommendation_metrics(self, test_transactions=None):
         """Calculate recommendation system metrics"""
-        print("📈 Calculating recommendation metrics...")
+        print(" Calculating recommendation metrics...")
 
         if test_transactions is None:
             # Use recent transactions as test set
@@ -639,14 +639,14 @@ class RecommendationEngine:
                 metrics["diversity"] = np.mean(diversity_scores)
 
         print(
-            f"✅ Metrics calculated: Coverage={metrics['coverage']:.3f}, Diversity={metrics['diversity']:.3f}"
+            f" Metrics calculated: Coverage={metrics['coverage']:.3f}, Diversity={metrics['diversity']:.3f}"
         )
         return metrics
 
     def generate_batch_recommendations(self, customer_list, n_recommendations=10):
         """Generate recommendations for multiple customers efficiently"""
         print(
-            f"⚡ Generating batch recommendations for {len(customer_list)} customers..."
+            f" Generating batch recommendations for {len(customer_list)} customers..."
         )
 
         batch_results = {}
@@ -665,7 +665,7 @@ class RecommendationEngine:
                     n_recommendations
                 )
 
-        print("✅ Batch recommendations completed")
+        print(" Batch recommendations completed")
         return batch_results
 
     def export_recommendations(self, customer_id, filename=None):
@@ -678,7 +678,7 @@ class RecommendationEngine:
             filename = f"recommendations_{customer_id}.csv"
 
         df.to_csv(filename, index=False)
-        print(f"📤 Recommendations for {customer_id} exported to {filename}")
+        print(f" Recommendations for {customer_id} exported to {filename}")
         return df
 
     def train_advanced_models(self):
@@ -700,11 +700,11 @@ class RecommendationEngine:
         # 4. Business Rules Integration
         self._setup_business_rules()
 
-        print("✅ Advanced recommendation models trained successfully!")
+        print(" Advanced recommendation models trained successfully!")
 
     def _train_matrix_factorization_models(self):
         """Train multiple matrix factorization approaches"""
-        print("🔄 Training matrix factorization models...")
+        print(" Training matrix factorization models...")
 
         # SVD (already exists, enhance it)
         self.collaborative_model = TruncatedSVD(n_components=50, random_state=42)
@@ -714,11 +714,11 @@ class RecommendationEngine:
         self.nmf_model = NMF(n_components=50, random_state=42, max_iter=200)
         self.nmf_model.fit(self.user_item_matrix)
 
-        print("   ✅ SVD and NMF models trained")
+        print("    SVD and NMF models trained")
 
     def _train_hybrid_ml_model(self):
         """Train ML-based hybrid recommendation model"""
-        print("🔄 Training hybrid ML model...")
+        print(" Training hybrid ML model...")
 
         # Create training data from user-item interactions
         training_data = []
@@ -781,12 +781,12 @@ class RecommendationEngine:
             mse = mean_squared_error(y_test, y_pred)
             mae = mean_absolute_error(y_test, y_pred)
 
-            print(f"   ✅ Hybrid model trained - MSE: {mse:.4f}, MAE: {mae:.4f}")
+            print(f"    Hybrid model trained - MSE: {mse:.4f}, MAE: {mae:.4f}")
 
             # Save model
             joblib.dump(self.hybrid_model, "models/hybrid_recommendation_model.joblib")
         else:
-            print("   ⚠️  Insufficient data for hybrid model training")
+            print("     Insufficient data for hybrid model training")
 
     def _get_hybrid_features(self, customer_id, product_id, customer_data):
         """Get features for hybrid model"""
@@ -847,7 +847,7 @@ class RecommendationEngine:
 
     def _analyze_temporal_patterns(self):
         """Analyze temporal and seasonal patterns in purchases"""
-        print("🔄 Analyzing temporal patterns...")
+        print(" Analyzing temporal patterns...")
 
         # Convert transaction dates
         self.transactions["transaction_date"] = pd.to_datetime(
@@ -876,11 +876,11 @@ class RecommendationEngine:
             lambda x: (x["quantity"] * 12) / category_totals[x["category"]], axis=1
         )
 
-        print("   ✅ Temporal patterns analyzed")
+        print("    Temporal patterns analyzed")
 
     def _setup_business_rules(self):
         """Setup business rules for recommendations"""
-        print("🔄 Setting up business rules...")
+        print(" Setting up business rules...")
 
         self.business_rules = {
             "min_price_threshold": 0.5,  # Minimum product price to recommend
@@ -893,15 +893,15 @@ class RecommendationEngine:
             "recency_days": 30,  # Days to consider as recent
         }
 
-        print("   ✅ Business rules configured")
+        print("    Business rules configured")
 
     def get_enhanced_recommendations(self, customer_id, n_recommendations=10):
         """Get enhanced recommendations using all models and business rules"""
         if self.hybrid_model is None:
-            print("⚠️  Enhanced models not trained. Training now...")
+            print("  Enhanced models not trained. Training now...")
             self.train_advanced_models()
 
-        print(f"🎯 Generating enhanced recommendations for {customer_id}...")
+        print(f" Generating enhanced recommendations for {customer_id}...")
 
         # Get recommendations from each model
         collab_recs = self.collaborative_recommendations(
@@ -922,7 +922,7 @@ class RecommendationEngine:
         enhanced_scores = []
         customer_matches = self.customers[self.customers["customer_id"] == customer_id]
         if len(customer_matches) == 0:
-            print(f"⚠️  Customer {customer_id} not found in customer database")
+            print(f"  Customer {customer_id} not found in customer database")
             return pd.DataFrame()
         customer_data = customer_matches.iloc[0]
 
@@ -959,10 +959,10 @@ class RecommendationEngine:
                 how="left",
             )
 
-            print(f"✅ Generated {len(recommendations_df)} enhanced recommendations")
+            print(f" Generated {len(recommendations_df)} enhanced recommendations")
             return recommendations_df
         else:
-            print("⚠️  No enhanced recommendations generated")
+            print("  No enhanced recommendations generated")
             return pd.DataFrame()
 
     def _apply_business_rules(self, customer_id, product_id, base_score):
@@ -1043,14 +1043,14 @@ class RecommendationEngine:
         with open(f"models/recommendation_config_{timestamp}.json", "w") as f:
             json.dump(config, f, indent=2, default=str)
 
-        print(f"💾 Enhanced recommendation models saved with timestamp: {timestamp}")
+        print(f" Enhanced recommendation models saved with timestamp: {timestamp}")
 
         return timestamp
 
 
 if __name__ == "__main__":
     # Example usage
-    print("🚀 Coop Norge - Recommendation Engine")
+    print(" Coop Norge - Recommendation Engine")
     print("=" * 50)
 
     # Initialize recommendation engine
@@ -1065,12 +1065,12 @@ if __name__ == "__main__":
 
     # Test recommendations for a sample customer
     sample_customer = rec_engine.user_item_matrix.index[0]
-    print(f"\n🎯 Sample recommendations for customer: {sample_customer}")
+    print(f"\n Sample recommendations for customer: {sample_customer}")
 
     # Get hybrid recommendations
     recommendations = rec_engine.get_hybrid_recommendations(sample_customer, 10)
 
-    print(f"\n📋 TOP 10 RECOMMENDATIONS:")
+    print(f"\n TOP 10 RECOMMENDATIONS:")
     for i, rec in enumerate(recommendations, 1):
         print(f"{i}. {rec['product_name']} ({rec['category']}) - {rec['price']} NOK")
         print(
@@ -1079,7 +1079,7 @@ if __name__ == "__main__":
 
     # Calculate metrics
     metrics = rec_engine.calculate_recommendation_metrics()
-    print(f"\n📊 RECOMMENDATION SYSTEM METRICS:")
+    print(f"\n RECOMMENDATION SYSTEM METRICS:")
     print(f"• Coverage: {metrics['coverage']:.1%}")
     print(f"• Diversity: {metrics['diversity']:.3f}")
 

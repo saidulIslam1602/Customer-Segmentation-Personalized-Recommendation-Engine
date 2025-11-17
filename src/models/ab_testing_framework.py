@@ -69,11 +69,11 @@ class ABTestingFramework:
 
         self.experiments[experiment_name] = experiment
 
-        print(f"   ✅ Experiment designed")
-        print(f"   📊 Variants: {variants}")
-        print(f"   🎯 Success metric: {success_metric}")
-        print(f"   📈 Required sample size per variant: {sample_size}")
-        print(f"   ⚡ Minimum detectable effect: {minimum_effect_size:.1%}")
+        print(f"    Experiment designed")
+        print(f"    Variants: {variants}")
+        print(f"    Success metric: {success_metric}")
+        print(f"    Required sample size per variant: {sample_size}")
+        print(f"    Minimum detectable effect: {minimum_effect_size:.1%}")
 
         return experiment
 
@@ -99,8 +99,8 @@ class ABTestingFramework:
 
         self.active_experiments.append(experiment_name)
 
-        print(f"🚀 Started experiment: {experiment_name}")
-        print(f"   📅 Start date: {experiment['actual_start_date']}")
+        print(f" Started experiment: {experiment_name}")
+        print(f"    Start date: {experiment['actual_start_date']}")
 
         return experiment
 
@@ -151,7 +151,7 @@ class ABTestingFramework:
                 break
 
         if not user_variant:
-            print(f"⚠️  User {user_id} not found in experiment {experiment_name}")
+            print(f"  User {user_id} not found in experiment {experiment_name}")
             return False
 
         return True
@@ -163,7 +163,7 @@ class ABTestingFramework:
 
         experiment = self.experiments[experiment_name]
 
-        print(f"📊 Analyzing experiment: {experiment_name}")
+        print(f" Analyzing experiment: {experiment_name}")
 
         # Collect outcomes by variant
         variant_outcomes = {}
@@ -178,7 +178,7 @@ class ABTestingFramework:
         )
 
         if not sufficient_data and not early_stopping:
-            print("⚠️  Insufficient data for analysis")
+            print("  Insufficient data for analysis")
             return None
 
         # Statistical analysis
@@ -374,30 +374,30 @@ class ABTestingFramework:
 
     def _print_analysis_summary(self, results):
         """Print a summary of analysis results"""
-        print(f"\n📋 EXPERIMENT ANALYSIS SUMMARY")
+        print(f"\n EXPERIMENT ANALYSIS SUMMARY")
         print(f"=" * 50)
 
         print(f"🧪 Experiment: {results['experiment_name']}")
-        print(f"📅 Analysis Date: {results['analysis_date']}")
+        print(f" Analysis Date: {results['analysis_date']}")
 
         # Sample sizes
-        print(f"\n📊 Sample Sizes:")
+        print(f"\n Sample Sizes:")
         for variant, size in results["sample_sizes"].items():
             print(f"   {variant}: {size:,} participants")
 
         # Statistical results
         stat_results = results["statistical_results"]
-        print(f"\n🔬 Statistical Results:")
+        print(f"\n Statistical Results:")
         print(f"   Test Type: {stat_results.get('test_type', 'N/A')}")
         print(f"   P-value: {stat_results.get('p_value', 0):.6f}")
-        print(f"   Significant: {'✅' if stat_results.get('significant') else '❌'}")
+        print(f"   Significant: {'' if stat_results.get('significant') else ''}")
 
         if "effect_size" in stat_results:
             print(f"   Effect Size (Cohen's d): {stat_results['effect_size']:.4f}")
 
         # Business impact
         business = results["business_impact"]
-        print(f"\n💰 Business Impact:")
+        print(f"\n Business Impact:")
         for variant, metrics in business.items():
             if isinstance(metrics, dict) and "mean" in metrics:
                 print(
@@ -406,11 +406,11 @@ class ABTestingFramework:
 
         if "relative_improvement" in business:
             improvement = business["relative_improvement"]
-            print(f"   📈 Relative Improvement: {improvement:.2%}")
+            print(f"    Relative Improvement: {improvement:.2%}")
 
         # Recommendation
         rec = results["recommendation"]
-        print(f"\n🎯 Recommendation:")
+        print(f"\n Recommendation:")
         print(f"   Decision: {rec['decision'].replace('_', ' ').title()}")
         print(f"   Reason: {rec['reason']}")
         print(f"   Confidence: {rec['confidence'].title()}")
@@ -430,7 +430,7 @@ class ABTestingFramework:
 
         self.experiment_history.append(experiment_name)
 
-        print(f"🛑 Stopped experiment: {experiment_name}")
+        print(f" Stopped experiment: {experiment_name}")
         print(f"   Reason: {reason}")
 
         return experiment
@@ -465,7 +465,7 @@ class ABTestingFramework:
         with open(filename, "w") as f:
             json.dump(experiment, f, indent=2, default=str)
 
-        print(f"💾 Experiment results saved: {filename}")
+        print(f" Experiment results saved: {filename}")
 
         return filename
 
@@ -514,7 +514,7 @@ def main():
     # Save results
     ab_test.save_experiment_results("recommendation_algorithm_test")
 
-    print(f"\n✅ A/B Testing Framework Demo Completed!")
+    print(f"\n A/B Testing Framework Demo Completed!")
 
 
 if __name__ == "__main__":

@@ -69,7 +69,7 @@ class CustomerSegmentation:
 
     def prepare_data(self):
         """Prepare and clean data for segmentation"""
-        print("🔄 Preparing data for segmentation...")
+        print(" Preparing data for segmentation...")
 
         # Convert date columns
         self.transactions["transaction_date"] = pd.to_datetime(
@@ -88,12 +88,12 @@ class CustomerSegmentation:
         )
 
         print(
-            f"✅ Data prepared: {len(self.transactions)} transactions, {len(self.customers)} customers"
+            f" Data prepared: {len(self.transactions)} transactions, {len(self.customers)} customers"
         )
 
     def calculate_rfm(self):
         """Calculate RFM (Recency, Frequency, Monetary) metrics"""
-        print("📊 Calculating RFM metrics...")
+        print(" Calculating RFM metrics...")
 
         # Calculate RFM metrics
         rfm = (
@@ -180,13 +180,13 @@ class CustomerSegmentation:
         rfm = rfm.fillna(0)
 
         self.rfm_data = rfm
-        print(f"✅ RFM metrics calculated for {len(rfm)} customers")
+        print(f" RFM metrics calculated for {len(rfm)} customers")
 
         return rfm
 
     def create_rfm_scores(self):
         """Create RFM scores using quantile-based scoring"""
-        print("🎯 Creating RFM scores...")
+        print(" Creating RFM scores...")
 
         if self.rfm_data is None:
             self.calculate_rfm()
@@ -243,7 +243,7 @@ class CustomerSegmentation:
             self._categorize_rfm
         )
 
-        print("✅ RFM scores created")
+        print(" RFM scores created")
         return self.rfm_data
 
     def _categorize_rfm(self, rfm_score):
@@ -320,11 +320,11 @@ class CustomerSegmentation:
         if silhouette_kmeans >= silhouette_gmm:
             self.rfm_data["final_cluster"] = self.rfm_data["cluster"]
             self.model = kmeans
-            print(f"✅ K-Means selected (Silhouette Score: {silhouette_kmeans:.3f})")
+            print(f" K-Means selected (Silhouette Score: {silhouette_kmeans:.3f})")
         else:
             self.rfm_data["final_cluster"] = self.rfm_data["cluster_gmm"]
             self.model = gmm
-            print(f"✅ GMM selected (Silhouette Score: {silhouette_gmm:.3f})")
+            print(f" GMM selected (Silhouette Score: {silhouette_gmm:.3f})")
 
         # Create business-friendly segment names
         self._create_segment_names()
@@ -344,7 +344,7 @@ class CustomerSegmentation:
 
         # Find optimal k (highest silhouette score)
         optimal_k = K_range[np.argmax(silhouette_scores)]
-        print(f"🎯 Optimal number of clusters: {optimal_k}")
+        print(f" Optimal number of clusters: {optimal_k}")
         return optimal_k
 
     def _create_segment_names(self):
@@ -387,7 +387,7 @@ class CustomerSegmentation:
 
     def generate_insights(self):
         """Generate actionable business insights from segmentation"""
-        print("💡 Generating business insights...")
+        print(" Generating business insights...")
 
         if self.rfm_data is None:
             self.advanced_clustering()
@@ -518,7 +518,7 @@ class CustomerSegmentation:
 
         if save_path:
             plt.savefig(save_path, dpi=300, bbox_inches="tight")
-            print(f"📊 Analysis plots saved to {save_path}")
+            print(f" Analysis plots saved to {save_path}")
 
         plt.show()
 
@@ -611,13 +611,13 @@ class CustomerSegmentation:
         export_data = self.rfm_data[export_cols].copy()
 
         export_data.to_csv(filename, index=False)
-        print(f"📤 Segmentation results exported to {filename}")
+        print(f" Segmentation results exported to {filename}")
         print(f"   Columns exported: {', '.join(export_cols)}")
         return export_data
 
     def calculate_customer_lifetime_value(self):
         """Calculate Customer Lifetime Value (CLV) using advanced modeling"""
-        print("💰 Calculating Customer Lifetime Value (CLV)...")
+        print(" Calculating Customer Lifetime Value (CLV)...")
 
         if self.rfm_data is None:
             self.calculate_rfm()
@@ -701,7 +701,7 @@ class CustomerSegmentation:
 
         self.clv_data = clv_features
 
-        print(f"✅ CLV calculated for {len(clv_features)} customers")
+        print(f" CLV calculated for {len(clv_features)} customers")
         print(f"   Average CLV: ${clv_features['historical_clv'].mean():.2f}")
         print(
             f"   CLV Range: ${clv_features['historical_clv'].min():.2f} - ${clv_features['historical_clv'].max():.2f}"
@@ -763,8 +763,8 @@ class CustomerSegmentation:
             }
         ).sort_values("importance", ascending=False)
 
-        print(f"   ✅ CLV model trained - R²: {test_score:.4f}")
-        print(f"   🎯 Top CLV predictors:")
+        print(f"    CLV model trained - R²: {test_score:.4f}")
+        print(f"    Top CLV predictors:")
         for _, row in feature_importance.head(5).iterrows():
             print(f"      {row['feature']}: {row['importance']:.4f}")
 
@@ -905,14 +905,14 @@ class CustomerSegmentation:
 
         self.behavioral_features = behavioral_features
 
-        print(f"✅ Behavioral features created for {len(behavioral_features)} customers")
+        print(f" Behavioral features created for {len(behavioral_features)} customers")
         print(f"   Features: {behavioral_features.shape[1] - 1}")  # Exclude customer_id
 
         return behavioral_features
 
     def detect_vip_customers(self):
         """Detect VIP customers using anomaly detection"""
-        print("👑 Detecting VIP customers...")
+        print(" Detecting VIP customers...")
 
         if self.clv_data is None:
             self.calculate_customer_lifetime_value()
@@ -952,21 +952,21 @@ class CustomerSegmentation:
         vip_customers = self.clv_data[self.clv_data["is_vip"]].copy()
         self.vip_customers = vip_customers
 
-        print(f"✅ VIP detection completed")
-        print(f"   👑 VIP customers identified: {len(vip_customers)}")
-        print(f"   💰 Average VIP CLV: ${vip_customers['historical_clv'].mean():.2f}")
+        print(f" VIP detection completed")
+        print(f"    VIP customers identified: {len(vip_customers)}")
+        print(f"    Average VIP CLV: ${vip_customers['historical_clv'].mean():.2f}")
         print(
-            f"   📊 VIP contribution: {(vip_customers['historical_clv'].sum() / self.clv_data['historical_clv'].sum() * 100):.1f}% of total value"
+            f"    VIP contribution: {(vip_customers['historical_clv'].sum() / self.clv_data['historical_clv'].sum() * 100):.1f}% of total value"
         )
 
         return vip_customers
 
     def create_segment_profiles(self):
         """Create detailed profiles for each segment"""
-        print("📊 Creating segment profiles...")
+        print(" Creating segment profiles...")
 
         if self.rfm_data is None or "segment_name" not in self.rfm_data.columns:
-            print("⚠️  Segmentation not completed. Run advanced_clustering() first.")
+            print("  Segmentation not completed. Run advanced_clustering() first.")
             return None
 
         # Combine all data for profiling
@@ -1033,10 +1033,10 @@ class CustomerSegmentation:
 
             self.segment_profiles[segment] = profile
 
-        print(f"✅ Segment profiles created for {len(segments)} segments")
+        print(f" Segment profiles created for {len(segments)} segments")
 
         # Print summary
-        print(f"\n📋 SEGMENT PROFILE SUMMARY:")
+        print(f"\n SEGMENT PROFILE SUMMARY:")
         for segment, profile in self.segment_profiles.items():
             print(f"   {segment}:")
             print(f"     Size: {profile['size']:,} ({profile['percentage']:.1f}%)")
@@ -1048,7 +1048,7 @@ class CustomerSegmentation:
 
     def generate_retention_strategies(self):
         """Generate segment-specific retention strategies"""
-        print("🎯 Generating retention strategies...")
+        print(" Generating retention strategies...")
 
         if not self.segment_profiles:
             self.create_segment_profiles()
@@ -1120,7 +1120,7 @@ class CustomerSegmentation:
             self.retention_strategies[segment] = strategy
 
         print(
-            f"✅ Retention strategies generated for {len(self.retention_strategies)} segments"
+            f" Retention strategies generated for {len(self.retention_strategies)} segments"
         )
 
         # Print strategy summary
@@ -1137,7 +1137,7 @@ class CustomerSegmentation:
             else 0
         )
 
-        print(f"\n💰 RETENTION STRATEGY SUMMARY:")
+        print(f"\n RETENTION STRATEGY SUMMARY:")
         print(f"   Total Budget: ${total_budget:,.2f}")
         print(f"   Expected Weighted ROI: {weighted_roi:.1f}%")
 
@@ -1166,7 +1166,7 @@ class CustomerSegmentation:
 
     def run_enhanced_segmentation(self):
         """Run complete enhanced segmentation analysis"""
-        print("🚀 RUNNING ENHANCED CUSTOMER SEGMENTATION")
+        print(" RUNNING ENHANCED CUSTOMER SEGMENTATION")
         print("=" * 60)
 
         # Step 1: Basic segmentation
@@ -1190,12 +1190,12 @@ class CustomerSegmentation:
         # Step 6: Save results
         self.save_enhanced_results()
 
-        print(f"\n🎉 ENHANCED SEGMENTATION COMPLETED!")
-        print(f"   📊 Segments: {len(self.segment_profiles)}")
+        print(f"\n ENHANCED SEGMENTATION COMPLETED!")
+        print(f"    Segments: {len(self.segment_profiles)}")
         print(
-            f"   👑 VIP Customers: {len(self.vip_customers) if self.vip_customers is not None else 0}"
+            f"    VIP Customers: {len(self.vip_customers) if self.vip_customers is not None else 0}"
         )
-        print(f"   🎯 Retention Strategies: {len(self.retention_strategies)}")
+        print(f"    Retention Strategies: {len(self.retention_strategies)}")
 
         return {
             "segments": segments,
@@ -1248,14 +1248,14 @@ class CustomerSegmentation:
                 self.anomaly_detector, f"models/vip_detector_{timestamp}.joblib"
             )
 
-        print(f"💾 Enhanced segmentation results saved with timestamp: {timestamp}")
+        print(f" Enhanced segmentation results saved with timestamp: {timestamp}")
 
         return timestamp
 
 
 if __name__ == "__main__":
     # Example usage
-    print("🚀 Coop Norge - Customer Segmentation Analysis")
+    print(" Coop Norge - Customer Segmentation Analysis")
     print("=" * 50)
 
     # Initialize segmentation
@@ -1271,7 +1271,7 @@ if __name__ == "__main__":
 
     # Generate insights
     insights = segmentation.generate_insights()
-    print(f"\n📈 KEY INSIGHTS:")
+    print(f"\n KEY INSIGHTS:")
     print(f"• Total Customers: {insights['total_customers']:,}")
     print(f"• Total Revenue: {insights['total_revenue']:,.2f} NOK")
     print(f"• Average CLV: {insights['avg_clv']:,.2f} NOK")
@@ -1280,7 +1280,7 @@ if __name__ == "__main__":
     # Get marketing recommendations
     recommendations = segmentation.get_marketing_recommendations()
     print(
-        f"\n🎯 MARKETING RECOMMENDATIONS GENERATED FOR {len(recommendations)} SEGMENTS"
+        f"\n MARKETING RECOMMENDATIONS GENERATED FOR {len(recommendations)} SEGMENTS"
     )
 
     # Export results

@@ -351,10 +351,10 @@ class APIGateway:
             await asyncio.sleep(2)  # Simulate sync time
 
             # Log sync completion
-            print(f"✅ CRM sync completed for systems: {request.systems}")
+            print(f" CRM sync completed for systems: {request.systems}")
 
         except Exception as e:
-            print(f"❌ CRM sync failed: {e}")
+            print(f" CRM sync failed: {e}")
 
     def start_server(self, host: str = "0.0.0.0", port: int = None):
         """Start the API server"""

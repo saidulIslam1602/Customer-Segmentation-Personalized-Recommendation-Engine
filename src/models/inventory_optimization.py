@@ -38,7 +38,7 @@ class InventoryOptimizationEngine:
 
     def prepare_demand_data(self):
         """Prepare comprehensive demand data for forecasting"""
-        print("🔄 Preparing demand forecasting data...")
+        print(" Preparing demand forecasting data...")
 
         # Convert dates
         self.transactions["transaction_date"] = pd.to_datetime(
@@ -237,9 +237,9 @@ class InventoryOptimizationEngine:
         self.demand_data = complete_demand
 
         print(
-            f"✅ Demand data prepared for {len(products)} products over {len(date_range)} days"
+            f" Demand data prepared for {len(products)} products over {len(date_range)} days"
         )
-        print(f"📊 Total demand records: {len(complete_demand):,}")
+        print(f" Total demand records: {len(complete_demand):,}")
 
         return complete_demand
 
@@ -329,13 +329,13 @@ class InventoryOptimizationEngine:
         self.forecast_models["demand"] = best_model
         self.feature_columns = X_features.columns.tolist()
 
-        print(f"✅ Best model: {self.best_model_name} (MAE: {best_score:.2f})")
+        print(f" Best model: {self.best_model_name} (MAE: {best_score:.2f})")
 
         return best_model, best_score
 
     def generate_demand_forecasts(self, forecast_days=30):
         """Generate demand forecasts for all products"""
-        print(f"📈 Generating {forecast_days}-day demand forecasts...")
+        print(f" Generating {forecast_days}-day demand forecasts...")
 
         if "demand" not in self.forecast_models:
             self.train_demand_forecasting_models()
@@ -409,13 +409,13 @@ class InventoryOptimizationEngine:
 
         forecast_df = pd.DataFrame(forecasts)
 
-        print(f"✅ Generated forecasts for {len(latest_data)} products")
+        print(f" Generated forecasts for {len(latest_data)} products")
 
         return forecast_df
 
     def optimize_inventory_levels(self, service_level=0.95, lead_time_days=7):
         """Calculate optimal inventory levels and reorder points"""
-        print("📦 Optimizing inventory levels...")
+        print(" Optimizing inventory levels...")
 
         forecasts = self.generate_demand_forecasts(forecast_days=30)
 
@@ -506,14 +506,14 @@ class InventoryOptimizationEngine:
         self.inventory_recommendations = pd.DataFrame(inventory_optimization)
 
         print(
-            f"✅ Inventory optimization completed for {len(inventory_optimization)} products"
+            f" Inventory optimization completed for {len(inventory_optimization)} products"
         )
 
         return self.inventory_recommendations
 
     def generate_procurement_recommendations(self):
         """Generate procurement recommendations and alerts"""
-        print("🚨 Generating procurement recommendations...")
+        print(" Generating procurement recommendations...")
 
         if self.inventory_recommendations is None:
             self.optimize_inventory_levels()
@@ -572,7 +572,7 @@ class InventoryOptimizationEngine:
             "inventory_turnover"
         ].mean()
 
-        print(f"\n📊 Procurement Recommendations Summary:")
+        print(f"\n Procurement Recommendations Summary:")
         print(
             f"   High Priority Reorders: {recommendations['high_priority_reorders']['count']} products"
         )
@@ -589,7 +589,7 @@ class InventoryOptimizationEngine:
 
 def main():
     """Main execution function"""
-    print("🚀 INVENTORY OPTIMIZATION & DEMAND FORECASTING ENGINE")
+    print(" INVENTORY OPTIMIZATION & DEMAND FORECASTING ENGINE")
     print("=" * 60)
 
     # Initialize inventory optimization engine
@@ -618,8 +618,8 @@ def main():
     with open("results/procurement_recommendations.json", "w") as f:
         json.dump(procurement_recommendations, f, indent=2, default=str)
 
-    print("\n✅ Inventory optimization analysis completed!")
-    print("📁 Results saved to:")
+    print("\n Inventory optimization analysis completed!")
+    print(" Results saved to:")
     print("   - results/demand_forecasts.csv")
     print("   - results/inventory_optimization.csv")
     print("   - results/procurement_recommendations.json")

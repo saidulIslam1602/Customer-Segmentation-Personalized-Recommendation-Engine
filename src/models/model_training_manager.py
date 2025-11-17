@@ -55,7 +55,7 @@ class ModelTrainingManager:
         problem_type="classification",
     ):
         """Train model with comprehensive validation"""
-        print(f"🔄 Training {model_name} with enhanced validation...")
+        print(f" Training {model_name} with enhanced validation...")
 
         # Fit the model
         model.fit(X_train, y_train)
@@ -139,7 +139,7 @@ class ModelTrainingManager:
             f"   Cross-validation: {metrics['cv_mean']:.4f} ± {metrics['cv_std']:.4f}"
         )
         print(
-            f"   Overfitting check: {'⚠️  Overfitting detected' if metrics['is_overfitting'] else '✅ Good generalization'}"
+            f"   Overfitting check: {'  Overfitting detected' if metrics['is_overfitting'] else ' Good generalization'}"
         )
 
         return model, metrics
@@ -148,7 +148,7 @@ class ModelTrainingManager:
         self, model, X, y, param_name, param_range, model_name
     ):
         """Create validation curves for hyperparameter analysis"""
-        print(f"📊 Creating validation curves for {model_name}...")
+        print(f" Creating validation curves for {model_name}...")
 
         train_scores, test_scores = validation_curve(
             model,
@@ -270,16 +270,16 @@ class ModelTrainingManager:
             }
         )
 
-        print(f"💾 Model saved with versioning:")
+        print(f" Model saved with versioning:")
         print(f"   Directory: {model_dir}")
         print(f"   Version: {version}")
-        print(f"   Deployment Ready: {'✅' if metadata['deployment_ready'] else '❌'}")
+        print(f"   Deployment Ready: {'' if metadata['deployment_ready'] else ''}")
 
         return model_dir, metadata
 
     def compare_model_performance(self, model_name_pattern=None):
         """Compare performance across model versions"""
-        print("📊 MODEL PERFORMANCE COMPARISON")
+        print(" MODEL PERFORMANCE COMPARISON")
         print("=" * 50)
 
         if not self.training_history:
@@ -299,7 +299,7 @@ class ModelTrainingManager:
             return
 
         # Group by model name and show best performance
-        print("🏆 Best Performance by Model Type:")
+        print(" Best Performance by Model Type:")
         for model_name in df["model_name"].unique():
             model_data = df[df["model_name"] == model_name]
             best_model = model_data.loc[model_data["performance"].idxmax()]
@@ -308,7 +308,7 @@ class ModelTrainingManager:
             print(f"     Best Version: {best_model['version']}")
             print(f"     Performance: {best_model['performance']:.4f}")
             print(
-                f"     Deployment Ready: {'✅' if best_model['deployment_ready'] else '❌'}"
+                f"     Deployment Ready: {'' if best_model['deployment_ready'] else ''}"
             )
             print(f"     Trained: {best_model['timestamp']}")
 
@@ -356,7 +356,7 @@ class ModelTrainingManager:
                 <p>Generated: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</p>
             </div>
             
-            <h2>📊 Training Summary</h2>
+            <h2> Training Summary</h2>
             <div class="metric">
                 <strong>Total Models Trained:</strong> {len(self.training_history)}
             </div>
@@ -364,7 +364,7 @@ class ModelTrainingManager:
                 <strong>Deployment Ready Models:</strong> {len(self.get_deployment_ready_models())}
             </div>
             
-            <h2>🏆 Model Performance</h2>
+            <h2> Model Performance</h2>
             <table>
                 <tr>
                     <th>Model Name</th>
@@ -376,7 +376,7 @@ class ModelTrainingManager:
         """
 
         for entry in self.training_history:
-            ready_icon = "✅" if entry["deployment_ready"] else "❌"
+            ready_icon = "" if entry["deployment_ready"] else ""
             html_content += f"""
                 <tr>
                     <td>{entry['model_name']}</td>
@@ -396,30 +396,30 @@ class ModelTrainingManager:
         with open(report_path, "w") as f:
             f.write(html_content)
 
-        print(f"📋 Training report saved: {report_path}")
+        print(f" Training report saved: {report_path}")
         return report_path
 
 
 def main():
     """Demo of enhanced model training"""
-    print("🚀 ENHANCED MODEL TRAINING SYSTEM")
+    print(" ENHANCED MODEL TRAINING SYSTEM")
     print("=" * 50)
 
     manager = ModelTrainingManager()
 
     # This would be called by individual model classes
-    print("✅ Model Training Manager initialized")
-    print("📁 Models directory:", manager.models_dir)
-    print("📊 Results directory:", manager.results_dir)
+    print(" Model Training Manager initialized")
+    print(" Models directory:", manager.models_dir)
+    print(" Results directory:", manager.results_dir)
 
-    print("\n🔧 Features Available:")
-    print("   ✅ Hyperparameter tuning with GridSearchCV")
-    print("   ✅ Model versioning and persistence")
-    print("   ✅ Cross-validation and overfitting detection")
-    print("   ✅ Validation curves and performance visualization")
-    print("   ✅ Deployment readiness assessment")
-    print("   ✅ Model comparison and selection")
-    print("   ✅ Comprehensive training reports")
+    print("\n Features Available:")
+    print("    Hyperparameter tuning with GridSearchCV")
+    print("    Model versioning and persistence")
+    print("    Cross-validation and overfitting detection")
+    print("    Validation curves and performance visualization")
+    print("    Deployment readiness assessment")
+    print("    Model comparison and selection")
+    print("    Comprehensive training reports")
 
 
 if __name__ == "__main__":

@@ -88,15 +88,15 @@ class PerformanceMetricsGenerator:
             },
         }
 
-        print("📊 Performance Metrics Generator initialized")
-        print(f"   📁 Results directory: {results_dir}")
-        print(f"   🎯 Benchmarks loaded: {len(self.benchmarks)} categories")
+        print(" Performance Metrics Generator initialized")
+        print(f"    Results directory: {results_dir}")
+        print(f"    Benchmarks loaded: {len(self.benchmarks)} categories")
 
     def evaluate_churn_prediction_performance(
         self, model, X_test, y_test, X_train=None, y_train=None
     ):
         """Comprehensive churn prediction model evaluation"""
-        print("🔍 Evaluating Churn Prediction Performance...")
+        print(" Evaluating Churn Prediction Performance...")
 
         # Basic predictions
         y_pred = model.predict(X_test)
@@ -180,12 +180,12 @@ class PerformanceMetricsGenerator:
 
         self.model_metrics["churn_prediction"] = metrics
 
-        print(f"✅ Churn Prediction Metrics:")
-        print(f"   🎯 Accuracy: {metrics['accuracy']:.4f}")
-        print(f"   📊 Precision: {metrics['precision']:.4f}")
-        print(f"   🔍 Recall: {metrics['recall']:.4f}")
-        print(f"   ⚖️  F1-Score: {metrics['f1_score']:.4f}")
-        print(f"   📈 AUC-ROC: {metrics['auc_roc']:.4f}")
+        print(f" Churn Prediction Metrics:")
+        print(f"    Accuracy: {metrics['accuracy']:.4f}")
+        print(f"    Precision: {metrics['precision']:.4f}")
+        print(f"    Recall: {metrics['recall']:.4f}")
+        print(f"     F1-Score: {metrics['f1_score']:.4f}")
+        print(f"    AUC-ROC: {metrics['auc_roc']:.4f}")
 
         return metrics
 
@@ -193,7 +193,7 @@ class PerformanceMetricsGenerator:
         self, recommendations_df, actual_purchases_df, k=10
     ):
         """Evaluate recommendation engine performance"""
-        print("🎯 Evaluating Recommendation Engine Performance...")
+        print(" Evaluating Recommendation Engine Performance...")
 
         metrics = {}
 
@@ -298,17 +298,17 @@ class PerformanceMetricsGenerator:
 
         self.model_metrics["recommendation_engine"] = metrics
 
-        print(f"✅ Recommendation Engine Metrics:")
-        print(f"   🎯 Precision@{k}: {metrics[f'precision_at_{k}']:.4f}")
-        print(f"   🔍 Recall@{k}: {metrics[f'recall_at_{k}']:.4f}")
-        print(f"   📊 Coverage: {metrics['coverage']:.4f}")
-        print(f"   🌈 Diversity: {metrics['diversity']:.4f}")
+        print(f" Recommendation Engine Metrics:")
+        print(f"    Precision@{k}: {metrics[f'precision_at_{k}']:.4f}")
+        print(f"    Recall@{k}: {metrics[f'recall_at_{k}']:.4f}")
+        print(f"    Coverage: {metrics['coverage']:.4f}")
+        print(f"    Diversity: {metrics['diversity']:.4f}")
 
         return metrics
 
     def evaluate_segmentation_performance(self, segmentation_data, features_data):
         """Evaluate customer segmentation performance"""
-        print("👥 Evaluating Customer Segmentation Performance...")
+        print(" Evaluating Customer Segmentation Performance...")
 
         # Extract cluster labels and features
         if "final_cluster" in segmentation_data.columns:
@@ -319,7 +319,7 @@ class PerformanceMetricsGenerator:
             segment_mapping = {segment: i for i, segment in enumerate(unique_segments)}
             cluster_labels = segmentation_data["segment_name"].map(segment_mapping)
         else:
-            print("⚠️  No cluster labels found in segmentation data")
+            print("  No cluster labels found in segmentation data")
             return {}
 
         # Prepare features for evaluation
@@ -329,7 +329,7 @@ class PerformanceMetricsGenerator:
         ]
 
         if not available_features:
-            print("⚠️  No suitable features found for segmentation evaluation")
+            print("  No suitable features found for segmentation evaluation")
             return {}
 
         X = features_data[available_features].fillna(0)
@@ -416,17 +416,17 @@ class PerformanceMetricsGenerator:
 
         self.model_metrics["segmentation"] = metrics
 
-        print(f"✅ Segmentation Metrics:")
-        print(f"   📊 Silhouette Score: {metrics['silhouette_score']:.4f}")
-        print(f"   🎯 Calinski-Harabasz: {metrics['calinski_harabasz_score']:.2f}")
-        print(f"   📈 Davies-Bouldin: {metrics['davies_bouldin_score']:.4f}")
-        print(f"   👥 Number of Segments: {len(np.unique(cluster_labels))}")
+        print(f" Segmentation Metrics:")
+        print(f"    Silhouette Score: {metrics['silhouette_score']:.4f}")
+        print(f"    Calinski-Harabasz: {metrics['calinski_harabasz_score']:.2f}")
+        print(f"    Davies-Bouldin: {metrics['davies_bouldin_score']:.4f}")
+        print(f"    Number of Segments: {len(np.unique(cluster_labels))}")
 
         return metrics
 
     def calculate_business_performance_metrics(self, transactions_df, customers_df):
         """Calculate comprehensive business performance metrics"""
-        print("💼 Calculating Business Performance Metrics...")
+        print(" Calculating Business Performance Metrics...")
 
         # Prepare data
         transactions_df["transaction_date"] = pd.to_datetime(
@@ -556,14 +556,14 @@ class PerformanceMetricsGenerator:
 
         self.business_metrics = metrics
 
-        print(f"✅ Business Performance Metrics:")
-        print(f"   💰 Total Revenue: ${metrics['revenue']['total_revenue']:,.2f}")
-        print(f"   👥 Total Customers: {metrics['customer']['total_customers']:,}")
+        print(f" Business Performance Metrics:")
+        print(f"    Total Revenue: ${metrics['revenue']['total_revenue']:,.2f}")
+        print(f"    Total Customers: {metrics['customer']['total_customers']:,}")
         print(
-            f"   🔄 Repeat Customer Rate: {metrics['customer']['repeat_customer_rate']:.2%}"
+            f"    Repeat Customer Rate: {metrics['customer']['repeat_customer_rate']:.2%}"
         )
         print(
-            f"   💳 Average Order Value: ${metrics['transactions']['average_order_value']:.2f}"
+            f"    Average Order Value: ${metrics['transactions']['average_order_value']:.2f}"
         )
 
         return metrics
@@ -572,7 +572,7 @@ class PerformanceMetricsGenerator:
         self, baseline_revenue, current_revenue, implementation_cost=50000
     ):
         """Calculate ROI and business impact metrics"""
-        print("📈 Calculating ROI and Business Impact...")
+        print(" Calculating ROI and Business Impact...")
 
         # Revenue impact
         revenue_increase = current_revenue - baseline_revenue
@@ -636,21 +636,21 @@ class PerformanceMetricsGenerator:
 
         self.financial_metrics = metrics
 
-        print(f"✅ ROI and Impact Metrics:")
-        print(f"   💰 Revenue Increase: ${revenue_increase:,.2f}")
-        print(f"   📈 Revenue Lift: {revenue_lift_percentage:.1f}%")
-        print(f"   🎯 ROI: {roi:.1f}%")
+        print(f" ROI and Impact Metrics:")
+        print(f"    Revenue Increase: ${revenue_increase:,.2f}")
+        print(f"    Revenue Lift: {revenue_lift_percentage:.1f}%")
+        print(f"    ROI: {roi:.1f}%")
         print(
-            f"   ⏱️  Payback Period: {payback_months:.1f} months"
+            f"   ⏱  Payback Period: {payback_months:.1f} months"
             if payback_months != float("inf")
-            else "   ⏱️  Payback Period: Not achieved"
+            else "   ⏱  Payback Period: Not achieved"
         )
 
         return metrics
 
     def generate_performance_dashboard(self):
         """Generate comprehensive performance dashboard"""
-        print("📊 Generating Performance Dashboard...")
+        print(" Generating Performance Dashboard...")
 
         # Create visualizations
         fig, axes = plt.subplots(2, 3, figsize=(18, 12))
@@ -767,12 +767,12 @@ class PerformanceMetricsGenerator:
         plt.savefig(dashboard_path, dpi=300, bbox_inches="tight")
         plt.close()
 
-        print(f"✅ Performance dashboard saved: {dashboard_path}")
+        print(f" Performance dashboard saved: {dashboard_path}")
         return dashboard_path
 
     def generate_comprehensive_report(self):
         """Generate comprehensive performance report"""
-        print("📋 Generating Comprehensive Performance Report...")
+        print(" Generating Comprehensive Performance Report...")
 
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 
@@ -809,8 +809,8 @@ class PerformanceMetricsGenerator:
         with open(summary_path, "w") as f:
             f.write(summary_report)
 
-        print(f"✅ Comprehensive report saved: {report_path}")
-        print(f"✅ Summary report saved: {summary_path}")
+        print(f" Comprehensive report saved: {report_path}")
+        print(f" Summary report saved: {summary_path}")
 
         return comprehensive_report
 
@@ -966,7 +966,7 @@ KEY ACHIEVEMENTS:
         for achievement in comprehensive_report["executive_summary"][
             "key_achievements"
         ]:
-            summary += f"✅ {achievement}\n"
+            summary += f" {achievement}\n"
 
         summary += f"""
 IMPROVEMENT AREAS:
@@ -975,7 +975,7 @@ IMPROVEMENT AREAS:
         for improvement in comprehensive_report["executive_summary"][
             "improvement_areas"
         ]:
-            summary += f"⚠️  {improvement}\n"
+            summary += f"  {improvement}\n"
 
         summary += f"""
 MODEL PERFORMANCE SUMMARY:
@@ -1005,13 +1005,13 @@ RECOMMENDATIONS:
 """
 
         for rec in comprehensive_report["recommendations"]:
-            summary += f"🎯 {rec['recommendation']} (Priority: {rec['priority']})\n"
+            summary += f" {rec['recommendation']} (Priority: {rec['priority']})\n"
 
         return summary
 
     def run_complete_performance_analysis(self, data_sources):
         """Run complete performance analysis"""
-        print("🚀 RUNNING COMPLETE PERFORMANCE ANALYSIS")
+        print(" RUNNING COMPLETE PERFORMANCE ANALYSIS")
         print("=" * 70)
 
         # Load data sources
@@ -1032,21 +1032,21 @@ RECOMMENDATIONS:
         # Generate comprehensive report
         comprehensive_report = self.generate_comprehensive_report()
 
-        print(f"\n🎉 PERFORMANCE ANALYSIS COMPLETED!")
+        print(f"\n PERFORMANCE ANALYSIS COMPLETED!")
         print(
-            f"   📊 Overall Score: {comprehensive_report['executive_summary']['overall_performance_score']:.1f}/100"
+            f"    Overall Score: {comprehensive_report['executive_summary']['overall_performance_score']:.1f}/100"
         )
         print(
-            f"   🎯 Key Achievements: {len(comprehensive_report['executive_summary']['key_achievements'])}"
+            f"    Key Achievements: {len(comprehensive_report['executive_summary']['key_achievements'])}"
         )
-        print(f"   📈 Recommendations: {len(comprehensive_report['recommendations'])}")
+        print(f"    Recommendations: {len(comprehensive_report['recommendations'])}")
 
         return comprehensive_report
 
 
 def main():
     """Demo of performance metrics generator"""
-    print("📊 PERFORMANCE METRICS GENERATOR DEMO")
+    print(" PERFORMANCE METRICS GENERATOR DEMO")
     print("=" * 50)
 
     # Initialize generator
@@ -1060,7 +1060,7 @@ def main():
 
     results = metrics_generator.run_complete_performance_analysis(data_sources)
 
-    print(f"\n📊 ANALYSIS RESULTS:")
+    print(f"\n ANALYSIS RESULTS:")
     print(
         f"   Overall Performance: {results['executive_summary']['overall_performance_score']:.1f}/100"
     )
@@ -1071,7 +1071,7 @@ def main():
         f"   Key Achievements: {len(results['executive_summary']['key_achievements'])}"
     )
 
-    print(f"\n✅ Performance Metrics Generator Demo Completed!")
+    print(f"\n Performance Metrics Generator Demo Completed!")
 
 
 if __name__ == "__main__":

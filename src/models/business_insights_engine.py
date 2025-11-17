@@ -63,7 +63,7 @@ class BusinessInsightsEngine:
 
     def calculate_business_kpis(self):
         """Calculate comprehensive business KPIs"""
-        print("📊 Calculating business KPIs...")
+        print(" Calculating business KPIs...")
 
         # Prepare transaction data
         self.transactions["transaction_date"] = pd.to_datetime(
@@ -164,17 +164,17 @@ class BusinessInsightsEngine:
             },
         }
 
-        print(f"✅ KPIs calculated")
-        print(f"   💰 Total Revenue: ${total_revenue:,.2f}")
-        print(f"   👥 Total Customers: {total_customers:,}")
-        print(f"   📈 Revenue Growth: {revenue_growth:.1f}%")
-        print(f"   🔄 Repeat Customer Rate: {repeat_customer_rate:.1f}%")
+        print(f" KPIs calculated")
+        print(f"    Total Revenue: ${total_revenue:,.2f}")
+        print(f"    Total Customers: {total_customers:,}")
+        print(f"    Revenue Growth: {revenue_growth:.1f}%")
+        print(f"    Repeat Customer Rate: {repeat_customer_rate:.1f}%")
 
         return self.kpis
 
     def detect_anomalies(self):
         """Detect anomalies in business metrics"""
-        print("🔍 Detecting business anomalies...")
+        print(" Detecting business anomalies...")
 
         if not self.kpis:
             self.calculate_business_kpis()
@@ -281,8 +281,8 @@ class BusinessInsightsEngine:
                 }
             )
 
-        print(f"✅ Anomaly detection completed")
-        print(f"   🚨 Total anomalies detected: {len(self.anomalies)}")
+        print(f" Anomaly detection completed")
+        print(f"    Total anomalies detected: {len(self.anomalies)}")
 
         # Print summary by type
         anomaly_types = {}
@@ -291,13 +291,13 @@ class BusinessInsightsEngine:
             anomaly_types[anomaly_type] = anomaly_types.get(anomaly_type, 0) + 1
 
         for anom_type, count in anomaly_types.items():
-            print(f"   📊 {anom_type}: {count}")
+            print(f"    {anom_type}: {count}")
 
         return self.anomalies
 
     def analyze_trends(self):
         """Analyze business trends and patterns"""
-        print("📈 Analyzing business trends...")
+        print(" Analyzing business trends...")
 
         # Monthly trends
         monthly_trends = (
@@ -382,17 +382,17 @@ class BusinessInsightsEngine:
             "peak_day": weekly_seasonality.idxmax(),
         }
 
-        print(f"✅ Trend analysis completed")
+        print(f" Trend analysis completed")
         if self.trends:
-            print(f"   📈 Revenue trend: {self.trends['revenue_trend']['direction']}")
-            print(f"   👥 Customer trend: {self.trends['customer_trend']['direction']}")
-            print(f"   🗓️ Peak month: {self.trends['seasonality']['peak_month']}")
+            print(f"    Revenue trend: {self.trends['revenue_trend']['direction']}")
+            print(f"    Customer trend: {self.trends['customer_trend']['direction']}")
+            print(f"    Peak month: {self.trends['seasonality']['peak_month']}")
 
         return self.trends
 
     def generate_insights(self):
         """Generate automated business insights"""
-        print("💡 Generating business insights...")
+        print(" Generating business insights...")
 
         if not self.kpis:
             self.calculate_business_kpis()
@@ -509,7 +509,7 @@ class BusinessInsightsEngine:
                 }
             )
 
-        print(f"✅ Generated {len(self.insights)} business insights")
+        print(f" Generated {len(self.insights)} business insights")
 
         # Print insight summary
         insight_categories = {}
@@ -518,13 +518,13 @@ class BusinessInsightsEngine:
             insight_categories[category] = insight_categories.get(category, 0) + 1
 
         for category, count in insight_categories.items():
-            print(f"   📊 {category}: {count} insights")
+            print(f"    {category}: {count} insights")
 
         return self.insights
 
     def generate_recommendations(self):
         """Generate actionable business recommendations"""
-        print("🎯 Generating business recommendations...")
+        print(" Generating business recommendations...")
 
         # Revenue optimization recommendations
         if self.kpis["financial"]["revenue_growth_rate"] < 0:
@@ -599,16 +599,16 @@ class BusinessInsightsEngine:
                 }
             )
 
-        print(f"✅ Generated {len(self.recommendations)} recommendations")
+        print(f" Generated {len(self.recommendations)} recommendations")
 
         for rec in self.recommendations:
-            print(f"   🎯 {rec['title']} ({rec['priority']} priority)")
+            print(f"    {rec['title']} ({rec['priority']} priority)")
 
         return self.recommendations
 
     def calculate_business_health_score(self):
         """Calculate overall business health score"""
-        print("🏥 Calculating business health score...")
+        print(" Calculating business health score...")
 
         if not self.kpis:
             self.calculate_business_kpis()
@@ -699,17 +699,17 @@ class BusinessInsightsEngine:
             "calculation_date": datetime.now().isoformat(),
         }
 
-        print(f"✅ Business health score calculated: {health_score:.1f}/100 ({status})")
-        print(f"   💰 Revenue Health: {scores['revenue']}/100")
-        print(f"   👥 Customer Health: {scores['customer']}/100")
-        print(f"   ⚙️  Operational Health: {scores['operational']}/100")
-        print(f"   📈 Growth Health: {scores['growth']}/100")
+        print(f" Business health score calculated: {health_score:.1f}/100 ({status})")
+        print(f"    Revenue Health: {scores['revenue']}/100")
+        print(f"    Customer Health: {scores['customer']}/100")
+        print(f"     Operational Health: {scores['operational']}/100")
+        print(f"    Growth Health: {scores['growth']}/100")
 
         return health_report
 
     def generate_executive_summary(self):
         """Generate executive summary report"""
-        print("📋 Generating executive summary...")
+        print(" Generating executive summary...")
 
         # Ensure all analyses are complete
         if not self.kpis:
@@ -749,20 +749,20 @@ class BusinessInsightsEngine:
             },
         }
 
-        print(f"✅ Executive summary generated")
+        print(f" Executive summary generated")
         print(
-            f"   🏥 Business Health: {health_score['overall_score']:.1f}/100 ({health_score['status']})"
+            f"    Business Health: {health_score['overall_score']:.1f}/100 ({health_score['status']})"
         )
-        print(f"   💡 Key Insights: {len(summary['top_insights'])}")
+        print(f"    Key Insights: {len(summary['top_insights'])}")
         print(
-            f"   🎯 Critical Recommendations: {len(summary['critical_recommendations'])}"
+            f"    Critical Recommendations: {len(summary['critical_recommendations'])}"
         )
 
         return summary
 
     def run_complete_analysis(self):
         """Run complete business intelligence analysis"""
-        print("🚀 RUNNING COMPLETE BUSINESS INTELLIGENCE ANALYSIS")
+        print(" RUNNING COMPLETE BUSINESS INTELLIGENCE ANALYSIS")
         print("=" * 70)
 
         # Step 1: Calculate KPIs
@@ -786,7 +786,7 @@ class BusinessInsightsEngine:
         # Step 7: Save results
         self.save_results(executive_summary)
 
-        print(f"\n🎉 BUSINESS INTELLIGENCE ANALYSIS COMPLETED!")
+        print(f"\n BUSINESS INTELLIGENCE ANALYSIS COMPLETED!")
 
         return {
             "kpis": self.kpis,
@@ -818,14 +818,14 @@ class BusinessInsightsEngine:
         with open(f"{self.results_dir}/detailed_analysis_{timestamp}.json", "w") as f:
             json.dump(detailed_results, f, indent=2, default=str)
 
-        print(f"💾 Results saved with timestamp: {timestamp}")
+        print(f" Results saved with timestamp: {timestamp}")
 
         return timestamp
 
 
 def main():
     """Demo of business insights engine"""
-    print("💡 BUSINESS INSIGHTS ENGINE DEMO")
+    print(" BUSINESS INSIGHTS ENGINE DEMO")
     print("=" * 50)
 
     # Initialize engine
@@ -838,8 +838,8 @@ def main():
     # Run complete analysis
     results = insights_engine.run_complete_analysis()
 
-    print(f"\n📊 ANALYSIS SUMMARY:")
-    print(f"   KPIs Calculated: ✅")
+    print(f"\n ANALYSIS SUMMARY:")
+    print(f"   KPIs Calculated: ")
     print(f"   Insights Generated: {len(results['insights'])}")
     print(f"   Anomalies Detected: {len(results['anomalies'])}")
     print(f"   Recommendations: {len(results['recommendations'])}")
@@ -847,7 +847,7 @@ def main():
         f"   Business Health: {results['executive_summary']['business_health']['overall_score']:.1f}/100"
     )
 
-    print(f"\n✅ Business Insights Engine Demo Completed!")
+    print(f"\n Business Insights Engine Demo Completed!")
 
 
 if __name__ == "__main__":

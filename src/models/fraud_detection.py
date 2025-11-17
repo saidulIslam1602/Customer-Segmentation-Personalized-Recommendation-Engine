@@ -39,7 +39,7 @@ class FraudDetectionEngine:
 
     def prepare_fraud_features(self):
         """Create comprehensive fraud detection features"""
-        print("🔄 Creating fraud detection features...")
+        print(" Creating fraud detection features...")
 
         # Convert dates
         self.transactions["transaction_date"] = pd.to_datetime(
@@ -284,8 +284,8 @@ class FraudDetectionEngine:
 
         self.fraud_features = customer_behavior
 
-        print(f"✅ Fraud features created for {len(customer_behavior)} customers")
-        print(f"🚨 Fraud rate: {customer_behavior['is_fraud'].mean():.2%}")
+        print(f" Fraud features created for {len(customer_behavior)} customers")
+        print(f" Fraud rate: {customer_behavior['is_fraud'].mean():.2%}")
 
         return customer_behavior
 
@@ -374,7 +374,7 @@ class FraudDetectionEngine:
             {"feature": feature_columns, "importance": rf_model.feature_importances_}
         ).sort_values("importance", ascending=False)
 
-        print("\n🎯 Top 10 Fraud Detection Features:")
+        print("\n Top 10 Fraud Detection Features:")
         for idx, row in feature_importance.head(10).iterrows():
             print(f"   {row['feature']}: {row['importance']:.4f}")
 
@@ -382,7 +382,7 @@ class FraudDetectionEngine:
 
     def calculate_risk_scores(self):
         """Calculate comprehensive risk scores for all customers"""
-        print("📊 Calculating customer risk scores...")
+        print(" Calculating customer risk scores...")
 
         if self.fraud_model is None:
             self.train_fraud_detection_model()
@@ -433,8 +433,8 @@ class FraudDetectionEngine:
 
         self.risk_scores = risk_results
 
-        print(f"✅ Risk scores calculated for {len(risk_results)} customers")
-        print(f"📊 Risk distribution:")
+        print(f" Risk scores calculated for {len(risk_results)} customers")
+        print(f" Risk distribution:")
         print(
             f"   High Risk: {len(risk_results[risk_results['risk_category'] == 'High Risk'])}"
         )
@@ -449,7 +449,7 @@ class FraudDetectionEngine:
 
     def detect_transaction_anomalies(self):
         """Detect anomalous transaction patterns"""
-        print("🔍 Detecting transaction anomalies...")
+        print(" Detecting transaction anomalies...")
 
         # Prepare transaction-level features
         transaction_features = self.transactions.copy()
@@ -543,9 +543,9 @@ class FraudDetectionEngine:
             "anomaly_score", ascending=False
         )
 
-        print(f"✅ Detected {len(anomalous_transactions)} anomalous transactions")
+        print(f" Detected {len(anomalous_transactions)} anomalous transactions")
         print(
-            f"📊 Anomaly rate: {len(anomalous_transactions) / len(transaction_features):.2%}"
+            f" Anomaly rate: {len(anomalous_transactions) / len(transaction_features):.2%}"
         )
 
         return anomalous_transactions[
@@ -563,7 +563,7 @@ class FraudDetectionEngine:
 
     def generate_fraud_alerts(self):
         """Generate real-time fraud alerts and recommendations"""
-        print("🚨 Generating fraud alerts...")
+        print(" Generating fraud alerts...")
 
         risk_scores = self.calculate_risk_scores()
         anomalous_transactions = self.detect_transaction_anomalies()
@@ -606,8 +606,8 @@ class FraudDetectionEngine:
             ],
         }
 
-        print(f"🚨 Generated {len(high_risk_customers)} high-risk customer alerts")
-        print(f"⚠️  Identified {len(recent_anomalies)} recent anomalous transactions")
+        print(f" Generated {len(high_risk_customers)} high-risk customer alerts")
+        print(f"  Identified {len(recent_anomalies)} recent anomalous transactions")
 
         return alerts
 
@@ -648,7 +648,7 @@ class FraudDetectionEngine:
 
 def main():
     """Main execution function"""
-    print("🚀 FRAUD DETECTION & RISK MANAGEMENT ENGINE")
+    print(" FRAUD DETECTION & RISK MANAGEMENT ENGINE")
     print("=" * 60)
 
     # Initialize fraud detection engine
@@ -678,8 +678,8 @@ def main():
     with open("results/fraud_detection_dashboard.json", "w") as f:
         json.dump(dashboard_data, f, indent=2, default=str)
 
-    print("\n✅ Fraud detection analysis completed!")
-    print("📁 Results saved to:")
+    print("\n Fraud detection analysis completed!")
+    print(" Results saved to:")
     print("   - results/customer_risk_scores.csv")
     print("   - results/anomalous_transactions.csv")
     print("   - results/fraud_detection_dashboard.json")

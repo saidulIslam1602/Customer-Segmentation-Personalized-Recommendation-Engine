@@ -61,9 +61,9 @@ class RealTimeAnalyticsEngine:
         self.results_dir = "reports/real_time"
         os.makedirs(self.results_dir, exist_ok=True)
 
-        print("⚡ Real-time Analytics Engine initialized")
-        print(f"   📊 Buffer size: {buffer_size}")
-        print(f"   🚨 Alert thresholds: {len(self.alert_thresholds)} configured")
+        print(" Real-time Analytics Engine initialized")
+        print(f"    Buffer size: {buffer_size}")
+        print(f"    Alert thresholds: {len(self.alert_thresholds)} configured")
 
     def add_transaction(self, transaction_data):
         """Add a new transaction to the real-time stream"""
@@ -83,9 +83,9 @@ class RealTimeAnalyticsEngine:
         self, base_data_path, duration_minutes=5, transactions_per_minute=10
     ):
         """Simulate real-time transaction stream from historical data"""
-        print(f"🔄 Starting transaction stream simulation...")
-        print(f"   ⏱️  Duration: {duration_minutes} minutes")
-        print(f"   📊 Rate: {transactions_per_minute} transactions/minute")
+        print(f" Starting transaction stream simulation...")
+        print(f"   ⏱  Duration: {duration_minutes} minutes")
+        print(f"    Rate: {transactions_per_minute} transactions/minute")
 
         # Load historical data for simulation
         historical_data = pd.read_csv(base_data_path)
@@ -116,7 +116,7 @@ class RealTimeAnalyticsEngine:
             time.sleep(60 / transactions_per_minute)  # Convert to seconds
 
         print(
-            f"✅ Stream simulation completed: {transaction_count} transactions processed"
+            f" Stream simulation completed: {transaction_count} transactions processed"
         )
         return transaction_count
 
@@ -327,10 +327,10 @@ class RealTimeAnalyticsEngine:
 
                         # Log alerts and recommendations
                         for alert in new_alerts:
-                            print(f"🚨 ALERT: {alert['message']}")
+                            print(f" ALERT: {alert['message']}")
 
                         for rec in recommendations:
-                            print(f"💡 RECOMMENDATION: {rec['title']} - {rec['action']}")
+                            print(f" RECOMMENDATION: {rec['title']} - {rec['action']}")
 
                 # Mark task as done
                 self.events.task_done()
@@ -338,12 +338,12 @@ class RealTimeAnalyticsEngine:
             except queue.Empty:
                 continue  # No events to process
             except Exception as e:
-                print(f"❌ Error processing event: {e}")
+                print(f" Error processing event: {e}")
 
     def start_monitoring(self):
         """Start real-time monitoring"""
         if self.is_monitoring:
-            print("⚠️  Monitoring already active")
+            print("  Monitoring already active")
             return
 
         self.is_monitoring = True
@@ -353,13 +353,13 @@ class RealTimeAnalyticsEngine:
         self.monitoring_thread.daemon = True
         self.monitoring_thread.start()
 
-        print("🚀 Real-time monitoring started")
+        print(" Real-time monitoring started")
         return True
 
     def stop_monitoring(self):
         """Stop real-time monitoring"""
         if not self.is_monitoring:
-            print("⚠️  Monitoring not active")
+            print("  Monitoring not active")
             return
 
         self.is_monitoring = False
@@ -368,7 +368,7 @@ class RealTimeAnalyticsEngine:
         if self.monitoring_thread:
             self.monitoring_thread.join(timeout=5)
 
-        print("🛑 Real-time monitoring stopped")
+        print(" Real-time monitoring stopped")
         return True
 
     def get_live_dashboard_data(self):
@@ -422,12 +422,12 @@ class RealTimeAnalyticsEngine:
         with open(f"{self.results_dir}/dashboard_data_{timestamp}.json", "w") as f:
             json.dump(dashboard_data, f, indent=2, default=str)
 
-        print(f"💾 Real-time data exported with timestamp: {timestamp}")
+        print(f" Real-time data exported with timestamp: {timestamp}")
         return timestamp
 
     def run_real_time_demo(self, data_path, duration_minutes=2):
         """Run a complete real-time analytics demo"""
-        print("⚡ REAL-TIME ANALYTICS DEMO")
+        print(" REAL-TIME ANALYTICS DEMO")
         print("=" * 50)
 
         # Start monitoring
@@ -449,15 +449,15 @@ class RealTimeAnalyticsEngine:
             if (datetime.now() - last_status_time).total_seconds() >= 30:
                 dashboard_data = self.get_live_dashboard_data()
 
-                print(f"\n📊 LIVE STATUS ({datetime.now().strftime('%H:%M:%S')}):")
+                print(f"\n LIVE STATUS ({datetime.now().strftime('%H:%M:%S')}):")
                 if dashboard_data["current_metrics"]:
                     metrics = dashboard_data["current_metrics"]
                     print(
-                        f"   💰 Revenue (5min): ${metrics.get('total_revenue', 0):.2f}"
+                        f"    Revenue (5min): ${metrics.get('total_revenue', 0):.2f}"
                     )
-                    print(f"   📊 Transactions: {metrics.get('transaction_count', 0)}")
-                    print(f"   👥 Customers: {metrics.get('unique_customers', 0)}")
-                    print(f"   🚨 Total Alerts: {len(self.alerts)}")
+                    print(f"    Transactions: {metrics.get('transaction_count', 0)}")
+                    print(f"    Customers: {metrics.get('unique_customers', 0)}")
+                    print(f"    Total Alerts: {len(self.alerts)}")
 
                 last_status_time = datetime.now()
 
@@ -473,18 +473,18 @@ class RealTimeAnalyticsEngine:
         self.export_real_time_data()
 
         # Final summary
-        print(f"\n🎉 REAL-TIME DEMO COMPLETED!")
-        print(f"   ⏱️  Duration: {duration_minutes} minutes")
-        print(f"   📊 Transactions processed: {len(self.transaction_buffer)}")
-        print(f"   📈 KPI calculations: {len(self.kpi_buffer)}")
-        print(f"   🚨 Alerts generated: {len(self.alerts)}")
+        print(f"\n REAL-TIME DEMO COMPLETED!")
+        print(f"   ⏱  Duration: {duration_minutes} minutes")
+        print(f"    Transactions processed: {len(self.transaction_buffer)}")
+        print(f"    KPI calculations: {len(self.kpi_buffer)}")
+        print(f"    Alerts generated: {len(self.alerts)}")
 
         return self.get_live_dashboard_data()
 
 
 def main():
     """Demo of real-time analytics engine"""
-    print("⚡ REAL-TIME ANALYTICS ENGINE DEMO")
+    print(" REAL-TIME ANALYTICS ENGINE DEMO")
     print("=" * 50)
 
     # Initialize engine
@@ -495,12 +495,12 @@ def main():
         "data/transactions_real.csv", duration_minutes=1
     )
 
-    print(f"\n📊 DEMO RESULTS:")
+    print(f"\n DEMO RESULTS:")
     print(f"   Current Metrics: {len(results['current_metrics'])} KPIs")
     print(f"   Recent Alerts: {len(results['recent_alerts'])}")
     print(f"   Buffer Status: {results['buffer_status']}")
 
-    print(f"\n✅ Real-time Analytics Engine Demo Completed!")
+    print(f"\n Real-time Analytics Engine Demo Completed!")
 
 
 if __name__ == "__main__":

@@ -39,7 +39,7 @@ class MarketingAttributionEngine:
 
     def prepare_attribution_data(self):
         """Prepare comprehensive marketing attribution data"""
-        print("🔄 Preparing marketing attribution data...")
+        print(" Preparing marketing attribution data...")
 
         # Convert dates
         self.transactions["transaction_date"] = pd.to_datetime(
@@ -197,19 +197,19 @@ class MarketingAttributionEngine:
 
         self.attribution_data = attribution_df
 
-        print(f"✅ Attribution data prepared for {len(attribution_df)} customers")
+        print(f" Attribution data prepared for {len(attribution_df)} customers")
         print(
-            f"📊 Average touchpoints per customer: {attribution_df['touchpoints_count'].mean():.1f}"
+            f" Average touchpoints per customer: {attribution_df['touchpoints_count'].mean():.1f}"
         )
         print(
-            f"💰 Average customer value: ${attribution_df['total_customer_value'].mean():.2f}"
+            f" Average customer value: ${attribution_df['total_customer_value'].mean():.2f}"
         )
 
         return attribution_df
 
     def analyze_channel_performance(self):
         """Analyze performance of different marketing channels"""
-        print("📊 Analyzing marketing channel performance...")
+        print(" Analyzing marketing channel performance...")
 
         if self.attribution_data is None:
             self.prepare_attribution_data()
@@ -314,20 +314,20 @@ class MarketingAttributionEngine:
         self.channel_performance = channel_performance_df
 
         print(
-            f"✅ Channel performance analyzed for {len(channel_performance_df)} channels"
+            f" Channel performance analyzed for {len(channel_performance_df)} channels"
         )
         print(
-            f"🏆 Top performing channel by revenue: {channel_performance_df.iloc[0]['channel']}"
+            f" Top performing channel by revenue: {channel_performance_df.iloc[0]['channel']}"
         )
         print(
-            f"💰 Best ROI channel: {channel_performance_df.loc[channel_performance_df['roi'].idxmax(), 'channel']}"
+            f" Best ROI channel: {channel_performance_df.loc[channel_performance_df['roi'].idxmax(), 'channel']}"
         )
 
         return channel_performance_df
 
     def optimize_budget_allocation(self, total_budget=100000):
         """Optimize marketing budget allocation across channels"""
-        print("💰 Optimizing marketing budget allocation...")
+        print(" Optimizing marketing budget allocation...")
 
         if self.channel_performance is None:
             self.analyze_channel_performance()
@@ -413,19 +413,19 @@ class MarketingAttributionEngine:
             },
         }
 
-        print(f"✅ Budget optimization completed")
+        print(f" Budget optimization completed")
         print(
-            f"📈 Expected ROI improvement: {optimization_results['expected_improvement']['roi_improvement']:.2%}"
+            f" Expected ROI improvement: {optimization_results['expected_improvement']['roi_improvement']:.2%}"
         )
         print(
-            f"⚡ Expected efficiency improvement: {optimization_results['expected_improvement']['efficiency_improvement']:.2%}"
+            f" Expected efficiency improvement: {optimization_results['expected_improvement']['efficiency_improvement']:.2%}"
         )
 
         return optimization_results
 
     def analyze_customer_acquisition_funnel(self):
         """Analyze customer acquisition funnel and conversion rates"""
-        print("🔄 Analyzing customer acquisition funnel...")
+        print(" Analyzing customer acquisition funnel...")
 
         # Digital events funnel analysis
         funnel_stages = [
@@ -500,9 +500,9 @@ class MarketingAttributionEngine:
         funnel_df = pd.DataFrame(funnel_data)
         funnel_df = funnel_df.sort_values("conversion_rate", ascending=False)
 
-        print(f"✅ Funnel analysis completed for {len(funnel_stages)} stages")
+        print(f" Funnel analysis completed for {len(funnel_stages)} stages")
         print(
-            f"🏆 Best converting stage: {funnel_df.iloc[0]['stage']} ({funnel_df.iloc[0]['conversion_rate']:.1%})"
+            f" Best converting stage: {funnel_df.iloc[0]['stage']} ({funnel_df.iloc[0]['conversion_rate']:.1%})"
         )
 
         return funnel_df
@@ -547,7 +547,7 @@ class MarketingAttributionEngine:
 
 def main():
     """Main execution function"""
-    print("🚀 MARKETING ATTRIBUTION & ROI ANALYSIS ENGINE")
+    print(" MARKETING ATTRIBUTION & ROI ANALYSIS ENGINE")
     print("=" * 60)
 
     # Initialize marketing attribution engine
@@ -587,8 +587,8 @@ def main():
     with open("results/budget_optimization_recommendations.json", "w") as f:
         json.dump(budget_optimization, f, indent=2, default=str)
 
-    print("\n✅ Marketing attribution analysis completed!")
-    print("📁 Results saved to:")
+    print("\n Marketing attribution analysis completed!")
+    print(" Results saved to:")
     print("   - results/marketing_attribution_data.csv")
     print("   - results/channel_performance_analysis.csv")
     print("   - results/acquisition_funnel_analysis.csv")

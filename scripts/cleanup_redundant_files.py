@@ -53,22 +53,22 @@ def cleanup_redundant_files():
                 os.remove(file_path)
                 total_size_saved += file_size
                 files_removed += 1
-                print(f"✅ Removed: {file_path} ({file_size/1024/1024:.1f} MB)")
+                print(f" Removed: {file_path} ({file_size/1024/1024:.1f} MB)")
             except Exception as e:
-                print(f"❌ Error removing {file_path}: {e}")
+                print(f" Error removing {file_path}: {e}")
         else:
-            print(f"⚠️  Not found: {file_path}")
+            print(f"  Not found: {file_path}")
     
     # Remove redundant directories
     for dir_path in redundant_dirs:
         if os.path.exists(dir_path):
             try:
                 shutil.rmtree(dir_path)
-                print(f"✅ Removed directory: {dir_path}")
+                print(f" Removed directory: {dir_path}")
             except Exception as e:
-                print(f"❌ Error removing {dir_path}: {e}")
+                print(f" Error removing {dir_path}: {e}")
     
-    print(f"\n📊 CLEANUP SUMMARY:")
+    print(f"\n CLEANUP SUMMARY:")
     print(f"   Files removed: {files_removed}")
     print(f"   Space saved: {total_size_saved/1024/1024:.1f} MB")
     
@@ -79,42 +79,42 @@ def create_optimized_structure_summary():
     """Create a summary of the optimized project structure"""
     
     structure_summary = """
-# 🚀 OPTIMIZED PROJECT STRUCTURE
+#  OPTIMIZED PROJECT STRUCTURE
 
 ## Core Business Intelligence Platform
 ```
 Customer-Segmentation-Personalized-Recommendation-Engine/
-├── src/
-│   ├── business_intelligence/              # Advanced BI modules
-│   │   ├── churn_prediction.py            # Customer retention
-│   │   ├── inventory_optimization.py       # Demand forecasting  
-│   │   ├── pricing_optimization.py         # Dynamic pricing
-│   │   ├── fraud_detection.py             # Risk management
-│   │   ├── marketing_attribution.py       # ROI analysis
-│   │   └── executive_dashboard.py         # Business insights
-│   ├── data_integration/                  # Real data integration
-│   │   └── real_data_loader.py           # UCI dataset loader
-│   ├── enhanced_business_pipeline.py      # Main pipeline
-│   ├── customer_segmentation.py          # Core segmentation
-│   └── recommendation_engine.py          # Core recommendations
-├── data/                                  # UCI datasets
-│   ├── transactions_real.csv            # 397K real transactions
-│   ├── customers_real.csv               # 440 real customers  
-│   ├── products_real.csv                # 3,897 real products
-│   └── digital_events_real.csv          # 15K digital events
-├── results/                              # Analysis outputs
-├── requirements.txt                      # Dependencies
-├── Dockerfile                           # Container config
-├── docker-compose.yml                   # Multi-service setup
-└── ENHANCED_BUSINESS_INTELLIGENCE_README.md
+ src/
+    business_intelligence/              # Advanced BI modules
+       churn_prediction.py            # Customer retention
+       inventory_optimization.py       # Demand forecasting  
+       pricing_optimization.py         # Dynamic pricing
+       fraud_detection.py             # Risk management
+       marketing_attribution.py       # ROI analysis
+       executive_dashboard.py         # Business insights
+    data_integration/                  # Real data integration
+       real_data_loader.py           # UCI dataset loader
+    enhanced_business_pipeline.py      # Main pipeline
+    customer_segmentation.py          # Core segmentation
+    recommendation_engine.py          # Core recommendations
+ data/                                  # UCI datasets
+    transactions_real.csv            # 397K real transactions
+    customers_real.csv               # 440 real customers  
+    products_real.csv                # 3,897 real products
+    digital_events_real.csv          # 15K digital events
+ results/                              # Analysis outputs
+ requirements.txt                      # Dependencies
+ Dockerfile                           # Container config
+ docker-compose.yml                   # Multi-service setup
+ ENHANCED_BUSINESS_INTELLIGENCE_README.md
 ```
 
 ## Key Benefits After Cleanup:
-- ✅ Reduced project size by ~150MB
-- ✅ Eliminated duplicate functionality
-- ✅ Cleaner, more maintainable codebase
-- ✅ Focus on UCI research datasets
-- ✅ Single comprehensive pipeline
+-  Reduced project size by ~150MB
+-  Eliminated duplicate functionality
+-  Cleaner, more maintainable codebase
+-  Focus on UCI research datasets
+-  Single comprehensive pipeline
 
 ## Usage After Cleanup:
 ```bash
@@ -131,7 +131,7 @@ python3 src/business_intelligence/inventory_optimization.py
     with open("OPTIMIZED_PROJECT_STRUCTURE.md", "w") as f:
         f.write(structure_summary)
     
-    print("✅ Created: OPTIMIZED_PROJECT_STRUCTURE.md")
+    print(" Created: OPTIMIZED_PROJECT_STRUCTURE.md")
 
 def backup_before_cleanup():
     """Create a backup of important files before cleanup"""
@@ -148,20 +148,20 @@ def backup_before_cleanup():
     for file_path in important_files:
         if os.path.exists(file_path):
             shutil.copy2(file_path, backup_dir)
-            print(f"📋 Backed up: {file_path}")
+            print(f" Backed up: {file_path}")
     
-    print(f"✅ Backup created in: {backup_dir}/")
+    print(f" Backup created in: {backup_dir}/")
 
 if __name__ == "__main__":
-    print("⚠️  This script will remove redundant files to optimize the project.")
-    print("📋 A backup will be created first.")
+    print("  This script will remove redundant files to optimize the project.")
+    print(" A backup will be created first.")
     
     response = input("\nProceed with cleanup? (y/N): ")
     
     if response.lower() in ['y', 'yes']:
         backup_before_cleanup()
         cleanup_redundant_files()
-        print("\n🎉 Project cleanup completed successfully!")
-        print("📁 Check OPTIMIZED_PROJECT_STRUCTURE.md for details")
+        print("\n Project cleanup completed successfully!")
+        print(" Check OPTIMIZED_PROJECT_STRUCTURE.md for details")
     else:
-        print("❌ Cleanup cancelled.")
+        print(" Cleanup cancelled.")

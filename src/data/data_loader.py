@@ -55,7 +55,7 @@ class RealDataLoader:
 
     def download_uci_online_retail(self):
         """Download and process UCI Online Retail dataset"""
-        print("📥 Downloading UCI Online Retail Dataset...")
+        print(" Downloading UCI Online Retail Dataset...")
 
         try:
             # Download the dataset
@@ -69,10 +69,10 @@ class RealDataLoader:
                     for chunk in response.iter_content(chunk_size=8192):
                         f.write(chunk)
 
-                print(f"✅ Downloaded: {file_path}")
+                print(f" Downloaded: {file_path}")
 
                 # Load and process the data
-                print("🔄 Processing Online Retail data...")
+                print(" Processing Online Retail data...")
                 df = pd.read_excel(file_path)
 
                 # Clean and standardize the data
@@ -83,20 +83,20 @@ class RealDataLoader:
                     os.path.join(self.data_dir, "transactions_real.csv"), index=False
                 )
 
-                print(f"✅ Processed {len(df):,} transactions")
+                print(f" Processed {len(df):,} transactions")
                 return df
 
             else:
-                print(f"❌ Failed to download: HTTP {response.status_code}")
+                print(f" Failed to download: HTTP {response.status_code}")
                 return None
 
         except Exception as e:
-            print(f"❌ Error downloading Online Retail dataset: {str(e)}")
+            print(f" Error downloading Online Retail dataset: {str(e)}")
             return None
 
     def download_uci_wholesale_customers(self):
         """Download and process UCI Wholesale Customers dataset"""
-        print("📥 Downloading UCI Wholesale Customers Dataset...")
+        print(" Downloading UCI Wholesale Customers Dataset...")
 
         try:
             # Download the dataset
@@ -109,10 +109,10 @@ class RealDataLoader:
                 with open(file_path, "wb") as f:
                     f.write(response.content)
 
-                print(f"✅ Downloaded: {file_path}")
+                print(f" Downloaded: {file_path}")
 
                 # Load and process the data
-                print("🔄 Processing Wholesale Customers data...")
+                print(" Processing Wholesale Customers data...")
                 df = pd.read_csv(file_path)
 
                 # Clean and standardize the data
@@ -123,15 +123,15 @@ class RealDataLoader:
                     os.path.join(self.data_dir, "customers_real.csv"), index=False
                 )
 
-                print(f"✅ Processed {len(df):,} customers")
+                print(f" Processed {len(df):,} customers")
                 return df
 
             else:
-                print(f"❌ Failed to download: HTTP {response.status_code}")
+                print(f" Failed to download: HTTP {response.status_code}")
                 return None
 
         except Exception as e:
-            print(f"❌ Error downloading Wholesale Customers dataset: {str(e)}")
+            print(f" Error downloading Wholesale Customers dataset: {str(e)}")
             return None
 
     def _clean_online_retail_data(self, df):
@@ -212,7 +212,7 @@ class RealDataLoader:
         df["is_bulk_purchase"] = df["quantity"] > 100
         df["is_high_value"] = df["total_amount"] > 100
 
-        print(f"✅ Enhanced cleaning completed: {len(df):,} high-quality transactions")
+        print(f" Enhanced cleaning completed: {len(df):,} high-quality transactions")
         print(
             f"   Data quality improvement: {((initial_rows - len(df)) / initial_rows * 100):.1f}% of problematic records removed"
         )
@@ -311,12 +311,12 @@ class RealDataLoader:
 
         df = df[customer_columns]
 
-        print(f"✅ Cleaned data: {len(df):,} customers with demographics")
+        print(f" Cleaned data: {len(df):,} customers with demographics")
         return df
 
     def create_products_from_transactions(self, transactions_df):
         """Create enhanced products dataset from transaction data with deduplication"""
-        print("🔄 Creating enhanced products dataset from transactions...")
+        print(" Creating enhanced products dataset from transactions...")
 
         # Extract products with transaction statistics for better deduplication
         product_stats = (
@@ -433,12 +433,12 @@ class RealDataLoader:
         # Fill missing product names
         products["product_name"] = products["product_name"].fillna("Unknown Product")
 
-        print(f"✅ Created products dataset: {len(products):,} unique products")
+        print(f" Created products dataset: {len(products):,} unique products")
         return products
 
     def create_digital_events(self, customers_df, transactions_df):
         """Create digital events dataset based on customer behavior patterns"""
-        print("🔄 Creating digital events dataset...")
+        print(" Creating digital events dataset...")
 
         np.random.seed(42)
 
@@ -491,12 +491,12 @@ class RealDataLoader:
 
         digital_events_df = pd.DataFrame(digital_events)
 
-        print(f"✅ Created digital events dataset: {len(digital_events_df):,} events")
+        print(f" Created digital events dataset: {len(digital_events_df):,} events")
         return digital_events_df
 
     def load_all_real_datasets(self):
         """Load and process all real-world datasets"""
-        print("🚀 LOADING REAL-WORLD RETAIL DATASETS")
+        print(" LOADING REAL-WORLD RETAIL DATASETS")
         print("=" * 60)
 
         # Download and process datasets
@@ -504,7 +504,7 @@ class RealDataLoader:
         customers_df = self.download_uci_wholesale_customers()
 
         if transactions_df is None or customers_df is None:
-            print("❌ Failed to load required datasets")
+            print(" Failed to load required datasets")
             return None
 
         # Create additional datasets
@@ -520,14 +520,14 @@ class RealDataLoader:
         )
 
         # Print summary
-        print("\n📊 REAL DATASETS SUMMARY:")
+        print("\n REAL DATASETS SUMMARY:")
         print("=" * 40)
-        print(f"📈 Transactions: {len(transactions_df):,} records")
-        print(f"👥 Customers: {len(customers_df):,} records")
-        print(f"🛍️  Products: {len(products_df):,} records")
-        print(f"📱 Digital Events: {len(digital_events_df):,} records")
+        print(f" Transactions: {len(transactions_df):,} records")
+        print(f" Customers: {len(customers_df):,} records")
+        print(f"  Products: {len(products_df):,} records")
+        print(f" Digital Events: {len(digital_events_df):,} records")
 
-        print(f"\n📅 Data Timeframe:")
+        print(f"\n Data Timeframe:")
         print(
             f"   Transactions: {transactions_df['transaction_date'].min().date()} to {transactions_df['transaction_date'].max().date()}"
         )
@@ -535,7 +535,7 @@ class RealDataLoader:
             f"   Customers: {customers_df['member_since'].min().date()} to {customers_df['member_since'].max().date()}"
         )
 
-        print(f"\n💰 Business Metrics:")
+        print(f"\n Business Metrics:")
         print(f"   Total Revenue: £{transactions_df['total_amount'].sum():,.2f}")
         print(f"   Average Order Value: £{transactions_df['total_amount'].mean():.2f}")
         print(f"   Unique Products Sold: {transactions_df['product_id'].nunique():,}")
@@ -550,7 +550,7 @@ class RealDataLoader:
             "digital_events": digital_events_df,
         }
 
-        print("\n✅ All datasets loaded successfully!")
+        print("\n All datasets loaded successfully!")
 
         # Enhanced data quality validation
         self._validate_data_quality(datasets)
@@ -559,7 +559,7 @@ class RealDataLoader:
 
     def _validate_data_quality(self, datasets):
         """Perform comprehensive data quality validation"""
-        print("\n🔍 DATA QUALITY VALIDATION")
+        print("\n DATA QUALITY VALIDATION")
         print("=" * 40)
 
         transactions = datasets["transactions"]
@@ -567,56 +567,56 @@ class RealDataLoader:
         products = datasets["products"]
 
         # Transaction validation
-        print("📊 Transaction Data Quality:")
+        print(" Transaction Data Quality:")
         duplicates = transactions.duplicated().sum()
         missing_values = transactions.isnull().sum().sum()
         negative_amounts = (transactions["total_amount"] < 0).sum()
         zero_amounts = (transactions["total_amount"] == 0).sum()
 
-        print(f"   ✅ Total transactions: {len(transactions):,}")
-        print(f"   {'✅' if duplicates == 0 else '⚠️ '} Duplicate rows: {duplicates:,}")
+        print(f"    Total transactions: {len(transactions):,}")
+        print(f"   {'' if duplicates == 0 else ' '} Duplicate rows: {duplicates:,}")
         print(
-            f"   {'✅' if missing_values == 0 else '⚠️ '} Missing values: {missing_values:,}"
+            f"   {'' if missing_values == 0 else ' '} Missing values: {missing_values:,}"
         )
         print(
-            f"   {'✅' if negative_amounts == 0 else '⚠️ '} Negative amounts: {negative_amounts:,}"
+            f"   {'' if negative_amounts == 0 else ' '} Negative amounts: {negative_amounts:,}"
         )
         print(
-            f"   {'✅' if zero_amounts == 0 else '⚠️ '} Zero amounts: {zero_amounts:,}"
+            f"   {'' if zero_amounts == 0 else ' '} Zero amounts: {zero_amounts:,}"
         )
 
         # Customer validation
-        print("\n👥 Customer Data Quality:")
+        print("\n Customer Data Quality:")
         customer_duplicates = customers["customer_id"].duplicated().sum()
         customer_missing = customers.isnull().sum().sum()
 
-        print(f"   ✅ Total customers: {len(customers):,}")
+        print(f"    Total customers: {len(customers):,}")
         print(
-            f"   {'✅' if customer_duplicates == 0 else '⚠️ '} Duplicate IDs: {customer_duplicates:,}"
+            f"   {'' if customer_duplicates == 0 else ' '} Duplicate IDs: {customer_duplicates:,}"
         )
         print(
-            f"   {'✅' if customer_missing == 0 else '⚠️ '} Missing values: {customer_missing:,}"
+            f"   {'' if customer_missing == 0 else ' '} Missing values: {customer_missing:,}"
         )
 
         # Product validation
-        print("\n🛍️  Product Data Quality:")
+        print("\n  Product Data Quality:")
         product_duplicates = products["product_id"].duplicated().sum()
         product_missing = products.isnull().sum().sum()
         missing_names = products["product_name"].isnull().sum()
 
-        print(f"   ✅ Total products: {len(products):,}")
+        print(f"    Total products: {len(products):,}")
         print(
-            f"   {'✅' if product_duplicates == 0 else '⚠️ '} Duplicate IDs: {product_duplicates:,}"
+            f"   {'' if product_duplicates == 0 else ' '} Duplicate IDs: {product_duplicates:,}"
         )
         print(
-            f"   {'✅' if missing_names == 0 else '⚠️ '} Missing names: {missing_names:,}"
+            f"   {'' if missing_names == 0 else ' '} Missing names: {missing_names:,}"
         )
         print(
-            f"   {'✅' if product_missing == 0 else '⚠️ '} Missing values: {product_missing:,}"
+            f"   {'' if product_missing == 0 else ' '} Missing values: {product_missing:,}"
         )
 
         # Data relationships validation
-        print("\n🔗 Data Relationship Quality:")
+        print("\n Data Relationship Quality:")
 
         # Check for customers that exist in transactions but not in customer dataset
         transaction_customers = set(transactions["customer_id"].unique())
@@ -633,26 +633,26 @@ class RealDataLoader:
         )
 
         print(
-            f"   {'✅' if orphaned_transactions == 0 else '⚠️ '} Transaction customers not in customer dataset: {orphaned_transactions:,}"
+            f"   {'' if orphaned_transactions == 0 else ' '} Transaction customers not in customer dataset: {orphaned_transactions:,}"
         )
         print(
-            f"   {'✅' if missing_transaction_customers == 0 else '⚠️ '} Customer dataset customers not in transactions: {missing_transaction_customers:,}"
+            f"   {'' if missing_transaction_customers == 0 else ' '} Customer dataset customers not in transactions: {missing_transaction_customers:,}"
         )
         print(
-            f"   {'✅' if orphaned_products == 0 else '⚠️ '} Orphaned transactions (no product): {orphaned_products:,}"
+            f"   {'' if orphaned_products == 0 else ' '} Orphaned transactions (no product): {orphaned_products:,}"
         )
 
         # Note about data sources
         if orphaned_transactions > 0:
             print(
-                f"   ℹ️  Note: Online retail dataset has {len(transaction_customers):,} customers"
+                f"   ℹ  Note: Online retail dataset has {len(transaction_customers):,} customers"
             )
             print(
-                f"   ℹ️  Note: Wholesale dataset provides {len(customer_dataset_customers):,} customer profiles"
+                f"   ℹ  Note: Wholesale dataset provides {len(customer_dataset_customers):,} customer profiles"
             )
 
         # Business metrics validation
-        print("\n📈 Business Metrics Quality:")
+        print("\n Business Metrics Quality:")
         date_range = (
             transactions["transaction_date"].max()
             - transactions["transaction_date"].min()
@@ -660,9 +660,9 @@ class RealDataLoader:
         avg_transaction = transactions["total_amount"].mean()
         total_revenue = transactions["total_amount"].sum()
 
-        print(f"   ✅ Date range: {date_range} days")
-        print(f"   ✅ Average transaction: £{avg_transaction:.2f}")
-        print(f"   ✅ Total revenue: £{total_revenue:,.2f}")
+        print(f"    Date range: {date_range} days")
+        print(f"    Average transaction: £{avg_transaction:.2f}")
+        print(f"    Total revenue: £{total_revenue:,.2f}")
 
         # Quality score calculation (adjusted for multi-dataset scenario)
         critical_issues = (
@@ -677,7 +677,7 @@ class RealDataLoader:
 
         # Adjust scoring for the fact that we're combining two different datasets
         if orphaned_transactions > 0:
-            print(f"\n📋 Data Integration Notes:")
+            print(f"\n Data Integration Notes:")
             print(
                 f"   • Using UCI Online Retail transactions ({len(transaction_customers):,} customers)"
             )
@@ -695,30 +695,30 @@ class RealDataLoader:
             - (minor_issues / len(transactions) * 10),
         )
 
-        print(f"\n🎯 Data Processing Quality Score: {quality_score:.1f}%")
+        print(f"\n Data Processing Quality Score: {quality_score:.1f}%")
 
         if quality_score >= 95:
             print("   🟢 EXCELLENT - Data processing is high quality")
         elif quality_score >= 85:
             print("   🟡 GOOD - Minor processing issues detected")
         else:
-            print("   🔴 NEEDS IMPROVEMENT - Significant processing issues found")
+            print("    NEEDS IMPROVEMENT - Significant processing issues found")
 
         # Summary of improvements made
-        print(f"\n📈 Processing Improvements Applied:")
+        print(f"\n Processing Improvements Applied:")
         print(
-            f"   ✅ Removed {10035 if hasattr(self, '_duplicates_removed') else 'N/A'} duplicate transactions"
+            f"    Removed {10035 if hasattr(self, '_duplicates_removed') else 'N/A'} duplicate transactions"
         )
         print(
-            f"   ✅ Removed {229 if hasattr(self, '_product_duplicates_removed') else 'N/A'} duplicate products"
+            f"    Removed {229 if hasattr(self, '_product_duplicates_removed') else 'N/A'} duplicate products"
         )
-        print(f"   ✅ Applied outlier filtering and data type standardization")
-        print(f"   ✅ Enhanced product categorization and customer demographics")
+        print(f"    Applied outlier filtering and data type standardization")
+        print(f"    Enhanced product categorization and customer demographics")
 
 
 def main():
     """Main execution function"""
-    print("🌍 REAL-WORLD DATA INTEGRATION SYSTEM")
+    print(" REAL-WORLD DATA INTEGRATION SYSTEM")
     print("=" * 50)
 
     # Initialize data loader
@@ -728,17 +728,17 @@ def main():
     datasets = loader.load_all_real_datasets()
 
     if datasets:
-        print("\n🎉 Real-world data integration completed successfully!")
-        print("📁 Data files saved to 'data/' directory:")
+        print("\n Real-world data integration completed successfully!")
+        print(" Data files saved to 'data/' directory:")
         print("   - transactions_real.csv")
         print("   - customers_real.csv")
         print("   - products_real.csv")
         print("   - digital_events_real.csv")
 
-        print("\n🚀 Ready for enhanced business intelligence analysis!")
+        print("\n Ready for enhanced business intelligence analysis!")
     else:
         print(
-            "\n❌ Data integration failed. Please check your internet connection and try again."
+            "\n Data integration failed. Please check your internet connection and try again."
         )
 
 

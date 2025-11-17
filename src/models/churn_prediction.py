@@ -49,7 +49,7 @@ class ChurnPredictionEngine:
         Args:
             churn_threshold_days: Days without purchase to consider churned
         """
-        print("🔄 Creating advanced churn prediction features...")
+        print(" Creating advanced churn prediction features...")
 
         # Convert dates
         self.transactions["transaction_date"] = pd.to_datetime(
@@ -196,8 +196,8 @@ class ChurnPredictionEngine:
 
         self.churn_features = customer_stats
 
-        print(f"✅ Churn features created for {len(customer_stats)} customers")
-        print(f"📊 Churn rate: {customer_stats['is_churned'].mean():.2%}")
+        print(f" Churn features created for {len(customer_stats)} customers")
+        print(f" Churn rate: {customer_stats['is_churned'].mean():.2%}")
 
         return customer_stats
 
@@ -255,7 +255,7 @@ class ChurnPredictionEngine:
 
         # Enhanced model configurations with hyperparameter tuning
         if hyperparameter_tuning:
-            print("🔧 Performing hyperparameter optimization...")
+            print(" Performing hyperparameter optimization...")
             models = self._get_tuned_models(X_train, y_train)
         else:
             models = {
@@ -320,11 +320,11 @@ class ChurnPredictionEngine:
                 }
             ).sort_values("importance", ascending=False)
 
-            print("\n🎯 Top 10 Churn Prediction Features:")
+            print("\n Top 10 Churn Prediction Features:")
             for idx, row in feature_importance.head(10).iterrows():
                 print(f"   {row['feature']}: {row['importance']:.4f}")
 
-        print(f"✅ Best model: {self.best_model_name} (AUC: {best_score:.4f})")
+        print(f" Best model: {self.best_model_name} (AUC: {best_score:.4f})")
 
         # Save model and metadata
         self._save_model_artifacts(feature_columns, model_performances)
@@ -417,7 +417,7 @@ class ChurnPredictionEngine:
         with open(metadata_path, "w") as f:
             json.dump(self.model_metadata, f, indent=2)
 
-        print(f"💾 Model artifacts saved:")
+        print(f" Model artifacts saved:")
         print(f"   Model: {model_path}")
         print(f"   Scaler: {scaler_path}")
         print(f"   Metadata: {metadata_path}")
@@ -444,7 +444,7 @@ class ChurnPredictionEngine:
         with open(metadata_path, "r") as f:
             self.model_metadata = json.load(f)
 
-        print(f"✅ Loaded churn model from {self.model_metadata['training_date']}")
+        print(f" Loaded churn model from {self.model_metadata['training_date']}")
         print(f"   Model type: {self.model_metadata['model_type']}")
         print(f"   Training churn rate: {self.model_metadata['churn_rate']:.2%}")
 
@@ -485,7 +485,7 @@ class ChurnPredictionEngine:
 
     def generate_retention_strategies(self):
         """Generate targeted retention strategies for different risk segments"""
-        print("💡 Generating retention strategies...")
+        print(" Generating retention strategies...")
 
         churn_predictions = self.predict_churn_risk()
 
@@ -565,7 +565,7 @@ class ChurnPredictionEngine:
         expected_revenue_saved = expected_retained_customers * avg_customer_value
         roi = (expected_revenue_saved - total_campaign_cost) / total_campaign_cost
 
-        print(f"\n📊 Retention Strategy Business Impact:")
+        print(f"\n Retention Strategy Business Impact:")
         print(f"   Total at-risk customers: {total_at_risk_customers:,}")
         print(f"   Expected customers retained: {expected_retained_customers:,.0f}")
         print(f"   Total campaign cost: ${total_campaign_cost:,.0f}")
@@ -612,7 +612,7 @@ class ChurnPredictionEngine:
 
 def main():
     """Main execution function"""
-    print("🚀 CUSTOMER CHURN PREDICTION & RETENTION ENGINE")
+    print(" CUSTOMER CHURN PREDICTION & RETENTION ENGINE")
     print("=" * 60)
 
     # Initialize churn prediction engine
@@ -639,8 +639,8 @@ def main():
     with open("results/churn_dashboard_data.json", "w") as f:
         json.dump(dashboard_data, f, indent=2)
 
-    print("\n✅ Churn prediction analysis completed!")
-    print("📁 Results saved to:")
+    print("\n Churn prediction analysis completed!")
+    print(" Results saved to:")
     print("   - results/churn_predictions.csv")
     print("   - results/churn_dashboard_data.json")
 
