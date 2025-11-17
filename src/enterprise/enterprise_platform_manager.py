@@ -426,7 +426,7 @@ class EnterprisePlatformManager:
 
     def start_api_server(self):
         """Start the enterprise API gateway"""
-        print("🌐 Starting Enterprise API Gateway...")
+        logger.info("Starting Enterprise API Gateway...")
         return self.api_gateway.start_server()
 
     def get_enterprise_metrics(self) -> Dict:
@@ -435,7 +435,7 @@ class EnterprisePlatformManager:
 
     def export_for_deployment(self, deployment_path: str = "deployment"):
         """Export enterprise platform for production deployment"""
-        print(f"📦 Exporting enterprise platform to {deployment_path}...")
+        logger.info(f"Exporting enterprise platform to {deployment_path}...")
 
         os.makedirs(deployment_path, exist_ok=True)
 
@@ -474,12 +474,12 @@ def main():
     # Run enterprise analysis
     results = asyncio.run(enterprise_platform.run_enterprise_analysis())
 
-    print(f"\nENTERPRISE PLATFORM SUMMARY:")
-    print(f"   Status: COMPLETED")
-    print(f"   Quality: ENTERPRISE-GRADE")
-    print(f"   CRM Integration: ACTIVE")
-    print(f"   Security: GDPR COMPLIANT")
-    print(f"   API Gateway: RUNNING")
+    logger.info("\nENTERPRISE PLATFORM SUMMARY:")
+    logger.info("   Status: COMPLETED")
+    logger.info("   Quality: ENTERPRISE-GRADE")
+    logger.info("   CRM Integration: ACTIVE")
+    logger.info("   Security: GDPR COMPLIANT")
+    logger.info("   API Gateway: RUNNING")
 
     return results
 

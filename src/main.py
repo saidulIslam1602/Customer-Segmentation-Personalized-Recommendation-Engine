@@ -117,7 +117,7 @@ class EnhancedBusinessIntelligencePlatform:
         )
 
         # New business intelligence engines
-        print("🧠 Initializing advanced business intelligence engines...")
+        logger.info("Initializing advanced business intelligence engines...")
 
         self.engines["churn_prediction"] = ChurnPredictionEngine(
             self.data_paths["transactions"], self.data_paths["customers"]
