@@ -19,6 +19,9 @@ from enterprise.enterprise_platform_manager import EnterprisePlatformManager
 
 def setup_logging(log_level="INFO"):
     """Setup logging configuration"""
+    # Ensure logs directory exists
+    os.makedirs("logs", exist_ok=True)
+    
     logging.basicConfig(
         level=getattr(logging, log_level.upper()),
         format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
@@ -59,7 +62,7 @@ def print_banner():
 
 
 async def run_enterprise_analysis(
-    data_dir="data/processed",
+    data_dir="data",
     results_dir="reports",
     config_path="config/enterprise_config.json",
 ):

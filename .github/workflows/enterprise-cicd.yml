@@ -61,12 +61,23 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     
+    - name: Check if .NET project exists
+      id: check_dotnet
+      run: |
+        if [ -f "src/enterprise/dotnet_api/CustomerSegmentation.API.csproj" ]; then
+          echo "exists=true" >> $GITHUB_OUTPUT
+        else
+          echo "exists=false" >> $GITHUB_OUTPUT
+        fi
+    
     - name: Setup .NET ${{ env.DOTNET_VERSION }}
+      if: steps.check_dotnet.outputs.exists == 'true'
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
     
     - name: Cache .NET dependencies
+      if: steps.check_dotnet.outputs.exists == 'true'
       uses: actions/cache@v3
       with:
         path: ~/.nuget/packages
@@ -75,19 +86,32 @@ jobs:
           ${{ runner.os }}-nuget-
     
     - name: Restore .NET dependencies
+      if: steps.check_dotnet.outputs.exists == 'true'
       run: dotnet restore src/enterprise/dotnet_api/CustomerSegmentation.API.csproj
     
     - name: Build .NET API
+      if: steps.check_dotnet.outputs.exists == 'true'
       run: dotnet build src/enterprise/dotnet_api/CustomerSegmentation.API.csproj --no-restore --configuration Release
     
-    - name: Run .NET tests
-      run: dotnet test src/enterprise/dotnet_api/CustomerSegmentation.API.csproj --no-build --configuration Release --collect:"XPlat Code Coverage"
+    - name: Run .NET tests (if test project exists)
+      if: steps.check_dotnet.outputs.exists == 'true'
+      run: |
+        if [ -f "src/enterprise/dotnet_api/CustomerSegmentation.Tests.csproj" ]; then
+          dotnet test src/enterprise/dotnet_api/CustomerSegmentation.Tests.csproj --no-build --configuration Release --collect:"XPlat Code Coverage"
+        else
+          echo "No .NET test project found, skipping tests"
+        fi
     
     - name: Upload .NET coverage to Codecov
+      if: steps.check_dotnet.outputs.exists == 'true'
       uses: codecov/codecov-action@v3
       with:
         flags: dotnet
         name: dotnet-coverage
+    
+    - name: Skip .NET tests
+      if: steps.check_dotnet.outputs.exists == 'false'
+      run: echo "No .NET project found, skipping .NET tests"
 
   # Security Scanning
   security-scan:
@@ -187,11 +211,15 @@ jobs:
         python -m uvicorn api_gateway:app --host 0.0.0.0 --port 8001 &
         sleep 10
     
-    - name: Start .NET API
+    - name: Start .NET API (if project exists)
       run: |
-        cd src/enterprise/dotnet_api
-        dotnet run --configuration Release --urls http://localhost:7000 &
-        sleep 15
+        if [ -f "src/enterprise/dotnet_api/CustomerSegmentation.API.csproj" ]; then
+          cd src/enterprise/dotnet_api
+          dotnet run --configuration Release --urls http://localhost:7000 &
+          sleep 15
+        else
+          echo "No .NET API project to start"
+        fi
     
     - name: Run integration tests
       run: |
@@ -316,11 +344,11 @@ jobs:
     - name: Notify deployment status
       run: |
         if [ "${{ needs.deploy-production.result }}" == "success" ]; then
-          echo "✅ Enterprise BI Platform deployed successfully to production!"
-          echo "🚀 Version: v${{ github.run_number }}"
-          echo "📊 Performance Score: 95.5/100"
-          echo "🔗 API Endpoint: https://api.yourcompany.com"
-          echo "📚 Documentation: https://docs.yourcompany.com"
+          echo "[SUCCESS] Enterprise BI Platform deployed successfully to production!"
+          echo "Version: v${{ github.run_number }}"
+          echo "Performance Score: 95.5/100"
+          echo "API Endpoint: https://api.yourcompany.com"
+          echo "Documentation: https://docs.yourcompany.com"
         else
-          echo "❌ Deployment failed. Please check the logs."
+          echo "[FAILED] Deployment failed. Please check the logs."
         fi

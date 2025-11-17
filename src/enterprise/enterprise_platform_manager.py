@@ -84,7 +84,7 @@ class EnterprisePlatformManager:
 
     def __init__(
         self,
-        data_dir="data/processed",
+        data_dir="data",
         results_dir="reports",
         config_path="config/enterprise_config.json",
     ):

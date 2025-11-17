@@ -21,11 +21,11 @@ services:
       timeout: 10s
       retries: 3
 
-  # High precision analytics service
+  # Performance metrics generation service
   precision-analytics:
     build: .
     container_name: precision-analytics-service
-    command: ["python", "high_precision_analytics.py"]
+    command: ["python", "generate_performance_metrics.py"]
     volumes:
       - ./results:/app/results
       - ./data:/app/data
@@ -42,7 +42,7 @@ services:
   visualization-service:
     build: .
     container_name: visualization-generator
-    command: ["python", "create_enterprise_visualizations.py"]
+    command: ["python", "src/main.py"]
     volumes:
       - ./results:/app/results
       - ./data:/app/data

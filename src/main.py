@@ -40,7 +40,7 @@ class EnhancedBusinessIntelligencePlatform:
     for solving real-world retail business challenges.
     """
 
-    def __init__(self, data_dir="data/processed", results_dir="reports"):
+    def __init__(self, data_dir="data", results_dir="reports"):
         """Initialize the comprehensive business intelligence platform"""
         self.data_dir = data_dir
         self.results_dir = results_dir

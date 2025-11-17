@@ -130,6 +130,9 @@ dmypy.json
 
 # Enterprise-specific ignores
 config/encryption.key
+config/enterprise_config.json
+config/local_config.json
+*.credentials.json
 logs/
 reports/enterprise/
 deployment/
