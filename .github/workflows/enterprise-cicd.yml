@@ -46,7 +46,8 @@ jobs:
         python -m pip install --upgrade pip
         # Only absolute essentials - no ML libraries
         pip install pandas numpy python-dotenv
-        pip install pytest pytest-cov black==24.10.0 flake8
+        pip install pytest pytest-cov pytest-asyncio httpx
+        pip install black==24.10.0 flake8
     
     - name: Run Python linting
       run: |
